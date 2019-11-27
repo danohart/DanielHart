@@ -1,6 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
+import Validators from './validators';
 
 const Header = () => (
   <Row>
@@ -14,9 +15,15 @@ const Header = () => (
           creative environment with a knowledgeable approach. Helping them feel
           motivated about their business and increase revenue by always learning
           and adapting.
-          <Button>This is a button</Button>
+          <Row>
+            <Col>
+              <Button>Learn More</Button>
+              <Button variant="secondary inverse">See Work</Button>
+            </Col>
+          </Row>
         </p>
       </header>
+      <Validators />
     </Col>
   </Row>
 );

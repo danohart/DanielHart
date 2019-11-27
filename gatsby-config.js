@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Daniel Hart :: Freelance Web Designer & Developer`,
     description: `React and WordPress Web Development in Chicago, IL`,
-    author: `@gatsbyjs`,
+    author: `Daniel Hart`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo-sq.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

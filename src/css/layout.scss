@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'mixins';
 
 body {
   margin: 0;
@@ -28,6 +29,7 @@ a:visited {
     margin: 0;
     margin-bottom: 10px;
     padding: 0;
+    font-weight: bold;
   }
 }
 
@@ -41,16 +43,24 @@ a:visited {
 .btn {
   border-radius: 50px;
   text-transform: uppercase;
-  margin: 10px 0;
+  margin: 10px 0px 10px 5px;
 
   &.btn-primary {
-    background-color: $secondary-color-bold;
-    border-color: darken($secondary-color-bold, 5%);
+    @include btn-colors($secondary-color-bold);
+  }
+
+  &.btn-secondary {
+    @include btn-colors($secondary-color);
+    color: $black;
   }
 }
 
 .main-header {
-  padding: 20px 0px;
+  padding: 50px 100px;
+
+  @include mobile {
+    padding: 20px 0px;
+  }
 
   h1 {
     text-align: center;
@@ -62,5 +72,27 @@ a:visited {
 
   .subtext {
     text-align: center;
+  }
+}
+
+.morph {
+  @include morphing($bgColor: $secondary-color-bold, $offset: -20s);
+  width: 68%;
+}
+
+.morph2 {
+  @include morphing($bgColor: $secondary-color, $offset: -5s);
+  width: 40%;
+}
+
+.morph3 {
+  @include morphing($bgColor: $primary-color-alt, $offset: 5s);
+  width: 90%;
+}
+
+.validators {
+  img {
+    width: 100%;
+    height: auto;
   }
 }

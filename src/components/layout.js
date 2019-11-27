@@ -27,17 +27,22 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <Container>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <Row>
-        <Col>{children}</Col>
-      </Row>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
-    </Container>
+    <>
+      <div className="morph3" />
+      <div className="morph" />
+      <div className="morph2" />
+      <Container>
+        <Header siteTitle={data.site.siteMetadata.title} />
+        <Row>
+          <Col>{children}</Col>
+        </Row>
+        <footer>
+          © {new Date().getFullYear()}, Built with
+          {` `}
+          <a href="https://www.gatsbyjs.org">Gatsby</a>
+        </footer>
+      </Container>
+    </>
   );
 };
 
