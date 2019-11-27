@@ -9,14 +9,15 @@ export default ({ data }) => {
   return (
     <Layout>
       <SEO title="home" />
-      <h1>Portfolio</h1>
       <Row className="card-wrapper">
         {data.allWordpressPage.edges.map(({ node }) => (
-          <Col xs={12} sm={12} md={6} lg={6}>
+          <Col xs={12} sm={12} md={6} lg={6} key={node.id}>
             <div className="card">
               <h2>{node.title}</h2>
               {!node.featured_media ? (
-                <Img fluid="https://via.placeholder.com/728x90.png?text=Visit+WhoIsHostingThis.com+Buyers+Guide" />
+                <Img
+                  fluid={`https://via.placeholder.com/728x120.png?text=Photo`}
+                />
               ) : (
                 <Img
                   fluid={node.featured_media.localFile.childImageSharp.fluid}
@@ -36,6 +37,7 @@ export const pageQuery = graphql`
     allWordpressPage {
       edges {
         node {
+          id
           title
           featured_media {
             localFile {
