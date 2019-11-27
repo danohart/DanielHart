@@ -8,7 +8,7 @@ import { Row, Col } from 'react-bootstrap';
 export default ({ data }) => {
   return (
     <Layout>
-      <SEO title="home" />
+      <SEO title="Home" />
       <Row className="card-wrapper">
         {data.allWordpressPage.edges.map(({ node }) => (
           <Col xs={12} sm={12} md={6} lg={6} key={node.id}>
