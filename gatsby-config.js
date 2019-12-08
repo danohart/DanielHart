@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-transition-link`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -21,8 +22,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#223079`,
+        theme_color: `#223079`,
         display: `minimal-ui`,
         icon: `src/images/logo-sq.png`, // This path is relative to the root of the site.
       },
@@ -84,16 +85,16 @@ module.exports = {
         // all routes that begin with `yoast` from fetch.
         // Whitelisted routes using glob patterns
         includedRoutes: [
-          '**/categories',
+          // '**/categories',
           '**/posts',
           '**/pages',
           '**/media',
-          '**/tags',
-          '**/taxonomies',
+          // '**/tags',
+          // '**/taxonomies',
           '**/users',
         ],
         // Blacklisted routes using glob patterns
-        excludedRoutes: ['**/posts/1456'],
+        // excludedRoutes: ['**/posts/1456'],
         // Set this to keep media sizes.
         // This option is particularly useful in case you need access to
         // URLs for thumbnails, or any other media detail.

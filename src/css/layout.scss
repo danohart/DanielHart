@@ -36,7 +36,7 @@ a:visited {
 // Increase heading size
 @for $i from 1 through 5 {
   h#{6 - $i} {
-    font-size: $i * 0.6em;
+    font-size: $i * 0.57em;
   }
 }
 
@@ -53,6 +53,11 @@ a:visited {
     @include btn-colors($secondary-color);
     color: $black;
   }
+}
+
+.navigation {
+  padding: 20px 0px;
+  text-align: center;
 }
 
 .main-header {
@@ -91,8 +96,72 @@ a:visited {
 }
 
 .validators {
-  img {
-    width: 100%;
-    height: auto;
+  div {
+    align-items: center;
+    margin-bottom: 20px;
+
+    img {
+      width: 50%;
+      height: auto;
+      display: block;
+      margin: 0px auto;
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+  }
+
+  h2 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.benefits {
+  margin: 0px; // reset negative margin by bootstrap
+  position: relative;
+
+  &-card {
+    background-color: $white;
+    color: $black;
+    padding: 0px;
+    margin-bottom: 20px;
+    border-top: 5px solid $secondary-color;
+
+    &:nth-child(2) {
+      border-color: $primary-color-alt;
+    }
+
+    &:nth-child(3) {
+      border-color: $secondary-color-bold;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &-icon {
+    width: 100px;
+    display: block;
+    margin: -30px auto 0px auto;
+
+    .icon-background {
+      background-color: $secondary-color;
+      padding: 5px;
+      border-radius: 30px;
+    }
+  }
+
+  &-description {
+    text-align: center;
+    padding: 20px;
+  }
+
+  svg {
+    width: 100% !important;
   }
 }

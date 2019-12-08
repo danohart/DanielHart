@@ -7,32 +7,22 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+// import { useStaticQuery, graphql } from 'gatsby';
 import { Container, Row, Col } from 'react-bootstrap';
+import Nav from '../components/nav';
 
-import Header from './header';
 import '../css/bootstrap.min.css';
 import '../css/layout.scss';
 import '../css/card.scss';
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
     <>
       <div className="morph3" />
       <div className="morph" />
       <div className="morph2" />
       <Container>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Nav />
         <Row>
           <Col>{children}</Col>
         </Row>

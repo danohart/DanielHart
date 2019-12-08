@@ -1,3 +1,5 @@
+@import 'variables';
+
 @mixin btn-colors($color) {
   background-color: $color;
   border-color: darken($color, 5%);
@@ -18,11 +20,21 @@
   }
 }
 
+@keyframes border-link {
+  from {
+    color: $secondary-color;
+  }
+
+  to {
+    color: $white;
+  }
+}
+
 @mixin morphing($bgColor, $offset: 0s) {
   width: 15%;
   position: absolute;
   z-index: -1;
-  height: 1%;
+  height: 10px;
   background-color: $bgColor;
   //   animation-name: morph-animation;
   animation-duration: 25s;
