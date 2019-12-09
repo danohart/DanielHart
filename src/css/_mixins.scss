@@ -4,6 +4,10 @@
   background-color: $color;
   border-color: darken($color, 5%);
 
+  a {
+    color: $white;
+  }
+
   &:hover {
     background-color: darken($color, 10%);
   }
@@ -12,6 +16,10 @@
     border-color: $color;
     background-color: transparent;
     color: $color;
+
+    a {
+      color: $color;
+    }
 
     &:hover {
       background-color: $color;
