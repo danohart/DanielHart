@@ -16,7 +16,7 @@ const About = () => (
         <h1>About Daniel</h1>
         <h2>Frontend Web Developer</h2>
         <p>
-          With more than <strong>{yearsWorked} years experience</strong> in web
+          With <strong>{yearsWorked}+ years experience</strong> in web
           development and design, working on a variety of projects ranging from
           start to finish website for small businesses like restaurants, retail
           stores, and coffee shops to working with in-house teams for large

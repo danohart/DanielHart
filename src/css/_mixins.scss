@@ -6,6 +6,11 @@
 
   a {
     color: $white;
+
+    &:hover {
+      background-color: transparent;
+      color: $white;
+    }
   }
 
   &:hover {
@@ -19,6 +24,11 @@
 
     a {
       color: $color;
+
+      &:hover {
+        background-color: transparent;
+        color: $white;
+      }
     }
 
     &:hover {
