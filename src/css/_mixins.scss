@@ -93,6 +93,10 @@
   }
 }
 
+@mixin ease-in-out {
+  transition: all ease-in-out 0.3s;
+}
+
 // Media Queries
 $mobile-width: 300px;
 $tablet-width: 767px;

@@ -15,10 +15,15 @@ body {
   }
 }
 
+hr {
+  border-top-color: $light-gray;
+}
+
 a,
 a:focus,
 a:visited {
   color: $secondary-color;
+  @include ease-in-out;
 
   &:hover {
     text-decoration: none;
@@ -78,6 +83,10 @@ h3 {
 .navigation {
   padding: 20px 0px;
   text-align: center;
+
+  a {
+    padding: 2px 5px;
+  }
 }
 
 .main-header {
@@ -89,6 +98,7 @@ h3 {
 
   h1 {
     text-align: center;
+    line-height: 1em;
 
     a {
       color: $white;
@@ -97,6 +107,11 @@ h3 {
 
   .subtext {
     text-align: center;
+    width: 70%;
+    margin: 10px auto;
+    @include mobile {
+      width: 100%;
+    }
   }
 }
 
@@ -127,7 +142,7 @@ h3 {
       margin: 0px auto;
 
       @include mobile {
-        width: 100%;
+        width: 80%;
       }
     }
   }
@@ -140,34 +155,39 @@ h3 {
 }
 
 .benefits {
-  margin: 0px; // reset negative margin by bootstrap
   position: relative;
 
   &-card {
-    background-color: $white;
     color: $black;
-    padding: 0px;
     margin-bottom: 20px;
-    border-top: 5px solid $secondary-color;
-
-    &:nth-child(2) {
-      border-color: $primary-color-alt;
-    }
-
-    &:nth-child(3) {
-      border-color: $secondary-color-bold;
-    }
 
     img {
       width: 100%;
       height: auto;
+      border-top: 5px solid $secondary-color;
+    }
+
+    &:nth-child(2) {
+      img {
+        border-color: $primary-color-alt;
+      }
+    }
+
+    &:nth-child(3) {
+      img {
+        border-color: $secondary-color-bold;
+      }
     }
   }
 
   &-icon {
     width: 100px;
     display: block;
-    margin: -30px auto 0px auto;
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    margin-left: -50px;
+    z-index: 2;
 
     .icon-background {
       background-color: $secondary-color;
@@ -179,6 +199,10 @@ h3 {
   &-description {
     text-align: center;
     padding: 20px;
+    background-color: $white;
+    padding-top: 35px;
+    z-index: 1;
+
     p {
       font-size: 0.8em;
     }

@@ -12,7 +12,7 @@ const About = () => (
   <Layout>
     <SEO title="About" />
     <Row>
-      <Col xs={8} sm={8} md={8} lg={8}>
+      <Col xs={12} sm={12} md={8} lg={8}>
         <h1>About Daniel</h1>
         <h2>Frontend Web Developer</h2>
         <p>
@@ -36,7 +36,7 @@ const About = () => (
           </Button>
         </Col>
       </Col>
-      <Col xs={4} sm={4} md={4} lg={4}>
+      <Col xs={12} sm={12} md={4} lg={4}>
         <img
           src="/static/about.jpg"
           alt="Daniel Hart, web developer"

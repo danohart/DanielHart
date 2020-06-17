@@ -12,7 +12,7 @@ const Benefits = () => (
     <Col xs={12} sm={12} md={4} lg={4} className="benefits-card">
       <Row>
         <Col>
-          <img src="https://source.unsplash.com/600x600/?mobile" alt="Skills" />
+          <img src="../../mobile.jpg" alt="Mobile Design Development Online" />
         </Col>
       </Row>
       <Row>
@@ -29,15 +29,15 @@ const Benefits = () => (
         <p>
           In 2019, Black Friday through Cyber Monday, 49% of online orders came
           from a mobile phone. The best mobile experience for your customer is
-          not only important, but vital for growth and is always kept in mind
-          with any of our&nbsp;clients.
+          vital for growth and is always kept in mind with any of
+          our&nbsp;clients.
         </p>
       </Col>
     </Col>
     <Col xs={12} sm={12} md={4} lg={4} className="benefits-card">
       <Row>
         <Col>
-          <img src="https://source.unsplash.com/600x600/?speed" alt="Skills" />
+          <img src="../../data.jpg" alt="Data Driven Web Design" />
         </Col>
       </Row>
       <Row>
@@ -61,10 +61,7 @@ const Benefits = () => (
     <Col xs={12} sm={12} md={4} lg={4} className="benefits-card">
       <Row>
         <Col>
-          <img
-            src="https://source.unsplash.com/600x600/?macbook"
-            alt="Skills"
-          />
+          <img src="../../speed.jpg" alt="Fast Website Web Development" />
         </Col>
       </Row>
       <Row>

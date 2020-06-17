@@ -7,7 +7,11 @@ const Header = () => (
     <Col>
       <header className="main-header">
         <h1>
-          <Link to="/">Daniel Hart Web Design</Link>
+          <Link to="/">
+            Daniel Hart
+            <br />
+            Web Design
+          </Link>
         </h1>
         <p className="subtext">
           Providing web development &amp; design to trusting clients in a
@@ -19,7 +23,7 @@ const Header = () => (
                 <Link to="/about">Learn More</Link>
               </Button>
               <Button variant="secondary inverse">
-                <Link to="/work"> See Work</Link>
+                <Link to="/work">See Work</Link>
               </Button>
             </Col>
           </Row>
