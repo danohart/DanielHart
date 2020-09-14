@@ -12,27 +12,27 @@ class Validators extends Component {
           <Row>
             <Col xs={6} sm={6} md={4} lg={4}>
               <img
-                src="/static/proof/central-market.png"
+                src="/images/proof/central-market.png"
                 alt="Central Market Logo"
               />
             </Col>
             <Col xs={6} sm={6} md={4} lg={4}>
-              <img src="/static/proof/grainger.png" alt="Grainger Logo" />
+              <img src="/images/proof/grainger.png" alt="Grainger Logo" />
             </Col>
             <Col xs={6} sm={6} md={4} lg={4}>
-              <img src="/static/proof/yum-brands.png" alt="Yum Brands Logo" />
+              <img src="/images/proof/yum-brands.png" alt="Yum Brands Logo" />
             </Col>
             <Col xs={6} sm={6} md={4} lg={4}>
               <img
-                src="/static/proof/natural-music.png"
+                src="/images/proof/natural-music.png"
                 alt="Natural Music Logo"
               />
             </Col>
             <Col xs={6} sm={6} md={4} lg={4}>
-              <img src="/static/proof/rambler.png" alt="Rambler Logo" />
+              <img src="/images/proof/rambler.png" alt="Rambler Logo" />
             </Col>
             <Col xs={6} sm={6} md={4} lg={4}>
-              <img src="/static/proof/bump-boxes.png" alt="Bump Boxes Logo" />
+              <img src="/images/proof/bump-boxes.png" alt="Bump Boxes Logo" />
             </Col>
           </Row>
         </Col>
