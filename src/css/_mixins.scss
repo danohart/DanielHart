@@ -54,7 +54,7 @@
   z-index: -1;
   height: 10px;
   background-color: $bgColor;
-  //   animation-name: morph-animation;
+  // animation-name: morph-animation;
   animation-duration: 25s;
   animation-iteration-count: infinite;
   animation-delay: $offset;
@@ -90,6 +90,15 @@
   }
   100% {
     width: 15%;
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: -50%;
   }
 }
 
