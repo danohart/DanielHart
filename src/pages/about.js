@@ -38,7 +38,7 @@ const About = () => (
       </Col>
       <Col xs={12} sm={12} md={4} lg={4}>
         <img
-          src="/static/about.jpg"
+          src="/about.jpg"
           alt="Daniel Hart, web developer"
           title="Daniel Hart, web developer"
         />
