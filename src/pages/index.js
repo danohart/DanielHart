@@ -17,7 +17,7 @@ export default ({ data }) => {
       <Validators />
       <Benefits />
       <Row className="card-wrapper">
-        {/* {data.allWordpressPage.edges.map(({ node }) => (
+        {data.allWordpressPage.edges.map(({ node }) => (
           <Col xs={12} sm={12} md={6} lg={6} key={node.id}>
             <div className="card">
               <h2>{node.title}</h2>
@@ -32,32 +32,32 @@ export default ({ data }) => {
               )}
             </div>
           </Col>
-        ))} */}
+        ))}
       </Row>
     </Layout>
   );
 };
 
-// export const pageQuery = graphql`
-//   query {
-//     allWordpressPage {
-//       edges {
-//         node {
-//           id
-//           title
-//           featured_media {
-//             localFile {
-//               childImageSharp {
-//                 fluid {
-//                   ...GatsbyImageSharpFluid_withWebp
-//                 }
-//               }
-//             }
-//           }
-//           excerpt
-//           status
-//         }
-//       }
-//     }
-//   }
-// `;
+export const pageQuery = graphql`
+  query {
+    allWordpressPage {
+      edges {
+        node {
+          id
+          title
+          featured_media {
+            localFile {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
+              }
+            }
+          }
+          excerpt
+          status
+        }
+      }
+    }
+  }
+`;
