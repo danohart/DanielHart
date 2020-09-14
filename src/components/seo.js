@@ -68,7 +68,7 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
         {
-          name: `og:image`,
+          property: `og:image`,
           content: '/static/images/daniel-hart-web-design.png',
         },
       ].concat(meta)}
