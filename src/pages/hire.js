@@ -113,9 +113,9 @@ export default function Hire() {
                     {...bindBudget}
                   >
                     <option>Select</option>
-                    <option>$1,000-$2,000</option>
-                    <option>$2,000-$8,000</option>
-                    <option>$8,000-$10,000</option>
+                    <option>$1,000-$4,000</option>
+                    <option>$4,000-$7,000</option>
+                    <option>$7,000-$10,000</option>
                     <option>$10,000+</option>
                   </Form.Control>
                 </Form.Group>
