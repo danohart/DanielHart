@@ -6,7 +6,7 @@ import Benefits from '../components/benefits';
 import SEO from '../components/seo';
 import Work from '../components/work';
 
-export default ({ data }) => {
+export default () => {
   return (
     <Layout>
       <SEO title="Custom Web Development" />
