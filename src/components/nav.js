@@ -16,6 +16,9 @@ const Nav = () => (
     <Col>
       <Link to="/hire">Hire</Link>
     </Col>
+    <Col>
+      <Link to="/blog">Blog</Link>
+    </Col>
   </Row>
 );
 
