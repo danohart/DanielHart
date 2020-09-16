@@ -237,3 +237,39 @@ footer {
   font-size: 0.8em;
   text-align: center;
 }
+
+.post {
+  &-title {
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+
+  &-date {
+    font-size: 1rem;
+    font-weight: 200;
+    margin-bottom: 10px;
+  }
+
+  .wp-block-columns {
+    display: flex;
+
+    img {
+      height: auto;
+    }
+
+    &.has-2-columns {
+      justify-content: space-around;
+    }
+
+    .wp-block-column {
+      width: 50%;
+      flex-basis: 0;
+      flex-grow: 1;
+
+      &:not(:first-child) {
+        margin-left: 25px;
+      }
+    }
+  }
+}

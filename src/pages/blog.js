@@ -9,17 +9,29 @@ export default function BlogHome({ data }) {
     <Layout>
       <Seo title={'Blog'} />
       <h1>Blog</h1>
-      <Row>
+      <h2>
+        On topics of{' '}
         {data.allWordpressPost.edges.map(({ node }) => (
-          <Col xs={12} sm={12} md={12} lg={12}>
+          <div>{node.tags}</div>
+        ))}
+      </h2>
+      <Row className="card-wrapper">
+        {data.allWordpressPost.edges.map(({ node }) => (
+          <Col xs={12} sm={12} md={12} lg={12} className="card">
             <h2>{node.title}</h2>
-            <div dangerouslySetInnerHTML={{ __html: node.content }} />
-            {node.slug}
-            <Button>
-              <Link href={{ pathname: '/article', query: { slug: node.slug } }}>
-                Read More
-              </Link>
-            </Button>
+            <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+            <Row>
+              <Col
+                xs={{ span: 10, offset: 1 }}
+                sm={{ span: 10, offset: 1 }}
+                md={{ span: 2, offset: 0 }}
+                lg={{ span: 2, offset: 0 }}
+              >
+                <Button>
+                  <Link to={`/blog/${node.slug}`}>Read More</Link>
+                </Button>
+              </Col>
+            </Row>
           </Col>
         ))}
       </Row>
@@ -38,6 +50,7 @@ export const pageQuery = graphql`
           content
           excerpt
           status
+          tags
         }
       }
     }
