@@ -238,6 +238,12 @@ footer {
   text-align: center;
 }
 
+.blog-header {
+  &-subtitle {
+    font-size: 2rem;
+  }
+}
+
 .post {
   &-title {
     @include mobile {
