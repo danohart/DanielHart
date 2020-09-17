@@ -5,8 +5,6 @@ import Seo from '../components/seo';
 import { Link } from 'gatsby';
 
 export default function BlogHome({ data }) {
-  console.log(data.allWordpressPost.edges[2].node.excerpt.length);
-
   function shortenExcerpt(text) {
     if (text.length > 330) return text.slice(0, -16) + '...';
     return text;
