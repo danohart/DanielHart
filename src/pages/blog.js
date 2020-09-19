@@ -33,15 +33,10 @@ export default function BlogHome({ data }) {
                 __html: shortenExcerpt(node.excerpt),
               }}
             />
-            <Row>
-              <Col
-                xs={{ span: 10, offset: 1 }}
-                sm={{ span: 10, offset: 1 }}
-                md={{ span: 2, offset: 0 }}
-                lg={{ span: 2, offset: 0 }}
-              >
+            <Row className="read-more">
+              <Col>
                 <Button>
-                  <Link to={`/blog/${node.slug}`}>Read More</Link>
+                  <Link to={`/blog/${node.slug}`}>Go to post &raquo;</Link>
                 </Button>
               </Col>
             </Row>

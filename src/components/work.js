@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Button, Popover, OverlayTrigger } from 'react-bootstrap';
 
 export default function Work() {
+  const [showContent, setShowContent] = useState(false);
+
   return (
     <StaticQuery
       query={graphql`
@@ -22,7 +24,7 @@ export default function Work() {
                     }
                   }
                 }
-                excerpt
+                content
                 status
               }
             }
@@ -52,6 +54,23 @@ export default function Work() {
                     />
                   )}
                 </div>
+
+                <OverlayTrigger
+                  trigger="click"
+                  placement="bottom"
+                  overlay={
+                    <Popover id={`popover-positioned`}>
+                      <Popover.Title>About {node.title}</Popover.Title>
+                      <Popover.Content>
+                        <div
+                          dangerouslySetInnerHTML={{ __html: node.content }}
+                        />
+                      </Popover.Content>
+                    </Popover>
+                  }
+                >
+                  <Button variant="secondary inverse">Learn More</Button>
+                </OverlayTrigger>
               </div>
             </Col>
           ))}
