@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import SEO from '../components/seo';
 
 const BlogPostTemplate = ({ data }) => (
@@ -22,6 +23,29 @@ const BlogPostTemplate = ({ data }) => (
           className="post-content"
           dangerouslySetInnerHTML={{ __html: data.wordpressPost.content }}
         />
+      </Col>
+    </Row>
+    <Row className="post-cta">
+      <Col xs={12} sm={12} md={4} lg={2}>
+        <img
+          src="/images/daniel-hart-web-developer.jpg"
+          alt="Daniel Hart - web developer"
+          title="Daniel Hart - web designer"
+        />
+      </Col>
+      <Col>
+        <h3 className="post-cta-title">Looking for a web developer?</h3>
+        <Row>
+          <Col>
+            <p>
+              Let me bring years of experience in web development and design to
+              your team, let's chat about your current, or next, project.
+            </p>
+            <Button>
+              <Link to="/hire">Contact Me</Link>
+            </Button>
+          </Col>
+        </Row>
       </Col>
     </Row>
   </Layout>

@@ -278,4 +278,16 @@ footer {
       }
     }
   }
+
+  &-cta {
+    background-color: $primary-color-alt;
+    padding: 20px 5px;
+    margin: 40px 0;
+
+    &-title {
+      @include mobile {
+        margin-top: 10px;
+      }
+    }
+  }
 }
