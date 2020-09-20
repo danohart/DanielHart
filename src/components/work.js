@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Row, Col, Button, Popover, OverlayTrigger } from 'react-bootstrap';
 
 export default function Work() {
-  const [showContent, setShowContent] = useState(false);
-
   return (
     <StaticQuery
       query={graphql`
