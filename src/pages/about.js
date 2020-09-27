@@ -24,11 +24,10 @@ const About = () => (
           collected knowledge and data on what it takes for your website to
           succeed in your business.
         </p>
-
+        <h3>With a focus on eCommerce and online stores...</h3>
         <p>
-          <h3>With a focus on eCommerce and online stores...</h3> ...using data
-          driven design to make sure your customers have a pleasant experience
-          with spending their money with your company.
+          ...using data driven design to make sure your customers have a
+          pleasant experience with spending their money with your company.
         </p>
         <Col xs={{ span: 6, offset: 3 }} className="text-center">
           <Button>
