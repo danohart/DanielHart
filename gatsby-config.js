@@ -4,6 +4,7 @@ module.exports = {
     description: `React and WordPress Web Development in Chicago, IL`,
     author: `Daniel Hart`,
   },
+
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-transition-link`,
@@ -110,3 +111,7 @@ module.exports = {
     },
   ],
 };
+
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
