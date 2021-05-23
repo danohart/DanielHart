@@ -126,7 +126,11 @@ export default function Hire() {
               <Col>
                 <Form.Group controlId="exampleForm.ControlTextarea1">
                   <Form.Label>Additional Info</Form.Label>
-                  <Form.Control as="textarea" rows="3" {...bindInfo} />
+                  <Form.Control
+                    type="text"
+                    placeholder="Just a little info to get us started..."
+                    {...bindInfo}
+                  />
                 </Form.Group>
               </Col>
             </Row>
