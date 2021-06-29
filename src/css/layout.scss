@@ -23,6 +23,21 @@ hr {
   border-top-color: $light-gray;
 }
 
+pre {
+  color: $white;
+  padding: 10px 20px;
+  margin: 20px;
+  border: 1px solid $white;
+  border-radius: 5px;
+  background: $primary-color-alt;
+}
+
+code {
+  background-color: $primary-color-alt;
+  color: $light-gray;
+  font-style: italic;
+}
+
 a,
 a:focus,
 a:visited {
