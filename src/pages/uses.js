@@ -16,7 +16,7 @@ export default function Uses() {
       <Row>
         <Col>
           <h1>What I Use</h1>
-          <h2>as a frontend web developer &amp; designer</h2>
+          <h2>as a frontend web developer</h2>
           {usesContent.category.map(content => (
             <Row key={content.title}>
               <Col xs={12} sm={12} md={12} lg={12}>

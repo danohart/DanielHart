@@ -63,5 +63,57 @@ export const usesContent = {
         },
       ],
     },
+    {
+      title: 'Office',
+      items: [
+        {
+          name: 'Herman Miller Sayl Chair',
+          description:
+            'A smaller work chair for my home office with a rubberized back for breathability.',
+          link:
+            'https://www.hermanmiller.com/products/seating/office-chairs/sayl-chairs/',
+        },
+        {
+          name: 'LG 27" UltraGear Monitor',
+          description: '27 inch secondary monitor when in the home office',
+          link: 'https://www.lg.com/us/monitors/lg-27gl83a-b-gaming-monitor',
+          subItem: {
+            name: 'Resolution',
+            description: '2560 x 1440, 144Hz refresh rate',
+            link: 'https://www.lg.com/us/monitors/lg-27gl83a-b-gaming-monitor',
+          },
+        },
+      ],
+    },
+    {
+      title: 'Carry',
+      items: [
+        {
+          name: 'Mission Workshop Monty',
+          description:
+            'A medium-sized(21L) messenger bag that fits most of my work items',
+          link: 'https://missionworkshop.com/products/the-monty-messenger-bag',
+        },
+        {
+          name: 'Maxpedition Mini Pocket Organizer',
+          description:
+            'Small organizer for USB thumb drives, pens, battery packs, adapters, and cables',
+          link:
+            'https://www.maxpedition.com/products/mini-pocket-organizer?variant=39636203537',
+        },
+        {
+          name: 'Pawtec Keyboard and Trackpad Sleeve',
+          description:
+            'Soft case for protection and an extra pocket for batteries and cables',
+          link:
+            'https://shop.pawtec.com/collections/sleeves/products/pawtec-sleeve-for-apple-magic-keyboard-with-storage-pocket',
+          subItem: {
+            name: 'Resolution',
+            description: '2560 x 1440, 144Hz refresh rate',
+            link: 'https://www.lg.com/us/monitors/lg-27gl83a-b-gaming-monitor',
+          },
+        },
+      ],
+    },
   ],
 };
