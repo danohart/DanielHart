@@ -107,11 +107,6 @@ export const usesContent = {
             'Soft case for protection and an extra pocket for batteries and cables',
           link:
             'https://shop.pawtec.com/collections/sleeves/products/pawtec-sleeve-for-apple-magic-keyboard-with-storage-pocket',
-          subItem: {
-            name: 'Resolution',
-            description: '2560 x 1440, 144Hz refresh rate',
-            link: 'https://www.lg.com/us/monitors/lg-27gl83a-b-gaming-monitor',
-          },
         },
       ],
     },
