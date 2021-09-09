@@ -128,6 +128,7 @@ export default function Hire() {
                   <Form.Label>Additional Info</Form.Label>
                   <Form.Control
                     type="text"
+                    name="message"
                     placeholder="Just a little info to get us started..."
                     {...bindInfo}
                   />
