@@ -1,0 +1,327 @@
+@import 'variables';
+@import 'mixins';
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $white;
+  background-color: $primary-color;
+  font-size: 1.3em;
+
+  img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+hr {
+  border-top-color: $light-gray;
+}
+
+pre {
+  color: $white;
+  padding: 10px 20px;
+  margin: 20px;
+  border: 1px solid $white;
+  border-radius: 5px;
+  background: $primary-color-alt;
+}
+
+code {
+  background-color: $primary-color-alt;
+  color: $light-gray;
+  font-style: italic;
+}
+
+a,
+a:focus,
+a:visited {
+  color: $secondary-color;
+  @include ease-in-out;
+
+  &:hover {
+    text-decoration: none;
+    color: $white;
+    background-color: $secondary-color;
+  }
+}
+
+strong {
+  font-weight: 900;
+}
+
+// General heading styles
+@for $i from 1 through 5 {
+  h#{6 - $i} {
+    margin: 0;
+    margin-bottom: 10px;
+    padding: 0;
+    font-weight: bold;
+  }
+}
+
+// Increase heading size
+@for $i from 1 through 5 {
+  h#{6 - $i} {
+    font-size: $i * 0.55em;
+  }
+}
+
+h2 {
+  font-weight: 500;
+  line-height: 1em;
+
+  @include mobile {
+    font-size: 1.9em;
+  }
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+.btn {
+  border-radius: 50px;
+  text-transform: uppercase;
+  margin: 10px 0px 10px 5px;
+
+  &.btn-primary {
+    @include btn-colors($secondary-color-bold);
+  }
+
+  &.btn-secondary {
+    @include btn-colors($secondary-color);
+    color: $black;
+  }
+}
+
+.container {
+  min-height: 500px;
+}
+
+.navigation {
+  padding: 20px 0px;
+  text-align: center;
+
+  a {
+    padding: 2px 5px;
+  }
+}
+
+.main-header {
+  padding: 50px 100px;
+
+  &:after {
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 800px;
+    height: 800px;
+    content: '';
+    background-color: $primary-color-alt;
+    transform: rotate(45deg);
+    z-index: -2;
+  }
+
+  @include mobile {
+    padding: 20px 0px;
+    &:after {
+      left: -200px;
+      width: 400px;
+      height: 400px;
+    }
+  }
+
+  h1 {
+    text-align: center;
+    line-height: 1em;
+
+    a {
+      color: $white;
+    }
+  }
+
+  .subtext {
+    text-align: center;
+    width: 70%;
+    margin: 10px auto;
+    @include mobile {
+      width: 100%;
+    }
+  }
+}
+
+.morph {
+  @include morphing($bgColor: $secondary-color-bold, $offset: -20s);
+  width: 68%;
+}
+
+.morph2 {
+  @include morphing($bgColor: $secondary-color, $offset: -5s);
+  width: 40%;
+}
+
+.morph3 {
+  @include morphing($bgColor: $primary-color-alt, $offset: 5s);
+  width: 90%;
+}
+
+.validators {
+  div {
+    align-items: center;
+    margin-bottom: 20px;
+
+    img {
+      width: 50%;
+      height: auto;
+      display: block;
+      margin: 0px auto;
+
+      @include mobile {
+        width: 80%;
+      }
+    }
+  }
+
+  h2 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.benefits {
+  position: relative;
+
+  &-card {
+    color: $black;
+    margin-bottom: 20px;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-top: 5px solid $secondary-color;
+    }
+
+    &:nth-child(2) {
+      img {
+        border-color: $primary-color-alt;
+      }
+    }
+
+    &:nth-child(3) {
+      img {
+        border-color: $secondary-color-bold;
+      }
+    }
+  }
+
+  &-icon {
+    width: 100px;
+    display: block;
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    margin-left: -50px;
+    z-index: 2;
+
+    .icon-background {
+      background-color: $secondary-color;
+      padding: 5px;
+      border-radius: 30px;
+    }
+  }
+
+  &-description {
+    text-align: center;
+    padding: 20px;
+    background-color: $white;
+    padding-top: 35px;
+    z-index: 1;
+
+    p {
+      font-size: 0.8em;
+    }
+  }
+
+  svg {
+    width: 100% !important;
+  }
+}
+
+footer {
+  background-color: $primary-color-alt;
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.blog-header {
+  &-subtitle {
+    font-size: 2rem;
+  }
+}
+
+.post {
+  &-title {
+    @include mobile {
+      font-size: 2.4rem;
+    }
+  }
+
+  figure {
+    text-align: center;
+  }
+
+  figcaption {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  &-date {
+    font-size: 1rem;
+    font-weight: 200;
+    margin-bottom: 20px;
+  }
+
+  .wp-block-columns {
+    display: flex;
+
+    img {
+      height: auto;
+    }
+
+    &.has-2-columns {
+      justify-content: space-around;
+    }
+
+    .wp-block-column {
+      width: 50%;
+      flex-basis: 0;
+      flex-grow: 1;
+
+      &:not(:first-child) {
+        margin-left: 25px;
+      }
+    }
+  }
+
+  &-cta {
+    background-color: $primary-color-alt;
+    padding: 20px 5px;
+    margin: 40px 0;
+
+    &-title {
+      @include mobile {
+        margin-top: 10px;
+      }
+    }
+  }
+}

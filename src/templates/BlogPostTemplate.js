@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import Link from 'next/link';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
 import { Row, Col, Button } from 'react-bootstrap';
@@ -7,10 +7,10 @@ import SEO from '../components/seo';
 
 const BlogPostTemplate = ({ data }) => (
   <Layout>
-    <SEO
+    {/* <SEO
       title={data.wordpressPost.title}
       description={data.wordpressPost.excerpt}
-    />
+    /> */}
     <Row className="post">
       <Col>
         <h1 className="post-title">{data.wordpressPost.title}</h1>
@@ -42,7 +42,7 @@ const BlogPostTemplate = ({ data }) => (
               your team, let's chat about your current, or next, project.
             </p>
             <Button>
-              <Link to="/hire">Contact Me</Link>
+              <Link href="/hire">Contact Me</Link>
             </Button>
           </Col>
         </Row>
@@ -54,7 +54,7 @@ const BlogPostTemplate = ({ data }) => (
 export default BlogPostTemplate;
 
 export const query = graphql`
-  query($id: Int!) {
+  query ($id: Int!) {
     wordpressPost(wordpress_id: { eq: $id }) {
       id
       slug
