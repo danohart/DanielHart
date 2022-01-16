@@ -4,20 +4,20 @@ import { Row, Col } from 'react-bootstrap';
 
 const Footer = () => (
   <Row>
-    <Col>
-      <footer className="main-footer">
+    <Col className="main-footer">
+      <Row>
         <Col className="copyright">
           © {new Date().getFullYear()} Daniel Hart Web Design
         </Col>
-        <Row>
-          <Col>
-            <Link href="/hire">Work With Me</Link>
-          </Col>
-          <Col>
-            <Link href="/work">See My Work</Link>
-          </Col>
-        </Row>
-      </footer>
+      </Row>
+      <Row>
+        <Col>
+          <Link href="/hire">Work With Me</Link>
+        </Col>
+        <Col>
+          <Link href="/work">See My Work</Link>
+        </Col>
+      </Row>
     </Col>
   </Row>
 );

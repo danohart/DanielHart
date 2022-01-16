@@ -254,10 +254,11 @@ h3 {
   }
 }
 
-footer {
+.main-footer {
   background-color: $primary-color-alt;
   margin-top: 20px;
-  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   font-size: 0.8em;
   text-align: center;
 }
