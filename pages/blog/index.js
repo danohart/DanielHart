@@ -1,14 +1,16 @@
 import React from 'react';
-import Layout from '../components/layout';
+import Layout from '../../components/layout';
 import { Row, Col, Button } from 'react-bootstrap';
-import Seo from '../components/seo';
+import Seo from '../../components/seo';
 import Link from 'next/link';
+import { getPosts } from '../../utils/wordpress';
 
-export default function BlogHome({ data }) {
+export default function BlogHome({ posts }) {
   function shortenExcerpt(text) {
     if (text.length > 330) return text.slice(0, -16) + '...';
     return text;
   }
+
   return (
     <Layout>
       {/* <Seo title={'Blog'} /> */}
@@ -22,21 +24,21 @@ export default function BlogHome({ data }) {
       </Row>
 
       <Row className="card-wrapper">
-        {data.allWordpressPost.edges.map(({ node }) => (
+        {posts.map((post) => (
           <Col xs={12} sm={12} md={12} lg={12} className="card">
             <h2>
-              <Link to={`/blog/${node.slug}`}>{node.title}</Link>
+              <Link href={`/blog/${post.slug}`}>{post.title.rendered}</Link>
             </h2>
             <div
               className="card-excerpt"
               dangerouslySetInnerHTML={{
-                __html: shortenExcerpt(node.excerpt),
+                __html: shortenExcerpt(post.excerpt.rendered),
               }}
             />
             <Row className="read-more">
               <Col>
                 <Button>
-                  <Link to={`/blog/${node.slug}`}>Go to post &raquo;</Link>
+                  <Link href={`/blog/${post.slug}`}>Go to post &raquo;</Link>
                 </Button>
               </Col>
             </Row>
@@ -47,20 +49,13 @@ export default function BlogHome({ data }) {
   );
 }
 
-export const pageQuery = graphql`
-  query {
-    allWordpressPost {
-      edges {
-        node {
-          id
-          slug
-          title
-          content
-          excerpt
-          status
-          tags
-        }
-      }
-    }
-  }
-`;
+export async function getStaticProps({ params }) {
+  const posts = await getPosts();
+
+  return {
+    props: {
+      posts,
+    },
+    revalidate: 10, // In seconds
+  };
+}
