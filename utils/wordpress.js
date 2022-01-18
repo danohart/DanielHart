@@ -13,6 +13,12 @@ export async function getPost(slug) {
   return post;
 }
 
+export async function getPages() {
+  const pagesRes = await fetch(BASE_URL + '/pages?_embed');
+  const pages = await pagesRes.json();
+  return pages;
+}
+
 export async function getSlugs(type) {
   let elements = [];
   switch (type) {
@@ -20,6 +26,7 @@ export async function getSlugs(type) {
       elements = await getPosts();
       break;
   }
+
   const elementsIds = elements.map((element) => {
     return {
       params: {

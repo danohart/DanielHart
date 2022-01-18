@@ -25,7 +25,7 @@ export default function BlogHome({ posts }) {
 
       <Row className="card-wrapper">
         {posts.map((post) => (
-          <Col xs={12} sm={12} md={12} lg={12} className="card">
+          <Col xs={12} sm={12} md={12} lg={12} className="card" key={post.id}>
             <h2>
               <Link href={`/blog/${post.slug}`}>{post.title.rendered}</Link>
             </h2>

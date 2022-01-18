@@ -17,7 +17,6 @@ export default function Hire() {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    console.log('vent', evt.target.value);
     if (!evt.target.value)
       return alert(
         'Some information is missing. Please check that all fields are filled out.'
