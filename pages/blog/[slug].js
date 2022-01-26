@@ -8,10 +8,7 @@ import { getDate } from '../../utils/date';
 
 const BlogPostTemplate = ({ post }) => (
   <Layout>
-    {/* <SEO
-      title={post.title}
-      description={post.excerpt}
-    /> */}
+    <SEO title={post.title.rendered} description={post.excerpt.rendered} />
     <Row className="post">
       <Col>
         <h1 className="post-title">{post.title.rendered}</h1>

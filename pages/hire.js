@@ -34,7 +34,7 @@ export default function Hire() {
 
   return (
     <Layout>
-      {/* <SEO title="Hire Me" /> */}
+      <SEO title="Hire Me" />
       <div>
         <h1>Hire Me</h1>
         <p>

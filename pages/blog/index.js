@@ -1,7 +1,7 @@
 import React from 'react';
 import Layout from '../../components/layout';
 import { Row, Col, Button } from 'react-bootstrap';
-import Seo from '../../components/seo';
+import SEO from '../../components/seo';
 import Link from 'next/link';
 import { getPosts } from '../../utils/wordpress';
 
@@ -13,7 +13,7 @@ export default function BlogHome({ posts }) {
 
   return (
     <Layout>
-      {/* <Seo title={'Blog'} /> */}
+      <SEO title={'Blog'} />
       <Row className="blog-header">
         <Col>
           <h1 className="blog-header-title">Blog</h1>

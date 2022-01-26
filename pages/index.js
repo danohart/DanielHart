@@ -4,12 +4,13 @@ import Header from '../components/header';
 import Validators from '../components/validators';
 import Benefits from '../components/benefits';
 import Work from '../components/work';
+import SEO from '../components/seo';
 import { getPages } from '../utils/wordpress';
 
 export default ({ pages }) => {
   return (
     <Layout>
-      {/* <SEO title="Custom Web Development" /> */}
+      <SEO title="Custom Web Development" />
 
       <Header />
       <Validators />

@@ -10,7 +10,7 @@ const yearsWorked = currentYear - 2009;
 
 const About = () => (
   <Layout>
-    {/* <SEO title="About" /> */}
+    <SEO title="About" />
     <Row>
       <Col xs={12} sm={12} md={8} lg={8}>
         <h1>About Daniel</h1>
