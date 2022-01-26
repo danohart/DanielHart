@@ -2,22 +2,23 @@ import React from 'react';
 import Head from 'next/head';
 // import { useStaticQuery, graphql } from 'gatsby';
 
-function SEO({ description, meta, title }) {
+function SEO({ description, title }) {
   const site = {
-    siteMetadata: {
-      title: 'Daniel Hart :: Freelance Web Designer & Development',
-    },
+    title: 'Daniel Hart :: Freelance Web Designer & Development',
+    description:
+      'Feel motivated about your business and increase revenue with custom web design and development.',
   };
-  const metaTitle = title + ' - ' + site.siteMetadata.title;
+  const metaTitle = title + ' - ' + site.title;
+  const metaDescription = description ? description : site.description;
   return (
     <Head>
       <title>{metaTitle}</title>
       <meta name="title" content={metaTitle} />
-      <meta name="description" content={description} />
+      <meta name="description" content={metaDescription} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://danielhart.co/" />
       <meta property="og:title" content={metaTitle} />
-      <meta property="og:description" content={description} />
+      <meta property="og:description" content={metaDescription} />
       <meta
         property="og:image"
         content="https://danielhart.co/images/daniel-hart-web-design.png"
