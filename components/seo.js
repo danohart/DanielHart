@@ -3,7 +3,11 @@ import Head from 'next/head';
 // import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({ description, meta, title }) {
-  const site = { siteMetadata: { title: 'Daniel Hart Web Design' } };
+  const site = {
+    siteMetadata: {
+      title: 'Daniel Hart :: Freelance Web Designer & Development',
+    },
+  };
   const metaTitle = title + ' - ' + site.siteMetadata.title;
   return (
     <Head>
