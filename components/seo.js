@@ -1,6 +1,5 @@
 import React from 'react';
 import Head from 'next/head';
-// import { useStaticQuery, graphql } from 'gatsby';
 
 function SEO({ description, title }) {
   const site = {
@@ -8,8 +7,10 @@ function SEO({ description, title }) {
     description:
       'Feel motivated about your business and increase revenue with custom web design and development.',
   };
+
   const metaTitle = title + ' - ' + site.title;
   const metaDescription = description ? description : site.description;
+
   return (
     <Head>
       <title>{metaTitle}</title>
