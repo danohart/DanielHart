@@ -15,7 +15,7 @@ const Benefits = () => (
           <img src="../../mobile.jpg" alt="Mobile Design Development Online" />
         </Col>
       </Row>
-      <Row>
+      {/* <Row>
         <Col>
           <div className="benefits-icon">
             <div className="icon-background">
@@ -23,7 +23,7 @@ const Benefits = () => (
             </div>
           </div>
         </Col>
-      </Row>
+      </Row> */}
       <Col className="benefits-description">
         <h3>Mobile Friendly</h3>
         <p>
@@ -40,7 +40,7 @@ const Benefits = () => (
           <img src="../../data.jpg" alt="Data Driven Web Design" />
         </Col>
       </Row>
-      <Row>
+      {/* <Row>
         <Col>
           <div className="benefits-icon">
             <div className="icon-background">
@@ -48,7 +48,7 @@ const Benefits = () => (
             </div>
           </div>
         </Col>
-      </Row>
+      </Row> */}
       <Col className="benefits-description">
         <h3>Data Driven</h3>
         <p>
@@ -64,7 +64,7 @@ const Benefits = () => (
           <img src="../../speed.jpg" alt="Fast Website Web Development" />
         </Col>
       </Row>
-      <Row>
+      {/* <Row>
         <Col>
           <div className="benefits-icon">
             <div className="icon-background">
@@ -72,7 +72,7 @@ const Benefits = () => (
             </div>
           </div>
         </Col>
-      </Row>
+      </Row> */}
       <Col className="benefits-description">
         <h3>Optimal Speed</h3>
         <p>
