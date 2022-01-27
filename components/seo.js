@@ -24,6 +24,11 @@ function SEO({ description, title }) {
         property="og:image"
         content="https://danielhart.co/images/daniel-hart-web-design.png"
       />
+      <link
+        rel="icon"
+        type="image/png"
+        href="https://danielhart.co/favicon.ico"
+      />
     </Head>
   );
 }

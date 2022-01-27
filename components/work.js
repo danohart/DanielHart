@@ -19,7 +19,7 @@ export default function Work({ pages }) {
                     style={{
                       maxHeight: 'calc(50vh - 6.5rem)',
                     }}
-                    src={page._embedded['wp:featuredmedia'][0].link}
+                    src={page._embedded['wp:featuredmedia'][0].source_url}
                   />
                 )}
               </Col>
