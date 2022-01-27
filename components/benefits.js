@@ -7,6 +7,18 @@ import {
   faCode,
 } from '@fortawesome/free-solid-svg-icons';
 
+const benefitsIcon = (icon) => (
+  <Row>
+    <Col>
+      <div className="benefits-icon">
+        <div className="icon-background">
+          <FontAwesomeIcon icon={icon} />
+        </div>
+      </div>
+    </Col>
+  </Row>
+);
+
 const Benefits = () => (
   <Row className="benefits">
     <Col xs={12} sm={12} md={4} lg={4} className="benefits-card">
@@ -15,15 +27,7 @@ const Benefits = () => (
           <img src="../../mobile.jpg" alt="Mobile Design Development Online" />
         </Col>
       </Row>
-      {/* <Row>
-        <Col>
-          <div className="benefits-icon">
-            <div className="icon-background">
-              <FontAwesomeIcon icon={faBarcode} size="2x" />
-            </div>
-          </div>
-        </Col>
-      </Row> */}
+      {benefitsIcon(faBarcode)}
       <Col className="benefits-description">
         <h3>Mobile Friendly</h3>
         <p>
@@ -40,15 +44,7 @@ const Benefits = () => (
           <img src="../../data.jpg" alt="Data Driven Web Design" />
         </Col>
       </Row>
-      {/* <Row>
-        <Col>
-          <div className="benefits-icon">
-            <div className="icon-background">
-              <FontAwesomeIcon icon={faCodeBranch} size="2x" />
-            </div>
-          </div>
-        </Col>
-      </Row> */}
+      {benefitsIcon(faCodeBranch)}
       <Col className="benefits-description">
         <h3>Data Driven</h3>
         <p>
@@ -64,15 +60,7 @@ const Benefits = () => (
           <img src="../../speed.jpg" alt="Fast Website Web Development" />
         </Col>
       </Row>
-      {/* <Row>
-        <Col>
-          <div className="benefits-icon">
-            <div className="icon-background">
-              <FontAwesomeIcon icon={faCode} size="2x" />
-            </div>
-          </div>
-        </Col>
-      </Row> */}
+      {benefitsIcon(faCode)}
       <Col className="benefits-description">
         <h3>Optimal Speed</h3>
         <p>

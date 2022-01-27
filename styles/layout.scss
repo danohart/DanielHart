@@ -222,18 +222,18 @@ h3 {
   }
 
   &-icon {
-    width: 100px;
+    width: 70px;
     display: block;
     position: absolute;
-    top: -28px;
+    top: -40px;
     left: 50%;
-    margin-left: -50px;
+    margin-left: -35px;
     z-index: 2;
 
     .icon-background {
       background-color: $secondary-color;
-      padding: 5px;
-      border-radius: 30px;
+      padding: 20px;
+      border-radius: 50px;
     }
   }
 
@@ -294,6 +294,7 @@ h3 {
 
   .wp-block-columns {
     display: flex;
+    flex-wrap: nowrap;
 
     img {
       height: auto;
@@ -304,9 +305,11 @@ h3 {
     }
 
     .wp-block-column {
-      width: 50%;
       flex-basis: 0;
       flex-grow: 1;
+      min-width: 0;
+      word-break: break-word;
+      overflow-wrap: break-word;
 
       &:not(:first-child) {
         margin-left: 25px;
