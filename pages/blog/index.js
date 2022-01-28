@@ -4,6 +4,7 @@ import { Row, Col, Button } from 'react-bootstrap';
 import SEO from '../../components/seo';
 import Link from 'next/link';
 import { getPosts } from '../../utils/wordpress';
+import { renderApostrophe } from '../../utils/stringFormat';
 
 export default function BlogHome({ posts }) {
   function shortenExcerpt(text) {
@@ -27,7 +28,9 @@ export default function BlogHome({ posts }) {
         {posts.map((post) => (
           <Col xs={12} sm={12} md={12} lg={12} className="card" key={post.id}>
             <h2>
-              <Link href={`/blog/${post.slug}`}>{post.title.rendered}</Link>
+              <Link href={`/blog/${post.slug}`}>
+                {renderApostrophe(post.title.rendered)}
+              </Link>
             </h2>
             <div
               className="card-excerpt"

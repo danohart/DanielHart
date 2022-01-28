@@ -5,13 +5,20 @@ import { Row, Col, Button } from 'react-bootstrap';
 import SEO from '../../components/seo';
 import { getPost, getSlugs } from '../../utils/wordpress';
 import { getDate } from '../../utils/date';
+import { renderApostrophe } from '../../utils/stringFormat';
 
 const BlogPostTemplate = ({ post }) => (
   <Layout>
-    <SEO title={post.title.rendered} description={post.excerpt.rendered} />
+    <SEO
+      title={renderApostrophe(post.title.rendered)}
+      description={post.excerpt.rendered}
+    />
     <Row className="post">
       <Col>
-        <h1 className="post-title">{post.title.rendered}</h1>
+        <h1
+          className="post-title"
+          dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+        />
         <Row>
           <Col className="post-date">
             Written on <strong>{getDate(post.modified)}</strong>
