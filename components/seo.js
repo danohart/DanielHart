@@ -10,14 +10,15 @@ function SEO({ description, title }) {
 
   const metaTitle = title + ' - ' + site.title;
   const metaDescription = description ? description : site.description;
-
+  const currentUrl =
+    typeof window !== 'undefined' ? window.location.href : null;
   return (
     <Head>
       <title>{metaTitle}</title>
       <meta name="title" content={metaTitle} />
       <meta name="description" content={metaDescription} />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://danielhart.co/" />
+      <meta property="og:url" content={currentUrl} />
       <meta property="og:title" content={metaTitle} />
       <meta property="og:description" content={metaDescription} />
       <meta
