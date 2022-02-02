@@ -3,19 +3,19 @@ import { useRouter } from 'next/router';
 export default function OGImage() {
   const router = useRouter();
 
-  const searchParams = new URLSearchParams(router.asPath.split(/\?/)[1]);
+  const title = router.query.title;
+  const excerpt = router.query.excerpt;
+  const image = router.query.image;
 
-  const title = searchParams.get('title');
-  const excerpt = searchParams.get('excerpt');
-  const image = searchParams.get('image');
+  const styles =
+    image !== undefined
+      ? { backgroundImage: `url(${image})` }
+      : { backgroundImage: `url('/speed.jpg')` };
 
   return (
     <div className="ogimage">
       <div className="ogimage-overlay"></div>
-      <div
-        className="ogimage-image"
-        style={{ backgroundImage: `url(${image ? image : '/speed.jpg'})` }}
-      ></div>
+      <div className="ogimage-image" style={styles}></div>
       <div className="ogimage-content">
         <h1 className="ogimage-title">
           {title ? title : 'OG Image Generation Title Text'}

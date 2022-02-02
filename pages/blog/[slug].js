@@ -88,6 +88,7 @@ export async function getStaticProps({ params }) {
       post.excerpt.rendered
     )}&image=${featuredMedia}`
   );
+
   return {
     props: {
       post,
