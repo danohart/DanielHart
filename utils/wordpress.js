@@ -13,6 +13,14 @@ export async function getPost(slug) {
   return post;
 }
 
+export async function getFeaturedMedia(post, size) {
+  if (!post['_embedded']['wp:featuredmedia']) return null;
+  const featuredMedia = await post['_embedded']['wp:featuredmedia'][0]
+    .media_details.sizes[size].source_url;
+
+  return featuredMedia;
+}
+
 export async function getPages() {
   const pagesRes = await fetch(BASE_URL + '/pages?_embed');
   const pages = await pagesRes.json();

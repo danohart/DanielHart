@@ -3,12 +3,12 @@ import Link from 'next/link';
 import Layout from '../../components/layout';
 import { Row, Col, Button } from 'react-bootstrap';
 import SEO from '../../components/seo';
-import { getPost, getSlugs } from '../../utils/wordpress';
+import { getFeaturedMedia, getPost, getSlugs } from '../../utils/wordpress';
 import { getDate } from '../../utils/date';
 import getOgImage from '../../utils/getOgImage';
 import { renderApostrophe } from '../../utils/stringFormat';
 
-const BlogPostTemplate = ({ post, ogImage }) => (
+const BlogPostTemplate = ({ post, featuredMedia, ogImage }) => (
   <Layout>
     <SEO
       title={renderApostrophe(post.title.rendered)}
@@ -26,6 +26,13 @@ const BlogPostTemplate = ({ post, ogImage }) => (
             Written on <strong>{getDate(post.modified)}</strong>
           </Col>
         </Row>
+        {featuredMedia ? (
+          <Row>
+            <Col>
+              <img src={featuredMedia} />
+            </Col>
+          </Row>
+        ) : null}
         <div
           className="post-content"
           dangerouslySetInnerHTML={{ __html: post.content.rendered }}
@@ -73,16 +80,19 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const post = await getPost(params.slug);
+  const featuredMedia = await getFeaturedMedia(post, 'large');
   const ogImage = await getOgImage(
     `/ogimage?title=${renderApostrophe(
       post.title.rendered
-    )}&excerpt=${renderApostrophe(post.excerpt.rendered)}`
+    )}&excerpt=${renderApostrophe(
+      post.excerpt.rendered
+    )}&image=${featuredMedia}`
   );
-
   return {
     props: {
       post,
       ogImage,
+      featuredMedia,
     },
     revalidate: 10, // In seconds
   };
