@@ -5,13 +5,15 @@ import { Row, Col, Button } from 'react-bootstrap';
 import SEO from '../../components/seo';
 import { getPost, getSlugs } from '../../utils/wordpress';
 import { getDate } from '../../utils/date';
+import getOgImage from '../../utils/getOgImage';
 import { renderApostrophe } from '../../utils/stringFormat';
 
-const BlogPostTemplate = ({ post }) => (
+const BlogPostTemplate = ({ post, ogImage }) => (
   <Layout>
     <SEO
       title={renderApostrophe(post.title.rendered)}
       description={post.excerpt.rendered}
+      image={ogImage}
     />
     <Row className="post">
       <Col>
@@ -71,10 +73,14 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const post = await getPost(params.slug);
+  const ogImage = await getOgImage(
+    `/ogimage?title=${post.title}&excerpt=${post.excerpt}`
+  );
 
   return {
     props: {
       post,
+      ogImage,
     },
     revalidate: 10, // In seconds
   };

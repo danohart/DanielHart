@@ -342,3 +342,51 @@ h3 {
     }
   }
 }
+
+
+.ogimage {
+  position: relative;  
+  width: 1200px;
+  height: 630px;
+
+  &-overlay {
+    position: absolute;
+    background-image: url('/ogimage-overlay.png');
+    background-position: left center;
+    background-repeat: no-repeat;
+    width: 1200px;
+    height: 630px;
+    z-index: 2;
+  }
+
+  &-image {
+    position: absolute;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 1200px;
+    height: 630px;
+    z-index: 1;
+  }
+
+  &-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    width: 1200px;
+    height: 630px;
+  }
+
+  &-title {
+    font-size: 6rem;
+    padding: 0 40px;
+    z-index: 3;
+  }
+
+  &-excerpt {
+    font-size: 2rem;
+    padding: 20px 40px;
+    z-index: 3;
+  }
+}

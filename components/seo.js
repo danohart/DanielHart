@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-function SEO({ description, title }) {
+function SEO({ description, title, image }) {
   const site = {
     title: 'Daniel Hart :: Freelance Web Designer & Development',
     description:
@@ -10,6 +10,9 @@ function SEO({ description, title }) {
 
   const metaTitle = title + ' - ' + site.title;
   const metaDescription = description ? description : site.description;
+  const metaImage = image
+    ? image
+    : 'https://danielhart.co/images/daniel-hart-web-design.png';
   const currentUrl =
     typeof window !== 'undefined' ? window.location.href : null;
   return (
@@ -21,10 +24,7 @@ function SEO({ description, title }) {
       <meta property="og:url" content={currentUrl} />
       <meta property="og:title" content={metaTitle} />
       <meta property="og:description" content={metaDescription} />
-      <meta
-        property="og:image"
-        content="https://danielhart.co/images/daniel-hart-web-design.png"
-      />
+      <meta property="og:image" content={metaImage} />
       <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
     </Head>
   );
