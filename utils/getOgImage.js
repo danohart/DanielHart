@@ -3,6 +3,8 @@ const { createHash } = require('crypto');
 const fs = require('fs');
 
 async function getOgImage(path, baseUrl = 'https://danielhart.co') {
+  const url = `${baseUrl}${path}`;
+
   if (process.env.NODE_ENV === 'development') {
     return 'og image will be generated in production';
   }
@@ -12,7 +14,6 @@ async function getOgImage(path, baseUrl = 'https://danielhart.co') {
       ? 'http://localhost:3000'
       : 'https://danielhart.co';
 
-  const url = `${baseUrl}${path}`;
   const hash = createHash('md5').update(url).digest('hex');
   const browser = await playwright.launchChromium({ headless: true });
   const ogImageDir = `./public/images/og`;
