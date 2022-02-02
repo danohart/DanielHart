@@ -74,7 +74,9 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const post = await getPost(params.slug);
   const ogImage = await getOgImage(
-    `/ogimage?title=${post.title}&excerpt=${post.excerpt}`
+    `/ogimage?title=${renderApostrophe(
+      post.title.rendered
+    )}&excerpt=${renderApostrophe(post.excerpt.rendered)}`
   );
 
   return {
