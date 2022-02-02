@@ -7,6 +7,7 @@ import { getFeaturedMedia, getPost, getSlugs } from '../../utils/wordpress';
 import { getDate } from '../../utils/date';
 import getOgImage from '../../utils/getOgImage';
 import { renderApostrophe } from '../../utils/stringFormat';
+import { decode } from 'he';
 
 const BlogPostTemplate = ({ post, featuredMedia, ogImage }) => (
   <Layout>
@@ -82,9 +83,7 @@ export async function getStaticProps({ params }) {
   const post = await getPost(params.slug);
   const featuredMedia = await getFeaturedMedia(post, 'large');
   const ogImage = await getOgImage(
-    `/ogimage?title=${renderApostrophe(
-      post.title.rendered
-    )}&excerpt=${renderApostrophe(
+    `/ogimage?title=${decode(post.title.rendered)}&excerpt=${decode(
       post.excerpt.rendered
     )}&image=${featuredMedia}`
   );
