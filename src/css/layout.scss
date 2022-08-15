@@ -89,6 +89,11 @@ h3 {
   border-radius: 50px;
   text-transform: uppercase;
   margin: 10px 0px 10px 5px;
+  width: 100%;
+
+  &:first-of-type  {
+    margin: 10px 0px;
+  }
 
   &.btn-primary {
     @include btn-colors($secondary-color-bold);
