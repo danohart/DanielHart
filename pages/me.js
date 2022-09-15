@@ -49,6 +49,12 @@ const About = () => (
           </Col>
         </Row>
         <Col xs={12} sm={12} md={4} lg={12} className="text-center">
+          Email:{' '}
+          <a target="_blank" href="mailto:hello@danielhart.co">
+            hello@danielhart.co
+          </a>
+        </Col>
+        <Col xs={12} sm={12} md={4} lg={12} className="text-center">
           <Button>
             <Link href="/work">See examples of my work</Link>
           </Button>
