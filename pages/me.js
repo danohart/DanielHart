@@ -14,12 +14,20 @@ const About = () => (
       <Col xs={12} sm={12} md={8} lg={8}>
         <h1>Daniel Hart</h1>
         <Row>
-          <Col xs={12} sm={12} md={4} lg={12} className="mb-4">
+          <Col xs={12} sm={12} md={4} lg={12}>
             <img
               src="/images/Daniel Hart - Small Business Owner.png"
               alt="Daniel Hart, web developer"
               title="Daniel Hart, web developer"
             />
+          </Col>
+        </Row>
+        <Row>
+          <Col className="photo-credit">
+            Photograph by{' '}
+            <a href="https://letteringworks.com/">
+              Chelsie Tamms - Lettering Works
+            </a>
           </Col>
         </Row>
         <Row>
