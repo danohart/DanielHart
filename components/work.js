@@ -7,25 +7,19 @@ export default function Work({ pages }) {
       {pages.map((page) => (
         <Col xs={12} sm={12} md={12} lg={12} key={page.id}>
           <div className="card">
-            <h2>{page.title.rendered}</h2>
+            <h2>{page.title}</h2>
             <Row>
               <Col xs={12} sm={12} md={6} lg={6} className="card-image">
-                {!page.featured_media ? (
-                  <img
-                    src={`https://via.placeholder.com/728x120.png?text=Photo`}
-                  />
-                ) : (
-                  <img
-                    style={{
-                      maxHeight: 'calc(50vh - 6.5rem)',
-                    }}
-                    src={page._embedded['wp:featuredmedia'][0].source_url}
-                  />
-                )}
+                <img
+                  style={{
+                    maxHeight: 'calc(50vh - 6.5rem)',
+                  }}
+                  src={page.image}
+                />
               </Col>
               <Col xs={12} sm={12} md={6} lg={6}>
                 <div
-                  dangerouslySetInnerHTML={{ __html: page.content.rendered }}
+                  dangerouslySetInnerHTML={{ __html: page.description }}
                 ></div>
               </Col>
             </Row>

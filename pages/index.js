@@ -5,9 +5,9 @@ import Validators from '../components/validators';
 import Benefits from '../components/benefits';
 import Work from '../components/work';
 import SEO from '../components/seo';
-import { getPages } from '../utils/wordpress';
+import { workContent } from '../content/work';
 
-export default ({ pages }) => {
+export default () => {
   return (
     <Layout>
       <SEO title="Custom Web Development" />
@@ -15,16 +15,7 @@ export default ({ pages }) => {
       <Header />
       <Validators />
       <Benefits />
-      <Work pages={pages} />
+      <Work pages={workContent.sites} />
     </Layout>
   );
 };
-
-export async function getStaticProps({ params }) {
-  const pages = await getPages();
-  return {
-    props: {
-      pages,
-    },
-  };
-}

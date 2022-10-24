@@ -2,22 +2,13 @@ import React from 'react';
 import Layout from '../components/layout';
 import Work from '../components/work';
 import SEO from '../components/seo';
-import { getPages } from '../utils/wordpress';
+import { workContent } from '../content/work';
 
-export default ({ pages }) => {
+export default () => {
   return (
     <Layout>
       <SEO title="Work" />
-      <Work pages={pages} />
+      <Work pages={workContent.sites} />
     </Layout>
   );
 };
-
-export async function getStaticProps({ params }) {
-  const pages = await getPages();
-  return {
-    props: {
-      pages,
-    },
-  };
-}
