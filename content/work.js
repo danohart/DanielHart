@@ -32,10 +32,10 @@ export const workContent = {
       image: '/images/portfolio/natural-music.png',
     },
     {
-      title: 'Peoria Civic Hackathon',
-      url: '',
-      description: `The City of Peoria approached a group of developers, including myself, to create an open source website for their upcoming hackathon. This website was created using React.js and I created the design and layout of the website. It was fun working with a team and collaborating when things needed to get done.`,
-      image: '',
+      title: 'Grainger',
+      url: 'https://grainger.com/',
+      description: `Grainger is a powerhouse in the eCommerce space. Working on the website of a fortune 500 company to recreate their main pages, such as their homepage and product pages, to make it responsive and mobile friendly, you need a good amount of help. I worked on a team of about 6 other developers as well as a couple project managers for over a year to get this major overhaul to be published on the the internet.`,
+      image: '/images/portfolio/grainger.png',
     },
     // {
     //   title: 'Grace Baptist',
