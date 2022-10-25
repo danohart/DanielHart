@@ -78,13 +78,13 @@
 
       <div class="wp-block-column">
         <pre class="wp-block-code">
-          <code>
+          {/* <code>
             {' '}
             &lt;Row&gt; &lt;Col&gt; &lt;div className="benefits-icon"&gt;
             &lt;div className="icon-background"&gt; &lt;FontAwesomeIcon icon=
             {faCode} size="2x" /&gt; &lt;/div&gt; &lt;/div&gt; &lt;/Col&gt;
             &lt;/Row&gt;
-          </code>
+          </code> */}
         </pre>
       </div>
     </div>
@@ -102,12 +102,12 @@
     <h2 id="creating-a-reusable-constant">Creating a reusable constant</h2>
 
     <pre class="wp-block-code">
-      <code>
+      {/* <code>
         const benefitsIcon = (icon) =&gt; ( &lt;Row&gt; &lt;Col&gt; &lt;div
         className="benefits-icon"&gt; &lt;div className="icon-background"&gt;
         &lt;FontAwesomeIcon icon={icon} size="2x" /&gt; &lt;/div&gt;
         &lt;/div&gt; &lt;/Col&gt; &lt;/Row&gt; );
-      </code>
+      </code> */}
     </pre>
 
     <p>
@@ -121,11 +121,11 @@
     <h2 id="displaying-the-icon-in-jsx">Displaying the icon in JSX</h2>
 
     <pre class="wp-block-code">
-      <code>
+      {/* <code>
         {benefitsIcon(faBarcode)}
         {benefitsIcon(faCodeBranch)}
         {benefitsIcon(faCode)}
-      </code>
+      </code> */}
     </pre>
 
     <p>
