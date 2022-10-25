@@ -54,25 +54,25 @@
     <div class="wp-block-columns">
       <div class="wp-block-column">
         <pre class="wp-block-code">
-          <code>
+          {/* <code>
             {' '}
             &lt;Row&gt; &lt;Col&gt; &lt;div className="benefits-icon"&gt;
             &lt;div className="icon-background"&gt; &lt;FontAwesomeIcon icon=
             {faBarcode} size="2x" /&gt; &lt;/div&gt; &lt;/div&gt; &lt;/Col&gt;
             &lt;/Row&gt;
-          </code>
+          </code> */}
         </pre>
       </div>
 
       <div class="wp-block-column">
         <pre class="wp-block-code">
-          <code>
+          {/* <code>
             {' '}
             &lt;Row&gt; &lt;Col&gt; &lt;div className="benefits-icon"&gt;
             &lt;div className="icon-background"&gt; &lt;FontAwesomeIcon icon=
             {faCodeBranch} size="2x" /&gt; &lt;/div&gt; &lt;/div&gt;
             &lt;/Col&gt; &lt;/Row&gt;
-          </code>
+          </code> */}
         </pre>
       </div>
 
