@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Badge } from 'react-bootstrap';
 
 export default function Work({ pages }) {
   return (
@@ -19,8 +19,17 @@ export default function Work({ pages }) {
               </Col>
               <Col xs={12} sm={12} md={6} lg={6}>
                 <div
+                  className="card-description"
                   dangerouslySetInnerHTML={{ __html: page.description }}
                 ></div>
+                <Row>
+                  <Col>
+                    <h4>This Project Features:</h4>
+                    {page.tags.map((tag) => (
+                      <Badge bg="primary">{tag}</Badge>
+                    ))}
+                  </Col>
+                </Row>
               </Col>
             </Row>
           </div>

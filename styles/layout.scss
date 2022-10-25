@@ -38,6 +38,14 @@ code {
   font-style: italic;
 }
 
+.badge {
+  margin-right: 5px;
+
+  &.bg-primary {
+    background-color: $secondary-color-bold !important;
+  }
+}
+
 a,
 a:focus,
 a:visited {
