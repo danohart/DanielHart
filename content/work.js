@@ -5,6 +5,7 @@ export const workContent = {
       url: 'https://hellopeoria.co/',
       description: `Hello Peoria&apos;s website is a fully-customized directory website built on React and Next. Featuring a list of curated places for things to do in Peoria, IL to boost tourism as well as local economic growth.`,
       image: '/images/portfolio/hello-peoria.png',
+      tags: ['React'],
     },
     {
       title: 'Rambler',
