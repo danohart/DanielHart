@@ -5,7 +5,7 @@ export default function Work({ pages }) {
   return (
     <Row className="card-wrapper">
       {pages.map((page) => (
-        <Col xs={12} sm={12} md={12} lg={12} key={page.id}>
+        <Col xs={12} sm={12} md={12} lg={12} key={page.title}>
           <div className="card">
             <h2>{page.title}</h2>
             <Row>
