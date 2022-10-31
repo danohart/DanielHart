@@ -8,6 +8,13 @@ export const workContent = {
       tags: ['React', 'Next', 'GraphQL', 'Bootstrap', 'SASS'],
     },
     {
+      title: 'Grainger',
+      url: 'https://grainger.com/',
+      description: `Grainger is a powerhouse in the eCommerce space. Working on the website of a fortune 500 company to recreate their main pages, such as their homepage and product pages, to make it responsive and mobile friendly, you need a good amount of help. I worked on a team of about 6 other developers as well as a couple project managers for over a year to get this major overhaul to be published on the the internet.`,
+      image: '/images/portfolio/grainger.png',
+      tags: ['eCommerce', 'Handlebars.js', 'Less', 'GraphQL', 'Bootstrap'],
+    },
+    {
       title: 'Rambler',
       url: '',
       description: `<p>Rambler is a brick-and-mortar retail store that opened it&apos;s doors in 2016. After a couple of years in business, Drew reached out to start thinking of trying to start the online version of the Rambler store as well.</p>
@@ -42,13 +49,6 @@ export const workContent = {
         'Custom Template',
         'SASS',
       ],
-    },
-    {
-      title: 'Grainger',
-      url: 'https://grainger.com/',
-      description: `Grainger is a powerhouse in the eCommerce space. Working on the website of a fortune 500 company to recreate their main pages, such as their homepage and product pages, to make it responsive and mobile friendly, you need a good amount of help. I worked on a team of about 6 other developers as well as a couple project managers for over a year to get this major overhaul to be published on the the internet.`,
-      image: '/images/portfolio/grainger.png',
-      tags: ['eCommerce', 'Handlebars.js', 'Less', 'GraphQL', 'Bootstrap'],
     },
     // {
     //   title: 'Grace Baptist',
