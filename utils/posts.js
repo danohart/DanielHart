@@ -17,7 +17,6 @@ export function getPost(postSlug) {
   let postResult = matter(fileContent);
   const content = postResult.content;
 
-  console.log('postResult', postResult);
   return { content, ...postResult.data };
 }
 
