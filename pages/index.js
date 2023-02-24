@@ -9,7 +9,7 @@ import Work from '../components/work';
 import SEO from '../components/seo';
 import { workContent } from '../content/work';
 
-export default () => {
+export default function Home() {
   const CTA = (
     <Row>
       <Col className="text-center m-4">
@@ -32,4 +32,4 @@ export default () => {
       {CTA}
     </Layout>
   );
-};
+}

@@ -29,7 +29,9 @@ export default function Work({ pages }) {
                   <Col>
                     <h4>This Project Features:</h4>
                     {page.tags.map((tag) => (
-                      <Badge bg="primary">{tag}</Badge>
+                      <Badge bg="primary" key={tag}>
+                        {tag}
+                      </Badge>
                     ))}
                   </Col>
                 </Row>

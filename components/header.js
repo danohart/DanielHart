@@ -11,7 +11,7 @@ const Header = () => (
           <br />
           <Link href="/">Web Design</Link>
         </h1>
-        <p className="subtext">
+        <div className="subtext">
           Providing web development &amp; design to trusting clients in a
           creative environment. Helping them feel motivated about their business
           and increase revenue by always learning and adapting.
@@ -25,7 +25,7 @@ const Header = () => (
               </Button>
             </Col>
           </Row>
-        </p>
+        </div>
       </header>
     </Col>
   </Row>

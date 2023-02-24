@@ -13,8 +13,7 @@ function SEO({ description, title, image }) {
   const metaImage = image
     ? image
     : 'https://danielhart.co/images/daniel-hart-web-design.png';
-  const currentUrl =
-    typeof window !== 'undefined' ? window.location.href : null;
+  const currentUrl = null;
   return (
     <Head>
       <title>{metaTitle}</title>
