@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -24,7 +25,12 @@ const Benefits = () => (
     <Col xs={12} sm={12} md={4} lg={4} className="benefits-card">
       <Row>
         <Col>
-          <img src="../../mobile.jpg" alt="Mobile Design Development Online" />
+          <Image
+            src="/mobile.jpg"
+            alt="Mobile Design Development Online"
+            width="300"
+            height="300"
+          />
         </Col>
       </Row>
       {benefitsIcon(faBarcode)}
@@ -41,7 +47,12 @@ const Benefits = () => (
     <Col xs={12} sm={12} md={4} lg={4} className="benefits-card">
       <Row>
         <Col>
-          <img src="../../data.jpg" alt="Data Driven Web Design" />
+          <Image
+            src="/data.jpg"
+            alt="Data Driven Web Design"
+            width="300"
+            height="300"
+          />
         </Col>
       </Row>
       {benefitsIcon(faCodeBranch)}
@@ -57,7 +68,12 @@ const Benefits = () => (
     <Col xs={12} sm={12} md={4} lg={4} className="benefits-card">
       <Row>
         <Col>
-          <img src="../../speed.jpg" alt="Fast Website Web Development" />
+          <Image
+            src="/speed.jpg"
+            alt="Fast Website Web Development"
+            width="300"
+            height="300"
+          />
         </Col>
       </Row>
       {benefitsIcon(faCode)}

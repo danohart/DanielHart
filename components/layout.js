@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'react-bootstrap';
 import Nav from '../components/nav';
 import Footer from '../components/footer';
 
-if (process.env.NODE_ENV === 'production') {
-  if (typeof window !== 'undefined') {
-    ReactGA.initialize('UA-6570398-1');
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  }
-}
-
 const Layout = ({ children }) => {
+  useEffect(() => {
+    if (process.env.NODE_ENV === 'production') {
+      ReactGA.initialize('UA-6570398-1');
+      ReactGA.pageview(window.location.pathname + window.location.search);
+    }
+  }, []);
   return (
     <>
       <div className="morph3" />

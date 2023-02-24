@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Layout from '../components/layout';
 import { Row, Col, Button } from 'react-bootstrap';
 import SEO from '../components/seo';
+import Image from 'next/image';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -11,11 +12,18 @@ const About = () => (
   <Layout>
     <SEO title="How To Find Me" />
     <Row>
-      <Col xs={12} sm={12} md={8} lg={8}>
+      <Col
+        xs={12}
+        sm={12}
+        md={{ span: 8, offset: 2 }}
+        lg={{ span: 8, offset: 2 }}
+      >
         <h1>Daniel Hart</h1>
         <Row>
           <Col xs={12} sm={12} md={4} lg={12}>
-            <img
+            <Image
+              width="600"
+              height="400"
               src="/images/Daniel Hart - Small Business Owner.png"
               alt="Daniel Hart, web developer"
               title="Daniel Hart, web developer"

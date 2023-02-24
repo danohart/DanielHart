@@ -69,10 +69,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const post = await getPost(params.slug);
-  const ogImage = await getOgImage(
-    `/ogimage?title=${decode(post.title)}
-      )}`
-  );
+  const ogImage = await getOgImage(`/ogimage?title=${decode(post.title)}`);
 
   return {
     props: {

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col, Badge } from 'react-bootstrap';
+import Image from 'next/image';
 
 export default function Work({ pages }) {
   return (
@@ -10,7 +11,9 @@ export default function Work({ pages }) {
             <h2>{page.title}</h2>
             <Row>
               <Col xs={12} sm={12} md={6} lg={6} className="card-image">
-                <img
+                <Image
+                  width="600"
+                  height="400"
                   style={{
                     maxHeight: 'calc(50vh - 6.5rem)',
                   }}

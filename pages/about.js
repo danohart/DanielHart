@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-
+import Image from 'next/image';
 import Layout from '../components/layout';
 import { Row, Col, Button } from 'react-bootstrap';
 import SEO from '../components/seo';
@@ -36,10 +36,12 @@ const About = () => (
         </Col>
       </Col>
       <Col xs={12} sm={12} md={4} lg={4}>
-        <img
+        <Image
           src="/about.jpg"
           alt="Daniel Hart, web developer"
           title="Daniel Hart, web developer"
+          width="1200"
+          height="900"
         />
       </Col>
     </Row>
