@@ -20,6 +20,7 @@ export default function Home() {
       </Col>
     </Row>
   );
+
   return (
     <Layout>
       <SEO title="Custom Web Development" />
