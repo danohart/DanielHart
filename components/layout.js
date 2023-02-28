@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import ReactGA from 'react-ga4';
 import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'react-bootstrap';
-import Nav from '../components/nav';
-import Footer from '../components/footer';
+import Nav from './nav';
+import Footer from './footer';
 
 const Layout = ({ children }) => {
   useEffect(() => {

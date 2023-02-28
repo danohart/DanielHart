@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Layout from '../components/layout';
 import { Row, Col, Button } from 'react-bootstrap';
 import SEO from '../components/seo';
-import YearsOfExperience from '../components/YearsOfExperience';
+import YearsOfExperience from '../components/yearsOfExperience';
 
 function About() {
   const currentYear = new Date().getFullYear();
