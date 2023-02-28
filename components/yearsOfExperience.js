@@ -37,13 +37,7 @@ export default function YearsOfExperience() {
 
   return (
     <Row className="mb-2">
-      <Col
-        xs={6}
-        sm={6}
-        md={{ span: 2, offset: 1 }}
-        lg={{ span: 2, offset: 1 }}
-        className="experience"
-      >
+      <Col xs={6} sm={6} md={2} lg={2} className="experience">
         <div className="experience-title">Seconds</div>
         <div className="experience-number">
           {Math.floor(data.seconds).toLocaleString('en-US')}
@@ -73,7 +67,7 @@ export default function YearsOfExperience() {
           {Math.floor(data.months).toLocaleString('en-US')}
         </div>
       </Col>
-      <Col xs={6} sm={12} md={2} lg={2} className="experience">
+      <Col xs={6} sm={6} md={2} lg={2} className="experience">
         <div className="experience-title">Years</div>
         <div className="experience-number">
           {Math.floor(data.years).toLocaleString('en-US')}
