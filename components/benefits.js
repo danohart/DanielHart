@@ -33,8 +33,8 @@ const Benefits = () => (
           />
         </Col>
       </Row>
-      {benefitsIcon(faBarcode)}
       <Col className="benefits-description">
+        {benefitsIcon(faBarcode)}
         <h3>Mobile Friendly</h3>
         <p>
           In 2019, Black Friday through Cyber Monday, 49% of online orders came
@@ -55,8 +55,8 @@ const Benefits = () => (
           />
         </Col>
       </Row>
-      {benefitsIcon(faCodeBranch)}
       <Col className="benefits-description">
+        {benefitsIcon(faCodeBranch)}
         <h3>Data Driven</h3>
         <p>
           Through years of experience and testing, making design decisions based
@@ -76,8 +76,8 @@ const Benefits = () => (
           />
         </Col>
       </Row>
-      {benefitsIcon(faCode)}
       <Col className="benefits-description">
+        {benefitsIcon(faCode)}
         <h3>Optimal Speed</h3>
         <p>
           Your website has roughly 4 seconds before a customer decides to go

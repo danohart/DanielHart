@@ -1,5 +1,5 @@
-import '../styles/globals.css';
 import '../styles/bootstrap.min.css';
+import '../styles/globals.css';
 import '../styles/layout.scss';
 import '../styles/card.scss';
 import { config } from '@fortawesome/fontawesome-svg-core';

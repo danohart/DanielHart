@@ -63,4 +63,27 @@ export const workContent = {
     //   image: '',
     // },
   ],
+  projects: [
+    {
+      title: 'Hello Chicago',
+      url: 'https://hellochicago.co/',
+      description: `Chicago happy hour tracker.`,
+      image: '/images/projects/hello-chicago.png',
+      tags: ['React', 'Next.js', 'Mongo', 'Tailwind', 'SASS'],
+    },
+    {
+      title: 'CTA Transit Tracker',
+      url: 'https://ctabustracker.vercel.app/',
+      description: `Real-time bus and train tracker.`,
+      image: '/images/projects/cta-tracker.png',
+      tags: ['React', 'Next.js', 'REST-API', 'Material Design UI', 'SASS'],
+    },
+    {
+      title: 'Hello Avondale',
+      url: 'https://helloavondale.co/',
+      description: `Local bars and restaurant directory for the Chicago neighborhood, Avondale.`,
+      image: '/images/projects/hello-avondale.png',
+      tags: ['React', 'Next.js', 'Mongo', 'Keystone.js', 'SASS'],
+    },
+  ],
 };

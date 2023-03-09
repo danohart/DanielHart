@@ -7,7 +7,6 @@ import Validators from '../components/validators';
 import Benefits from '../components/benefits';
 import Work from '../components/work';
 import SEO from '../components/seo';
-import { workContent } from '../content/work';
 
 export default function Home() {
   const CTA = (
@@ -29,7 +28,7 @@ export default function Home() {
       <Validators />
       {CTA}
       <Benefits />
-      <Work pages={workContent.sites} />
+      <Work />
       {CTA}
     </Layout>
   );
