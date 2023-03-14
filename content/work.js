@@ -16,7 +16,7 @@ export const workContent = {
     },
     {
       title: 'Rambler',
-      url: '',
+      url: 'https://www.wearerambler.com/',
       description: `<p>Rambler is a brick-and-mortar retail store that opened it&apos;s doors in 2016. After a couple of years in business, Drew reached out to start thinking of trying to start the online version of the Rambler store as well.</p>
     <p>We worked with their Point-of-Sale to make sure their online store synced inventory to their site seamlessly to make sure people purchasing online, and in their store, wouldn&apos;t have any issues with out-of-stock items.</p>`,
       image: '/images/portfolio/rambler.png',
@@ -65,18 +65,25 @@ export const workContent = {
   ],
   projects: [
     {
-      title: 'Hello Chicago',
-      url: 'https://hellochicago.co/',
-      description: `Chicago happy hour tracker.`,
-      image: '/images/projects/hello-chicago.png',
-      tags: ['React', 'Next.js', 'Mongo', 'Tailwind', 'SASS'],
-    },
-    {
       title: 'CTA Transit Tracker',
       url: 'https://ctabustracker.vercel.app/',
       description: `Real-time bus and train tracker.`,
       image: '/images/projects/cta-tracker.png',
       tags: ['React', 'Next.js', 'REST-API', 'Material Design UI', 'SASS'],
+    },
+    {
+      title: 'WP Chord Charts',
+      url: '',
+      description: `Real-time chord chart editor for the WordPress admin dashboard.`,
+      image: '/images/projects/chord-charts.png',
+      tags: ['React', 'WordPress', 'REST API', 'PHP', 'Javascript'],
+    },
+    {
+      title: 'Hello Chicago',
+      url: 'https://hellochicago.co/',
+      description: `Chicago happy hour tracker.`,
+      image: '/images/projects/hello-chicago.png',
+      tags: ['React', 'Next.js', 'Mongo', 'Tailwind', 'SASS'],
     },
     {
       title: 'Hello Avondale',

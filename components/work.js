@@ -21,13 +21,14 @@ export default function Work() {
             <Button
               variant="secondary"
               onClick={() => setToggleContent(!toggleContent)}
-              className={toggleContent ? '--bs-bg-opacity: .5' : null}
+              className={toggleContent ? 'selected' : null}
             >
               Work
             </Button>
             <Button
               variant="secondary"
               onClick={() => setToggleContent(!toggleContent)}
+              className={!toggleContent ? 'selected' : null}
             >
               Projects
             </Button>
@@ -48,6 +49,15 @@ export default function Work() {
                     className="card-description"
                     dangerouslySetInnerHTML={{ __html: page.description }}
                   ></div>
+                  {page.url ? (
+                    <Row>
+                      <Col>
+                        <a href={page.url} target="_blank">
+                          Visit Site
+                        </a>
+                      </Col>
+                    </Row>
+                  ) : null}
                   <Row>
                     <Col>
                       <h4>This Project Features:</h4>
