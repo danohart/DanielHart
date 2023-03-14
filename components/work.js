@@ -17,18 +17,18 @@ export default function Work() {
           md={{ span: 6, offset: 3 }}
           lg={{ span: 6, offset: 3 }}
         >
-          <ButtonGroup size="lg" className="d-flex">
+          <ButtonGroup size="lg" className="d-flex mt-4 mb-4">
             <Button
-              variant="secondary"
+              variant="primary"
               onClick={() => setToggleContent(!toggleContent)}
-              className={toggleContent ? 'selected' : null}
+              className={!toggleContent ? 'selected' : null}
             >
               Work
             </Button>
             <Button
-              variant="secondary"
+              variant="primary"
               onClick={() => setToggleContent(!toggleContent)}
-              className={!toggleContent ? 'selected' : null}
+              className={toggleContent ? 'selected' : null}
             >
               Projects
             </Button>
@@ -41,10 +41,15 @@ export default function Work() {
             <div className="card">
               <Row>
                 <Col xs={12} sm={12} md={6} lg={6} className="card-image">
-                  <img src={page.image} />
+                  <img
+                    src={page.image}
+                    alt={page.title + ' screenshot'}
+                    width="600px"
+                    height="500px"
+                  />
                 </Col>
                 <Col xs={12} sm={12} md={6} lg={6}>
-                  <h2>{page.title}</h2>
+                  <h3>{page.title}</h3>
                   <div
                     className="card-description"
                     dangerouslySetInnerHTML={{ __html: page.description }}

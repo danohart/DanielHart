@@ -448,5 +448,5 @@ h3 {
 }
 
 .btn.selected {
-  background-color: darken($color: $secondary-color, $amount: 5);
+  background-color: $primary-color-alt;
 }
