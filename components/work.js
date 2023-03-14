@@ -43,7 +43,7 @@ export default function Work() {
                 <Col xs={12} sm={12} md={6} lg={6} className="card-image">
                   <img
                     src={page.image}
-                    alt={page.title + ' screenshot'}
+                    alt={'Screenshot of ' + page.title + ' website'}
                     width="600px"
                     height="500px"
                   />
