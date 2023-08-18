@@ -47,8 +47,8 @@ class Validators extends Component {
               <Image
                 width="600"
                 height="400"
-                src="/images/proof/rambler.png"
-                alt="Rambler Logo"
+                src="/images/proof/discovery-education.png"
+                alt="Discovery Education Logo"
               />
             </Col>
             <Col xs={6} sm={6} md={4} lg={4}>
