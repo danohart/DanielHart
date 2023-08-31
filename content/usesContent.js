@@ -10,8 +10,7 @@ export const usesContent = {
           subItem: {
             name: 'Theme',
             description: "SynthWave '84",
-            link:
-              'https://marketplace.visualstudio.com/items?itemName=RobbOwen.synthwave-vscode',
+            link: 'https://marketplace.visualstudio.com/items?itemName=RobbOwen.synthwave-vscode',
           },
         },
         {
@@ -48,7 +47,7 @@ export const usesContent = {
         {
           name: 'Apple Magic Keyboard and Trackpad',
           description:
-            'Version 1 for both items as they come cheap but work very well',
+            'Version 2 for both items as they charge with a lightning cable and the battery life is really good.',
           link: 'https://apple.com/',
         },
         {
@@ -70,8 +69,7 @@ export const usesContent = {
           name: 'Herman Miller Sayl Chair',
           description:
             'A smaller work chair for my home office with a rubberized back for breathability.',
-          link:
-            'https://www.hermanmiller.com/products/seating/office-chairs/sayl-chairs/',
+          link: 'https://www.hermanmiller.com/products/seating/office-chairs/sayl-chairs/',
         },
         {
           name: 'LG 27" UltraGear Monitor',
@@ -89,24 +87,22 @@ export const usesContent = {
       title: 'Carry',
       items: [
         {
-          name: 'Mission Workshop Monty',
+          name: 'Peak Design Everyday Zip',
           description:
-            'A medium-sized(21L) messenger bag that fits most of my work items',
-          link: 'https://missionworkshop.com/products/the-monty-messenger-bag',
+            'A medium-sized(20L) backpack that fits most of my work items with some unique organizational shelves inside.',
+          link: 'https://www.peakdesign.com/products/everyday-backpack-zip?variant=29743829254188',
         },
         {
           name: 'Maxpedition Mini Pocket Organizer',
           description:
             'Small organizer for USB thumb drives, pens, battery packs, adapters, and cables',
-          link:
-            'https://www.maxpedition.com/products/mini-pocket-organizer?variant=39636203537',
+          link: 'https://www.maxpedition.com/products/mini-pocket-organizer?variant=39636203537',
         },
         {
           name: 'Pawtec Keyboard and Trackpad Sleeve',
           description:
             'Soft case for protection and an extra pocket for batteries and cables',
-          link:
-            'https://shop.pawtec.com/collections/sleeves/products/pawtec-sleeve-for-apple-magic-keyboard-with-storage-pocket',
+          link: 'https://shop.pawtec.com/collections/sleeves/products/pawtec-sleeve-for-apple-magic-keyboard-with-storage-pocket',
         },
       ],
     },
