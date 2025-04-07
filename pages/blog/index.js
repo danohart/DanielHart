@@ -49,13 +49,13 @@ export default function BlogHome({ posts }) {
   );
 }
 
-export async function getStaticProps({ params }) {
-  const posts = await getSortedPostsData('posts');
+// export async function getStaticProps({ params }) {
+//   const posts = await getSortedPostsData('posts');
 
-  return {
-    props: {
-      posts,
-    },
-    revalidate: 10, // In seconds
-  };
-}
+//   return {
+//     props: {
+//       posts,
+//     },
+//     revalidate: 10, // In seconds
+//   };
+// }
