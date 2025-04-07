@@ -3,12 +3,10 @@ import Link from 'next/link';
 import Layout from '../../components/layout';
 import { Row, Col, Button } from 'react-bootstrap';
 import SEO from '../../components/seo';
-import { getSortedPostsData, getPost } from '../../utils/posts';
 import { getDate } from '../../utils/date';
-import getOgImage from '../../utils/getOgImage';
 import { decode } from 'he';
 
-const BlogPostTemplate = ({ post, ogImage }) => (
+const BlogPostTemplate = () => (
   <Layout>
     <SEO title={post.title} description={post.title} image={ogImage} />
     <Row className="post">
