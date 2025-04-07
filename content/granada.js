@@ -23,7 +23,7 @@ export const granadaData = {
         'Multiple locations, large croquettes. Cathedral location faces a popular square/plaza good for people watching.',
       generatedDescription:
         "A Granada institution since 1917, Los Manueles is renowned for its generous portions and traditional Spanish cuisine. Their croquettes are particularly famous, with various fillings including jamón ibérico, chicken, and spinach with pine nuts. The restaurant near the Cathedral offers outdoor seating on Plaza Bib-Rambla, one of Granada's most vibrant squares, making it an ideal spot to enjoy local cuisine while observing daily life in the city.",
-      //   imageUrl: '/images/places/granada/los-manueles.jpg',
+      imageUrl: '/images/places/granada/los-manueles.jpg',
       rating: 4.5,
       location: {
         address: 'Plaza Bib-Rambla, 6, 18001 Granada',
@@ -52,7 +52,7 @@ export const granadaData = {
       myDescription: 'Traditional southern Spain bar',
       generatedDescription:
         "Minotauro Tapas embodies the authentic tapas culture of southern Spain with its rustic decor and traditional Andalusian cuisine. Following Granada's generous tradition, they serve a complimentary tapa with each drink ordered. The menu features classic dishes like patatas bravas, albóndigas (meatballs), and berenjenas con miel (eggplant with honey). Popular with locals, this unpretentious establishment offers an authentic experience of Granada's famed tapas scene away from more touristy areas.",
-      //   imageUrl: '/images/places/granada/minotauro.jpg',
+      imageUrl: '/images/places/granada/minotauro.jpg',
       rating: 4.2,
       location: {
         address: 'Calle Horno de Abad, 47, 18002 Granada',
@@ -82,7 +82,7 @@ export const granadaData = {
         "As close to an American dive you'll get in a good way. Small corner bar.",
       generatedDescription:
         'Named after the literary genius Edgar Allan Poe, this small corner establishment channels the ambiance of an American dive bar while maintaining distinctly Spanish sensibilities. With its dimly lit interior, eclectic decor featuring literary references, and a carefully curated selection of local and international beers, Bar Poë has become a favorite among students, expats, and locals looking for something different. The unpretentious atmosphere and friendly bartenders make it easy to strike up conversations with fellow patrons.',
-      //   imageUrl: '/images/places/granada/bar-poe.jpg',
+      imageUrl: '/images/places/granada/bar-poe.jpg',
       rating: 4.1,
       location: {
         address: 'Calle Verónica de la Magdalena, 40, 18002 Granada',
