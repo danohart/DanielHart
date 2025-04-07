@@ -199,7 +199,17 @@ export default function GranadaGuide() {
                 {selectedPlace.location && (
                   <div className={styles.locationInfo}>
                     <h3>Location</h3>
-                    <p>{selectedPlace.location.address}</p>
+                    <p>
+                      <a
+                        href={
+                          `https://www.google.com/maps/place/` +
+                          selectedPlace.location.address
+                        }
+                        target="_blank"
+                      >
+                        {selectedPlace.location.address}
+                      </a>
+                    </p>
                   </div>
                 )}
               </div>

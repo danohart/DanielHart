@@ -35,13 +35,13 @@ export const granadaData = {
       name: 'Café Bar Bocadilleria Pibe',
       category: 'Food',
       myDescription:
-        'Bar in a cave like setting, but if you sit outside/on the road, it faces the Alhambra for a great view will eating cheese.',
+        'Bar in a cave like setting, but if you sit outside/on the road, it faces the Alhambra for a great view while eating cheese.',
       generatedDescription:
         "Nestled along the picturesque Paseo de los Tristes, this charming establishment offers a unique dining experience with both cave-like interior seating and coveted outdoor tables with unobstructed views of the Alhambra. Known for their excellent selection of Spanish cheeses and cured meats, it's particularly popular for their bocadillos (Spanish sandwiches) and affordable tapas. The location along the Darro River provides one of Granada's most photogenic settings for a casual meal.",
       imageUrl: '/images/places/granada/pibe.jpg',
       rating: 4.3,
       location: {
-        address: 'Paseo de los Tristes, 18010 Granada',
+        address: 'Cam. del Sacromonte, 41, Albaicín, 18010 Granada, Spain',
         coordinates: [37.178226, -3.589721],
       },
     },
