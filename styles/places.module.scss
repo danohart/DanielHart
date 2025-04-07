@@ -1,0 +1,304 @@
+@import 'styles/variables.scss';
+
+$tag-bg-color: $secondary-color; // Beige Spanish color for tags
+$tag-text-color: $black; // Earthy Spanish red for tag text
+$border-color: $light-gray; // Light gray for borders
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$gradient-bg: linear-gradient(135deg, #FFC3A0 0%, #FFAFBD 100%);
+$breakpoint-mobile: 600px;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin tab-style {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.2s;
+  color: $white;
+  
+  &:hover {
+    opacity: 1;
+  }
+}
+
+// Container and layout
+.container {
+  padding: 0 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main {
+  min-height: 100vh;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.footer {
+  @include flex-center;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid $border-color;
+  margin-top: 2rem;
+}
+
+// Typography
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.description {
+  margin: 1rem 0 2rem;
+  line-height: 1.5;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+// Category tabs
+.categoryTabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 600px;
+}
+
+.categoryTab {
+  @include tab-style;
+  border-bottom: 2px solid $border-color;
+  flex: 1;
+  text-align: center;
+}
+
+.activeTab {
+  opacity: 1;
+  font-weight: bold;
+  border-bottom: 2px solid $primary-color;
+}
+
+// Card grid
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  gap: 20px;
+}
+
+.card {
+  width: 300px;
+  padding-bottom: 1.5rem;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease, transform 0.2s ease;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: $box-shadow;
+  position: relative;
+  
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $primary-color;
+    transform: translateY(-5px);
+  }
+  
+  p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 1rem;
+  }
+}
+
+// Image styles
+.imageContainer {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.placeImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+// Placeholder styles
+.placeholderImage {
+  background: $gradient-bg;
+  width: 100%;
+  height: 100%;
+  @include flex-center;
+}
+
+.placeName {
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.placeholderImageLarge {
+  background: $gradient-bg;
+  width: 100%;
+  height: 100%;
+  @include flex-center;
+}
+
+.placeNameLarge {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+// Category tag
+.categoryTag {
+  position: relative;
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  background-color: $tag-bg-color;
+  color: $tag-text-color;
+  border-radius: 20px;
+  margin: 0.5rem 0;
+}
+
+// Ratings
+.placeRating {
+  color: $secondary-color;
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+.ratingText {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+// Modal styles
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  @include flex-center;
+  z-index: 100;
+}
+
+.modalContent {
+  background-color: $secondary-color-bold;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.largeImageContainer {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  margin-bottom: 1.5rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.modalImage {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+// Description tabs
+.descriptionTabs {
+  display: flex;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 1rem;
+}
+
+.tab {
+  @include tab-style;
+}
+
+.descriptionContent {
+  min-height: 120px;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+// Location info
+.locationInfo {
+  border-top: 1px solid $border-color;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  
+}
+
+// Responsive styles
+@media (max-width: $breakpoint-mobile) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card {
+    width: 90%;
+  }
+  
+  .modalContent {
+    width: 95%;
+    padding: 1rem;
+  }
+  
+  .largeImageContainer {
+    height: 250px;
+  }
+  
+  .categoryTabs {
+    flex-direction: column;
+    width: 90%;
+  }
+  
+  .categoryTab {
+    margin-bottom: 0.5rem;
+  }
+}
