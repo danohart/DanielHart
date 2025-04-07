@@ -20,8 +20,6 @@
     "gray-matter": "^4.0.3",
     "he": "^1.2.0",
     "next": "^13.2.1",
-    "playwright-aws-lambda": "^0.7.0",
-    "playwright-core": "^1.18.1",
     "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-bootstrap": "^2.1.1",
