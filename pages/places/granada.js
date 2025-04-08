@@ -1,6 +1,4 @@
-// pages/index.js or app/page.js (depending on your Next.js version)
-
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../../styles/places.module.scss';
@@ -13,6 +11,16 @@ export default function GranadaGuide() {
   const [selectedPlace, setSelectedPlace] = useState(null);
   const [showGenerated, setShowGenerated] = useState(false);
   const [activeCategory, setActiveCategory] = useState('all');
+  // Add state for view mode (grid or list)
+  const [viewMode, setViewMode] = useState('grid');
+  // Add state for copy feedback
+  const [copyFeedback, setCopyFeedback] = useState({
+    visible: false,
+    id: null,
+  });
+
+  // Ref for timeout to clear copy feedback
+  const copyTimeoutRef = useRef(null);
 
   const allPlaces = [
     ...granadaData.drinks_and_food.map((place) => ({
@@ -30,6 +38,39 @@ export default function GranadaGuide() {
     activeCategory === 'all'
       ? allPlaces
       : allPlaces.filter((place) => place.categoryType === activeCategory);
+
+  // Function to copy place info to clipboard
+  const copyPlaceInfo = (e, place) => {
+    // Stop event from bubbling up to parent (prevents opening modal)
+    e.stopPropagation();
+
+    // Create text to copy
+    const textToCopy = `${place.name} ${
+      place.location ? `, ${place.location.address}` : ''
+    }
+    `.trim();
+
+    // Copy to clipboard
+    navigator.clipboard
+      .writeText(textToCopy)
+      .then(() => {
+        // Clear any existing timeout
+        if (copyTimeoutRef.current) {
+          clearTimeout(copyTimeoutRef.current);
+        }
+
+        // Show feedback
+        setCopyFeedback({ visible: true, id: place.id });
+
+        // Hide feedback after 2 seconds
+        copyTimeoutRef.current = setTimeout(() => {
+          setCopyFeedback({ visible: false, id: null });
+        }, 2000);
+      })
+      .catch((err) => {
+        console.error('Failed to copy: ', err);
+      });
+  };
 
   return (
     <Layout>
@@ -52,42 +93,102 @@ export default function GranadaGuide() {
             impressions and additional information.
           </p>
 
-          <div className={styles.categoryTabs}>
-            <button
-              className={`${styles.categoryTab} ${
-                activeCategory === 'all' && styles.activeTab
-              }`}
-              onClick={() => setActiveCategory('all')}
-            >
-              All Places
-            </button>
-            <button
-              className={`${styles.categoryTab} ${
-                activeCategory === 'food' && styles.activeTab
-              }`}
-              onClick={() => setActiveCategory('food')}
-            >
-              Food & Drinks
-            </button>
-            <button
-              className={`${styles.categoryTab} ${
-                activeCategory === 'sightseeing' && styles.activeTab
-              }`}
-              onClick={() => setActiveCategory('sightseeing')}
-            >
-              Sightseeing
-            </button>
+          <div className={styles.controls}>
+            <div className={styles.categoryTabs}>
+              <button
+                className={`${styles.categoryTab} ${
+                  activeCategory === 'all' && styles.activeTab
+                }`}
+                onClick={() => setActiveCategory('all')}
+              >
+                All Places
+              </button>
+              <button
+                className={`${styles.categoryTab} ${
+                  activeCategory === 'food' && styles.activeTab
+                }`}
+                onClick={() => setActiveCategory('food')}
+              >
+                Food & Drinks
+              </button>
+              <button
+                className={`${styles.categoryTab} ${
+                  activeCategory === 'sightseeing' && styles.activeTab
+                }`}
+                onClick={() => setActiveCategory('sightseeing')}
+              >
+                Sightseeing
+              </button>
+            </div>
+
+            {/* View toggle buttons */}
+            <div className={styles.viewToggle}>
+              <button
+                className={`${styles.viewButton} ${
+                  viewMode === 'grid' && styles.activeView
+                }`}
+                onClick={() => setViewMode('grid')}
+                aria-label="Grid view"
+                title="Grid view"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+              </button>
+              <button
+                className={`${styles.viewButton} ${
+                  viewMode === 'list' && styles.activeView
+                }`}
+                onClick={() => setViewMode('list')}
+                aria-label="List view"
+                title="List view"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="8" y1="6" x2="21" y2="6"></line>
+                  <line x1="8" y1="12" x2="21" y2="12"></line>
+                  <line x1="8" y1="18" x2="21" y2="18"></line>
+                  <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                  <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                  <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                </svg>
+              </button>
+            </div>
           </div>
 
-          <div className={styles.grid}>
+          <div className={`${styles.placesContainer} ${styles[viewMode]}`}>
             {filteredPlaces.map((place) => (
               <div
                 key={place.id}
-                className={styles.card}
+                className={`${styles.placeItem} ${styles[viewMode + 'Item']}`}
                 onClick={() => setSelectedPlace(place)}
               >
-                <div className={styles.imageContainer}>
-                  {/* If imageUrl exists, try to display the image */}
+                <div
+                  className={styles.imageContainer}
+                  id={`image-container-${place.id}`}
+                >
                   {place.imageUrl ? (
                     <Image
                       src={place.imageUrl}
@@ -96,7 +197,6 @@ export default function GranadaGuide() {
                       height={200}
                       className={styles.placeImage}
                       onError={() => {
-                        // If image fails to load, we'll show the placeholder instead
                         const container = document.getElementById(
                           `image-container-${place.id}`
                         );
@@ -106,15 +206,81 @@ export default function GranadaGuide() {
                       }}
                     />
                   ) : (
-                    // If no imageUrl, show placeholder with name
                     <div className={styles.placeholderImage}>
                       <div className={styles.placeName}>{place.name}</div>
                     </div>
                   )}
                 </div>
-                <h2>{place.name}</h2>
-                <div className={styles.categoryTag}>{place.category}</div>
-                <p className={styles.description}>{place.myDescription}</p>
+
+                <div className={styles.placeContent}>
+                  <div className={styles.titleContainer}>
+                    <h2
+                      className={styles.placeTitle}
+                      onClick={(e) => copyPlaceInfo(e, place)}
+                      title="Click to copy place details"
+                    >
+                      {place.name}
+                      {/* Copy icon */}
+                      <span className={styles.copyIcon}>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <rect
+                            x="9"
+                            y="9"
+                            width="13"
+                            height="13"
+                            rx="2"
+                            ry="2"
+                          ></rect>
+                          <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"></path>
+                        </svg>
+                      </span>
+
+                      {/* Copy feedback tooltip */}
+                      {copyFeedback.visible && copyFeedback.id === place.id && (
+                        <span className={styles.copyFeedback}>Copied!</span>
+                      )}
+                    </h2>
+                    <div className={styles.categoryTag}>{place.category}</div>
+                  </div>
+
+                  {/* Only show description in list view or if in grid view but no image */}
+                  {(viewMode === 'list' || !place.imageUrl) && (
+                    <p className={styles.placeDescription}>
+                      {place.myDescription}
+                    </p>
+                  )}
+
+                  {/* Show location in list view */}
+                  {viewMode === 'list' && place.location && (
+                    <div className={styles.placeLocation}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                      </svg>
+                      <span>{place.location.address}</span>
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -146,23 +312,13 @@ export default function GranadaGuide() {
                     <Image
                       src={selectedPlace.imageUrl}
                       alt={selectedPlace.name}
-                      width={300}
-                      height={200}
-                      className={styles.placeImage}
-                      onError={() => {
-                        // If image fails to load, we'll show the placeholder instead
-                        const container = document.getElementById(
-                          `image-container-${place.id}`
-                        );
-                        if (container) {
-                          container.innerHTML = `<div class="${styles.placeholderImage}"><div class="${styles.placeName}">${place.name}</div></div>`;
-                        }
-                      }}
+                      width={600}
+                      height={400}
+                      className={styles.modalImage}
                     />
                   ) : (
-                    // If no imageUrl, show placeholder with name
-                    <div className={styles.placeholderImage}>
-                      <div className={styles.placeName}>
+                    <div className={styles.placeholderImageLarge}>
+                      <div className={styles.placeNameLarge}>
                         {selectedPlace.name}
                       </div>
                     </div>
@@ -203,9 +359,10 @@ export default function GranadaGuide() {
                       <a
                         href={
                           `https://www.google.com/maps/place/` +
-                          selectedPlace.location.address
+                          encodeURIComponent(selectedPlace.location.address)
                         }
                         target="_blank"
+                        rel="noopener noreferrer"
                       >
                         {selectedPlace.location.address}
                       </a>

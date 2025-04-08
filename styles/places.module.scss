@@ -1,7 +1,8 @@
-@import 'styles/variables.scss';
-
+// styles/places.module.scss
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
 $tag-bg-color: $secondary-color-bold; // Beige Spanish color for tags
-$tag-text-color: $black; // Earthy Spanish red for tag text
+$tag-text-color: $white; // Earthy Spanish red for tag text
 $border-color: $light-gray; // Light gray for borders
 $box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 $gradient-bg: linear-gradient(135deg, #FFC3A0 0%, #FFAFBD 100%);
@@ -34,26 +35,20 @@ $breakpoint-mobile: 600px;
   padding: 0 2rem;
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .main {
   min-height: 100vh;
+  padding: 4rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  width: 100%;
 }
 
-.footer {
-  @include flex-center;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid $border-color;
-  margin-top: 2rem;
-}
-
-// Typography
 .title {
   margin: 0;
   line-height: 1.15;
@@ -68,13 +63,33 @@ $breakpoint-mobile: 600px;
   text-align: center;
 }
 
+// Controls - combines category tabs and view toggle
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
 // Category tabs
 .categoryTabs {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
-  width: 100%;
-  max-width: 600px;
+  flex: 1;
+  
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+    flex-direction: row;
+  }
 }
 
 .categoryTab {
@@ -87,54 +102,224 @@ $breakpoint-mobile: 600px;
 .activeTab {
   opacity: 1;
   font-weight: bold;
-  border-bottom: 2px solid $primary-color;
+  border-bottom: 2px solid $white;
 }
 
-// Card grid
-.grid {
+// View toggle
+.viewToggle {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  max-width: 1200px;
-  gap: 20px;
+  gap: 0.5rem;
+  
+  @media (max-width: $breakpoint-mobile) {
+    justify-content: center;
+    width: 100%;
+  }
 }
 
-.card {
-  width: 300px;
-  padding-bottom: 1.5rem;
-  text-align: center;
-  color: inherit;
-  text-decoration: none;
+.viewButton {
+  background: none;
   border: 1px solid $border-color;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease, transform 0.2s ease;
+  border-radius: 4px;
+  padding: 0.5rem;
   cursor: pointer;
-  overflow: hidden;
-  box-shadow: $box-shadow;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s;
   
-  &:hover,
-  &:focus,
-  &:active {
-    border-color: $primary-color;
-    transform: translateY(-5px);
+  &:hover {
+    background-color: $light-gray;
+    color: $secondary-color-bold;
+  }
+}
+
+.activeView {
+  background-color: $secondary-color ;
+  color: $primary-color;
+  border-color: $primary-color;
+}
+
+// Places container - handles both grid and list views
+.placesContainer {
+  width: 100%;
+  max-width: 1200px;
+  
+  &.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
   }
   
-  p {
-    margin: 0;
-    font-size: 1rem;
-    line-height: 1.5;
+  &.list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+// Common styles for both view modes
+.placeItem {
+  border: 1px solid $border-color;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: $box-shadow;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+// Grid view specific styles
+.gridItem {
+  width: 300px;
+  
+  .imageContainer {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .placeContent {
     padding: 1rem;
+    text-align: center;
+  }
+  
+  .titleContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .categoryTag {
+    margin-top: 0.5rem;
+  }
+  
+  @media (max-width: $breakpoint-mobile) {
+    width: 100%;
+  }
+}
+
+// List view specific styles
+.listItem {
+  display: flex;
+  width: 100%;
+  
+  .imageContainer {
+    width: 200px;
+    min-width: 200px;
+    height: 150px;
+  }
+  
+  .placeContent {
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .titleContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    
+    .categoryTag {
+      margin-left: 1rem;
+    }
+  }
+  
+  .placeDescription {
+    flex: 1;
+    margin-bottom: 1rem;
+    // Limit to 3 lines with ellipsis
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  .placeLocation {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    
+    svg {
+      margin-right: 0.5rem;
+    }
+  }
+  
+  @media (max-width: $breakpoint-mobile) {
+    flex-direction: column;
+    
+    .imageContainer {
+      width: 100%;
+      height: 200px;
+    }
+    
+    .titleContainer {
+      flex-direction: column;
+      align-items: flex-start;
+      
+      .categoryTag {
+        margin-left: 0;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+
+// Place title with copy feature
+.placeTitle {
+  margin: 0;
+  font-size: 1.5rem;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  
+  .copyIcon {
+    opacity: 0;
+    margin-left: 0.5rem;
+    transition: opacity 0.2s;
+  }
+  
+  &:hover {
+    color: $secondary-color;
+    
+    .copyIcon {
+      opacity: 1;
+    }
+  }
+}
+
+// Copy feedback tooltip
+.copyFeedback {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fadeInOut 2s ease;
+  white-space: nowrap;
+  
+  @keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
   }
 }
 
 // Image styles
 .imageContainer {
-  width: 100%;
-  height: 200px;
   position: relative;
   overflow: hidden;
-  margin-bottom: 10px;
 }
 
 .placeImage {
@@ -159,44 +344,14 @@ $breakpoint-mobile: 600px;
   text-align: center;
 }
 
-.placeholderImageLarge {
-  background: $gradient-bg;
-  width: 100%;
-  height: 100%;
-  @include flex-center;
-}
-
-.placeNameLarge {
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  font-weight: bold;
-  font-size: 2rem;
-  padding: 0 2rem;
-  text-align: center;
-}
-
 // Category tag
 .categoryTag {
-  position: relative;
   display: inline-block;
   padding: 0.25rem 0.75rem;
   font-size: 0.8rem;
   background-color: $tag-bg-color;
   color: $tag-text-color;
   border-radius: 20px;
-  margin: 0.5rem 0;
-}
-
-// Ratings
-.placeRating {
-  color: $secondary-color;
-  font-size: 1.2rem;
-  margin: 0.5rem 0;
-}
-
-.ratingText {
-  color: #666;
-  font-size: 0.9rem;
 }
 
 // Modal styles
@@ -220,6 +375,11 @@ $breakpoint-mobile: 600px;
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
+  
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
 }
 
 .closeButton {
@@ -236,15 +396,35 @@ $breakpoint-mobile: 600px;
   width: 100%;
   height: 400px;
   position: relative;
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0;
   border-radius: 5px;
   overflow: hidden;
+  
+  @media (max-width: $breakpoint-mobile) {
+    height: 250px;
+  }
 }
 
 .modalImage {
   object-fit: cover;
   width: 100%;
   height: 100%;
+}
+
+.placeholderImageLarge {
+  background: $gradient-bg;
+  width: 100%;
+  height: 100%;
+  @include flex-center;
+}
+
+.placeNameLarge {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  font-size: 2rem;
+  padding: 0 2rem;
+  text-align: center;
 }
 
 // Description tabs
@@ -268,37 +448,16 @@ $breakpoint-mobile: 600px;
 .locationInfo {
   border-top: 1px solid $border-color;
   padding-top: 1rem;
-  margin-top: 1rem;
   
-}
-
-// Responsive styles
-@media (max-width: $breakpoint-mobile) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-    align-items: center;
+  h3 {
+    margin-top: 0;
   }
   
-  .card {
-    width: 90%;
-  }
-  
-  .modalContent {
-    width: 95%;
-    padding: 1rem;
-  }
-  
-  .largeImageContainer {
-    height: 250px;
-  }
-  
-  .categoryTabs {
-    flex-direction: column;
-    width: 90%;
-  }
-  
-  .categoryTab {
-    margin-bottom: 0.5rem;
+  a {
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
