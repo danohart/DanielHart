@@ -39,9 +39,7 @@ export default function GranadaGuide() {
       ? allPlaces
       : allPlaces.filter((place) => place.categoryType === activeCategory);
 
-  // Function to copy place info to clipboard
   const copyPlaceInfo = (e, place) => {
-    // Stop event from bubbling up to parent (prevents opening modal)
     e.stopPropagation();
 
     // Create text to copy
@@ -50,7 +48,6 @@ export default function GranadaGuide() {
     }
     `.trim();
 
-    // Copy to clipboard
     navigator.clipboard
       .writeText(textToCopy)
       .then(() => {
