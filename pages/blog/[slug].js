@@ -4,7 +4,6 @@ import Layout from '../../components/layout';
 import { Row, Col, Button } from 'react-bootstrap';
 import SEO from '../../components/seo';
 import { getDate } from '../../utils/date';
-import { decode } from 'he';
 
 const BlogPostTemplate = () => (
   <Layout>
@@ -67,7 +66,7 @@ export default BlogPostTemplate;
 
 // export async function getStaticProps({ params }) {
 //   const post = await getPost(params.slug);
-//   // const ogImage = await getOgImage(`/ogimage?title=${decode(post.title)}`);
+//
 
 //   return {
 //     props: {

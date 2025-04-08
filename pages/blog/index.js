@@ -3,7 +3,6 @@ import Layout from '../../components/layout';
 import { Row, Col, Button } from 'react-bootstrap';
 import SEO from '../../components/seo';
 import Link from 'next/link';
-import { getSortedPostsData } from '../../utils/posts';
 
 export default function BlogHome({ posts }) {
   function shortenExcerpt(text) {
