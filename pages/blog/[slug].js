@@ -5,12 +5,13 @@ import { Row, Col, Button } from 'react-bootstrap';
 import SEO from '../../components/seo';
 import { getDate } from '../../utils/date';
 
+const post = {
+  title: 'Sample Blog Post',
+  date: '2023-10-01',
+  content: '<p>This is a sample blog post content.</p>',
+};
+
 const BlogPostTemplate = () => (
-  const post = {
-    title: 'Sample Blog Post',
-    date: '2023-10-01',
-    content: '<p>This is a sample blog post content.</p>',
-  };
   <Layout>
     <SEO title={post.title} description={post.title} image={ogImage} />
     <Row className="post">
