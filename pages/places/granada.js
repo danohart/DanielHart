@@ -167,7 +167,7 @@ export default function GranadaGuide() {
               <div
                 key={place.id}
                 className={`${styles.placeItem} ${styles[viewMode + 'Item']}`}
-                onClick={() => setSelectedPlace(place)}
+                // onClick={() => setSelectedPlace(place)}
               >
                 <div
                   className={styles.imageContainer}
@@ -239,7 +239,6 @@ export default function GranadaGuide() {
                     </h2>
                     <div className={styles.categoryTag}>{place.category}</div>
                   </div>
-
                   {/* Only show description in list view or if in grid view but no image */}
                   {(viewMode === 'list' || !place.imageUrl) && (
                     <p className={styles.placeDescription}>
@@ -264,7 +263,16 @@ export default function GranadaGuide() {
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
                         <circle cx="12" cy="10" r="3"></circle>
                       </svg>
-                      <span>{place.location.address}</span>
+                      <span>
+                        <a
+                          href={`https://www.google.com/maps/search/?api=1&query=
+                            ${place.location.address + ', ' + place.name}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {place.location.address}
+                        </a>
+                      </span>
                     </div>
                   )}
                 </div>
