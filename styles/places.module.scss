@@ -32,7 +32,6 @@ $breakpoint-mobile: 600px;
 
 // Container and layout
 .container {
-  padding: 0 2rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -160,6 +159,7 @@ $breakpoint-mobile: 600px;
 
 // Common styles for both view modes
 .placeItem {
+  position: relative;
   border: 1px solid $border-color;
   border-radius: 10px;
   overflow: hidden;
@@ -244,6 +244,7 @@ $breakpoint-mobile: 600px;
     display: flex;
     align-items: center;
     font-size: 0.9rem;
+    color: $secondary-color;
     
     svg {
       margin-right: 0.5rem;
@@ -270,10 +271,8 @@ $breakpoint-mobile: 600px;
   }
 }
 
-// Place title with copy feature
 .placeTitle {
   margin: 0;
-  font-size: 1.5rem;
   position: relative;
   cursor: pointer;
   display: flex;
@@ -293,6 +292,31 @@ $breakpoint-mobile: 600px;
       opacity: 1;
     }
   }
+}
+
+// Special styling for featured items
+.placeItem.featured {
+  border-color: $secondary-color;
+  box-shadow: 0 4px 12px rgba($secondary-color, 0.3);
+}
+
+// Featured flag/ribbon styles
+.featuredFlag {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  background-color: $secondary-color;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 0.25rem 0.75rem;
+  text-transform: uppercase;
+  z-index: 2;
+  transform: translateY(0) translateX(0) rotate(45deg) translateX(1.5rem) translateY(-1.5rem);
+  width: 130px;
+  text-align: center;
+  line-height: 1.5;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 // Copy feedback tooltip

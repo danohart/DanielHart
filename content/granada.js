@@ -3,6 +3,7 @@ export const granadaData = {
     {
       id: 1,
       name: 'Restaurante Mirador de Morayma',
+      featured: true,
       category: 'Food',
       myDescription:
         "Mediterranean restaurant in an old house with patio views of the Alhambra. Great for sunset dinner as that's a little early for Spaniards to eat dinner so it's not crowded.",
@@ -33,6 +34,7 @@ export const granadaData = {
     {
       id: 3,
       name: 'Café Bar Bocadilleria Pibe',
+      featured: true,
       category: 'Food',
       myDescription:
         'Bar in a cave like setting, but if you sit outside/on the road, it faces the Alhambra for a great view while eating cheese.',
@@ -109,6 +111,7 @@ export const granadaData = {
     {
       id: 8,
       name: 'Sacromonte Neighborhood',
+      featured: true,
       category: 'Neighborhood',
       myDescription:
         "Large neighborhood in Granada that's placed on a hill (wear comfy shoes) where most buildings are cave like and painted white.",
@@ -139,6 +142,7 @@ export const granadaData = {
     {
       id: 10,
       name: 'Calle Calderería Nueva',
+      featured: true,
       category: 'Shopping',
       myDescription:
         'Stepped street with small local shops along with novelty and gift shops.',
@@ -154,6 +158,7 @@ export const granadaData = {
     {
       id: 11,
       name: 'Fuente del Paseo de los Tristes',
+      featured: true,
       category: 'Plaza',
       myDescription:
         'Walk along the river Darro for small shops and some restaurants to get to this plaza.',

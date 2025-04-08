@@ -11,9 +11,7 @@ export default function GranadaGuide() {
   const [selectedPlace, setSelectedPlace] = useState(null);
   const [showGenerated, setShowGenerated] = useState(false);
   const [activeCategory, setActiveCategory] = useState('all');
-  // Add state for view mode (grid or list)
-  const [viewMode, setViewMode] = useState('grid');
-  // Add state for copy feedback
+  const [viewMode, setViewMode] = useState('list');
   const [copyFeedback, setCopyFeedback] = useState({
     visible: false,
     id: null,
@@ -73,15 +71,6 @@ export default function GranadaGuide() {
     <Layout>
       <SEO title="Granada, Spain Recommendations" />
       <div className={styles.container}>
-        <Head>
-          <title>My Granada Travel Guide</title>
-          <meta
-            name="description"
-            content="Personal guide to the best places in Granada, Spain"
-          />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-
         <main className={styles.main}>
           <h1 className={styles.title}>My Granada Travel Guide</h1>
 
@@ -117,8 +106,6 @@ export default function GranadaGuide() {
                 Sightseeing
               </button>
             </div>
-
-            {/* View toggle buttons */}
             <div className={styles.viewToggle}>
               <button
                 className={`${styles.viewButton} ${
@@ -208,7 +195,11 @@ export default function GranadaGuide() {
                     </div>
                   )}
                 </div>
-
+                {place.featured && (
+                  <div className={`${styles.featuredFlag}`}>
+                    <span>Featured</span>
+                  </div>
+                )}
                 <div className={styles.placeContent}>
                   <div className={styles.titleContainer}>
                     <h2
@@ -217,7 +208,6 @@ export default function GranadaGuide() {
                       title="Click to copy place details"
                     >
                       {place.name}
-                      {/* Copy icon */}
                       <span className={styles.copyIcon}>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
