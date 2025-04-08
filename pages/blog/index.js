@@ -5,7 +5,14 @@ import SEO from '../../components/seo';
 import Link from 'next/link';
 
 export default function BlogHome() {
-  const { posts } = props;
+  const posts = [
+    {
+      id: 1,
+      title: 'Sample Blog Post',
+      slug: 'sample-blog-post',
+      content: '<p>This is a sample blog post content.</p>',
+    },
+  ];
   function shortenExcerpt(text) {
     if (text.length > 330) return text.slice(0, -16) + '...';
     return text;
