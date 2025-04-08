@@ -13,7 +13,7 @@ const post = {
 
 const BlogPostTemplate = () => (
   <Layout>
-    <SEO title={post.title} description={post.title} image={ogImage} />
+    <SEO title={post.title} description={post.title} />
     <Row className="post">
       <Col>
         <h1
