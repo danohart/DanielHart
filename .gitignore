@@ -71,3 +71,4 @@ yarn-error.log
 .next*
 
 ./pages/blog/blogPosts/
+content/slackers.html

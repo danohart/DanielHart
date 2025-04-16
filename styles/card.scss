@@ -27,6 +27,21 @@
   }
 }
 
+.card {
+  &-title {
+    color: $primary-color-alt;
+    font-weight: bold;
+  }
+
+  &-text {
+    color: $primary-color;
+  }
+
+  &-body {
+    color: $primary-color;
+  }
+}
+
 .popover-header {
   color: $primary-color;
 }
