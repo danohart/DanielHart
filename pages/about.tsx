@@ -12,6 +12,7 @@ import {
   faChartLine,
   IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
+import { GetStaticProps } from 'next';
 
 interface ExpertiseArea {
   title: string;
@@ -19,7 +20,12 @@ interface ExpertiseArea {
   icon: IconDefinition;
 }
 
-const About: React.FC = () => {
+interface AboutPageProps {
+  yearsWorked: number;
+  expertiseAreas: ExpertiseArea[];
+}
+
+export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
   const currentYear = new Date().getFullYear();
   const yearsWorked = currentYear - 2010;
 
@@ -44,6 +50,16 @@ const About: React.FC = () => {
     },
   ];
 
+  return {
+    props: {
+      yearsWorked,
+      expertiseAreas,
+    },
+    revalidate: 60 * 60 * 24,
+  };
+};
+
+const About: React.FC<AboutPageProps> = ({ yearsWorked, expertiseAreas }) => {
   return (
     <Layout>
       <SEO title="About Daniel Hart - Frontend Web Developer" />

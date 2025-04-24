@@ -8,8 +8,22 @@ import Benefits from '../components/benefits';
 import Work from '../components/work';
 import SEO from '../components/seo';
 import { workContent } from '../content/work';
+import { GetStaticProps } from 'next';
 
-export default function Home() {
+interface HomePageProps {
+  featuredWork: typeof workContent.sites;
+}
+
+export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
+  return {
+    props: {
+      featuredWork: workContent.sites,
+    },
+    revalidate: 60 * 60 * 24 * 7,
+  };
+};
+
+const Home: React.FC<HomePageProps> = ({ featuredWork }) => {
   const CTA = (
     <Row>
       <Col className="text-center m-4">
@@ -29,8 +43,10 @@ export default function Home() {
       <Validators />
       {CTA}
       <Benefits />
-      <Work pages={workContent.sites} />
+      <Work pages={featuredWork} />
       {CTA}
     </Layout>
   );
-}
+};
+
+export default Home;

@@ -2,7 +2,18 @@ import React from 'react';
 import { Row, Col, Badge } from 'react-bootstrap';
 import Image from 'next/image';
 
-export default function Work({ pages }) {
+export interface WorkItem {
+  title: string;
+  description: string;
+  image: string;
+  tags: string[];
+}
+
+interface WorkProps {
+  pages: WorkItem[];
+}
+
+const Work: React.FC<WorkProps> = ({ pages }) => {
   return (
     <Row className="card-wrapper">
       {pages.map((page) => (
@@ -12,12 +23,13 @@ export default function Work({ pages }) {
             <Row>
               <Col xs={12} sm={12} md={6} lg={6} className="card-image">
                 <Image
-                  width="600"
-                  height="400"
+                  width={600}
+                  height={400}
                   style={{
                     maxHeight: 'calc(50vh - 6.5rem)',
                   }}
                   src={page.image}
+                  alt={page.title}
                 />
               </Col>
               <Col xs={12} sm={12} md={6} lg={6}>
@@ -28,8 +40,8 @@ export default function Work({ pages }) {
                 <Row>
                   <Col>
                     <h4>This Project Features:</h4>
-                    {page.tags.map((tag) => (
-                      <Badge bg="primary" key={tag}>
+                    {page.tags.map((tag, index) => (
+                      <Badge bg="primary" key={`${page.title}-${tag}-${index}`}>
                         {tag}
                       </Badge>
                     ))}
@@ -42,4 +54,6 @@ export default function Work({ pages }) {
       ))}
     </Row>
   );
-}
+};
+
+export default Work;

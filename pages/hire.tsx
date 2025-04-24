@@ -3,16 +3,56 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { useInput } from '../components/formInput';
 import { Row, Col, Form, Button } from 'react-bootstrap';
+import { GetStaticProps } from 'next';
 
-interface FormState {
-  name: string;
-  email: string;
-  projectType: string;
-  budget: string;
-  info: string;
+interface ProjectOption {
+  value: string;
+  label: string;
 }
 
-const Hire: React.FC = () => {
+interface BudgetOption {
+  value: string;
+  label: string;
+}
+
+interface HirePageProps {
+  projectOptions: ProjectOption[];
+  budgetOptions: BudgetOption[];
+  formEndpoint: string;
+}
+
+export const getStaticProps: GetStaticProps<HirePageProps> = async () => {
+  const projectOptions: ProjectOption[] = [
+    { value: "", label: "Select" },
+    { value: "simple-website", label: "Simple, Elegant Website" },
+    { value: "ecommerce", label: "eCommerce Store" },
+    { value: "big-plans", label: "I have big, BIG, plans, we should talk." },
+    { value: "other", label: "Other" },
+  ];
+
+  const budgetOptions: BudgetOption[] = [
+    { value: "", label: "Select" },
+    { value: "1000-4000", label: "$1,000-$4,000" },
+    { value: "4000-7000", label: "$4,000-$7,000" },
+    { value: "7000-10000", label: "$7,000-$10,000" },
+    { value: "10000+", label: "$10,000+" },
+  ];
+
+  return {
+    props: {
+      projectOptions,
+      budgetOptions,
+      formEndpoint: "https://getform.io/f/f4b2bda9-a727-46ac-9498-1134a5a50b00",
+    },
+    revalidate: 60 * 60 * 24 * 7,
+  };
+};
+
+const Hire: React.FC<HirePageProps> = ({ 
+  projectOptions, 
+  budgetOptions, 
+  formEndpoint 
+}) => {
   const { value: Name, bind: bindName, reset: resetName } = useInput('');
   const { value: Email, bind: bindEmail, reset: resetEmail } = useInput('');
   const {
@@ -67,7 +107,7 @@ const Hire: React.FC = () => {
         </Row>
         <div>
           <Form
-            action="https://getform.io/f/f4b2bda9-a727-46ac-9498-1134a5a50b00"
+            action={formEndpoint}
             method="POST"
             onSubmit={handleSubmit}
           >
@@ -110,11 +150,11 @@ const Hire: React.FC = () => {
                     {...bindProjectType}
                     required
                   >
-                    <option value="">Select</option>
-                    <option>Simple, Elegant Website</option>
-                    <option>eCommerce Store</option>
-                    <option>I have big, BIG, plans, we should talk.</option>
-                    <option>Other</option>
+                    {projectOptions.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
                   </Form.Control>
                 </Form.Group>
               </Col>
@@ -127,11 +167,11 @@ const Hire: React.FC = () => {
                     {...bindBudget}
                     required
                   >
-                    <option value="">Select</option>
-                    <option>$1,000-$4,000</option>
-                    <option>$4,000-$7,000</option>
-                    <option>$7,000-$10,000</option>
-                    <option>$10,000+</option>
+                    {budgetOptions.map((option) => (
+                      <option key={option.value} value={option.value}>
+                        {option.label}
+                      </option>
+                    ))}
                   </Form.Control>
                 </Form.Group>
               </Col>
