@@ -1,10 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
 
-export default function YearsOfExperience() {
+interface ExperienceData {
+  years: number;
+  months: number;
+  weeks: number;
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
+const YearsOfExperience: React.FC = () => {
   const time = Date.parse('2009-04-12T09:00');
 
-  const [data, setData] = useState({
+  const [data, setData] = useState<ExperienceData>({
     years: 0,
     months: 0,
     weeks: 0,
@@ -24,6 +34,8 @@ export default function YearsOfExperience() {
       hours: seconds / 3600,
       minutes: seconds / 60,
       seconds: seconds,
+      months: 0,
+      weeks: 0,
     });
   }, []);
 
@@ -33,7 +45,7 @@ export default function YearsOfExperience() {
       months: prevState.years * 12,
       weeks: prevState.days / 7,
     }));
-  }, []);
+  }, [data.years, data.days]);
 
   return (
     <Row className="mb-2">
@@ -75,4 +87,6 @@ export default function YearsOfExperience() {
       </Col>
     </Row>
   );
-}
+};
+
+export default YearsOfExperience;

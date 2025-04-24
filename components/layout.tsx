@@ -1,11 +1,14 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, ReactNode } from 'react';
 import ReactGA from 'react-ga4';
-import PropTypes from 'prop-types';
 import { Container, Row, Col } from 'react-bootstrap';
 import Nav from './nav';
 import Footer from './footer';
 
-const Layout = ({ children }) => {
+interface LayoutProps {
+  children: ReactNode;
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   useEffect(() => {
     if (process.env.NODE_ENV === 'production') {
       ReactGA.initialize('G-B3KBWT41PX');
@@ -31,10 +34,6 @@ const Layout = ({ children }) => {
       </Container>
     </>
   );
-};
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 };
 
 export default Layout;

@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Layout from '../components/layout';
@@ -9,13 +10,20 @@ import {
   faTachometerAlt,
   faMobileAlt,
   faChartLine,
+  IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
 
-function About() {
+interface ExpertiseArea {
+  title: string;
+  description: string;
+  icon: IconDefinition;
+}
+
+const About: React.FC = () => {
   const currentYear = new Date().getFullYear();
   const yearsWorked = currentYear - 2010;
 
-  const expertiseAreas = [
+  const expertiseAreas: ExpertiseArea[] = [
     {
       title: 'Frontend Performance',
       description:
@@ -60,8 +68,8 @@ function About() {
               src="/about.jpg"
               alt="Daniel Hart, web developer"
               title="Daniel Hart, web developer"
-              width="1200"
-              height="900"
+              width={1200}
+              height={900}
               className="img-fluid rounded"
             />
           </div>
@@ -122,6 +130,6 @@ function About() {
       </Row>
     </Layout>
   );
-}
+};
 
 export default About;
