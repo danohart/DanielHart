@@ -6,7 +6,7 @@ export interface WorkItem {
   title: string;
   description: string;
   image: string;
-  url: string;
+  url?: string;
   tags: string[];
 }
 
@@ -34,7 +34,7 @@ const Work: React.FC<WorkProps> = ({ pages }) => {
                 />
                 {page.url && (
                   <Row className="card-button">
-                    <Col className=' d-flex justify-content-center'>
+                    <Col className='d-flex justify-content-center'>
                       <Button className="btn btn-primary">
                         <a href={page.url} target="_blank" rel="noopener noreferrer">View Project</a>
                       </Button>
