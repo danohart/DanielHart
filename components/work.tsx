@@ -1,11 +1,12 @@
 import React from 'react';
-import { Row, Col, Badge } from 'react-bootstrap';
+import { Row, Col, Badge, Button } from 'react-bootstrap';
 import Image from 'next/image';
 
 export interface WorkItem {
   title: string;
   description: string;
   image: string;
+  url: string;
   tags: string[];
 }
 
@@ -31,6 +32,15 @@ const Work: React.FC<WorkProps> = ({ pages }) => {
                   src={page.image}
                   alt={page.title}
                 />
+                {page.url && (
+                  <Row className="card-button">
+                    <Col className=' d-flex justify-content-center'>
+                      <Button className="btn btn-primary">
+                        <a href={page.url} target="_blank" rel="noopener noreferrer">View Project</a>
+                      </Button>
+                    </Col>
+                  </Row>
+                )}
               </Col>
               <Col xs={12} sm={12} md={6} lg={6}>
                 <div
