@@ -27,18 +27,6 @@ export default function CaseStudy({
   return (
     <Layout>
       <SEO title={title} description={description} />
-      <div className="case-study-header">
-        <h1>{title}</h1>
-        <div className="case-study-meta">
-          <p><strong>Client:</strong> {client}</p>
-          <p><strong>Date:</strong> {date}</p>
-          <div className="technologies">
-            {technologies.map(tech => (
-              <span key={tech} className="tech-tag">{tech}</span>
-            ))}
-          </div>
-        </div>
-      </div>
       <article className="case-study">
         <div dangerouslySetInnerHTML={{ __html: contentHtml }} />
       </article>
@@ -60,7 +48,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   
   return {
     paths,
-    fallback: false, // Show 404 for paths not returned by getStaticPaths
+    fallback: false,
   };
 };
 
@@ -69,10 +57,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const filePath = path.join(process.cwd(), 'content/case-studies', `${slug}.md`);
   const fileContents = fs.readFileSync(filePath, 'utf8');
   
-  // Use gray-matter to parse the metadata section
   const { data, content } = matter(fileContents);
   
-  // Use remark to convert markdown into HTML string
   const processedContent = await remark()
     .use(html)
     .process(content);
