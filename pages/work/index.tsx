@@ -1,10 +1,9 @@
-import React from 'react';
-import Layout from '../components/layout';
-import Work from '../components/work';
-import SEO from '../components/seo';
-import { workContent } from '../content/work';
+import Layout from '../../components/layout';
+import Work from '../../components/work';
+import SEO from '../../components/seo';
+import { workContent } from '../../content/work';
 import { GetStaticProps } from 'next';
-import { WorkItem } from '../components/work';
+import { WorkItem } from '../../components/work';
 
 interface WorkPageProps {
   portfolioItems: WorkItem[];

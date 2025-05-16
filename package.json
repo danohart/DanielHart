@@ -23,6 +23,8 @@
     "react": "^18.0.0",
     "react-bootstrap": "^2.1.1",
     "react-ga4": "^2.0.0",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
     "sass": "^1.58.3"
   },
   "devDependencies": {
