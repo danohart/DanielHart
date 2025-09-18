@@ -80,7 +80,82 @@ export const madridData = {
     },
   ],
   sightseeing: [
-    // You can add sightseeing locations here following the same structure
-    // when you have Madrid attractions to include
+    {
+      id: 6,
+      name: 'El Parque del Retiro',
+      featured: true,
+      category: 'Park',
+      myDescription:
+        'Large, beautiful park featuring ponds and palace made out of glass in the middle. Great for a grocery store sandwich for a picnic.',
+      generatedDescription:
+        "Madrid's most beloved green space, El Retiro spans 350 acres and serves as the city's central lung. The park's crown jewel is the stunning Palacio de Cristal (Crystal Palace), a glass and iron structure built in 1887 that now hosts contemporary art exhibitions. The expansive grounds feature manicured gardens, tree-lined paths, and the iconic Estanque Grande pond where visitors can rent rowboats. Perfect for picnicking with groceries from nearby markets, the park offers countless quiet spots under ancient trees. Street performers, joggers, and families create a vibrant atmosphere throughout the day.",
+      imageUrl: '/images/places/madrid/parque-retiro.jpg',
+      rating: 4.8,
+      location: {
+        address: 'Plaza de la Independencia, 7, 28001 Madrid',
+        coordinates: [40.415363, -3.684716],
+      },
+    },
+    {
+      id: 7,
+      name: 'Plaza Mayor',
+      featured: true,
+      category: 'Plaza',
+      myDescription:
+        'The busiest plaza, but could be worth a walk around at night to see what sort of street performers are up to.',
+      generatedDescription:
+        "Madrid's most famous square, Plaza Mayor is a rectangular masterpiece of Habsburg architecture completed in 1619, surrounded by striking red buildings with 237 balconies overlooking the cobblestone plaza. While bustling with tourists during the day, the evening hours reveal a different character when street performers take center stage with flamenco dancing, music, and theatrical displays. The uniformly designed buildings house traditional shops, cafes, and restaurants under their porticoed ground floors. The plaza's nine entrance arches lead to the surrounding historic streets, making it a perfect starting point for exploring Madrid's old quarter.",
+      imageUrl: '/images/places/madrid/plaza-mayor.jpg',
+      rating: 4.5,
+      location: {
+        address: 'Plaza Mayor, 28012 Madrid',
+        coordinates: [40.415556, -3.707222],
+      },
+    },
+    {
+      id: 8,
+      name: 'Puerta del Sol',
+      category: 'Plaza',
+      myDescription: "Another busy, touristy plaza that's close to Gran Via",
+      generatedDescription:
+        "Known simply as \"Sol,\" this bustling square marks the absolute center of Spain - kilometer zero from which all Spanish roads are measured. The semicircular plaza features the iconic clock tower of the Real Casa de Correos, famous for broadcasting the New Year's Eve countdown to the entire nation. The square buzzes with constant activity from street performers, vendors, and thousands of daily pedestrians connecting to the metro system's central hub. While intensely touristy, Sol provides essential orientation for visitors and serves as the gateway to both Gran Vía's commercial district and the historic neighborhoods of old Madrid.",
+      imageUrl: '/images/places/madrid/puerta-del-sol.jpg',
+      rating: 4.2,
+      location: {
+        address: 'Puerta del Sol, 28013 Madrid',
+        coordinates: [40.416775, -3.70379],
+      },
+    },
+    {
+      id: 9,
+      name: 'Gran Vía',
+      category: 'Shopping',
+      myDescription:
+        "Touristy shopping area that's good for people watching and some clothing from stores we don't have in the States. Just don't eat around there.",
+      generatedDescription:
+        "Madrid's answer to Broadway, Gran Vía is a grand boulevard lined with early 20th-century architecture, theaters, and international retail chains. The wide pedestrian-friendly street offers excellent people-watching opportunities and shopping at European brands like Zara, Mango, and El Corte Inglés that feature different selections than their American counterparts. The ornate buildings showcase Madrid's Belle Époque aspirations with their elaborate facades and rooftop terraces. While the dining options cater primarily to tourists and lack authenticity, the street's energy and architectural grandeur make it worth experiencing, especially for those interested in fashion and urban spectacle.",
+      imageUrl: '/images/places/madrid/gran-via.jpg',
+      rating: 4.1,
+      location: {
+        address: 'Gran Vía, 28013 Madrid',
+        coordinates: [40.420167, -3.705833],
+      },
+    },
+    {
+      id: 10,
+      name: 'Mercado de San Fernando',
+      featured: true,
+      category: 'Market',
+      myDescription:
+        'A less busy, but still full, market. Good for lunch, or just looking around to see how the locals buy food.',
+      generatedDescription:
+        "Located in the vibrant Lavapiés neighborhood, Mercado de San Fernando offers an authentic glimpse into Madrid's daily food culture without the overwhelming crowds of more famous markets. This traditional market combines old-school vendors selling fresh produce, meats, and seafood with modern food stalls offering prepared meals and international cuisine. The market reflects the neighborhood's multicultural character with Spanish, Middle Eastern, and Latin American offerings. Locals shop here for their daily groceries, making it an ideal place to observe authentic Madrid food culture while enjoying affordable, quality meals from the various food counters.",
+      imageUrl: '/images/places/madrid/mercado-san-fernando.jpg',
+      rating: 4.4,
+      location: {
+        address: 'Calle de Embajadores, 41, 28012 Madrid',
+        coordinates: [40.408889, -3.703056],
+      },
+    },
   ],
 };
