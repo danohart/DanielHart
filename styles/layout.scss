@@ -77,7 +77,7 @@ strong {
 // Increase heading size
 @for $i from 1 through 5 {
   h#{6 - $i} {
-    font-size: $i * 0.55em;
+    font-size: $i * 0.41em;
   }
 }
 
