@@ -473,16 +473,147 @@ $breakpoint-mobile: 600px;
 .locationInfo {
   border-top: 1px solid $border-color;
   padding-top: 1rem;
-  
+
   h3 {
     margin-top: 0;
   }
-  
+
   a {
     text-decoration: none;
-    
+
     &:hover {
       text-decoration: underline;
     }
   }
+}
+
+// ===========================================
+// Cities Index Page Styles
+// ===========================================
+
+.citiesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.cityCardLink {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+
+  &:hover {
+    background-color: transparent;
+    text-decoration: none;
+  }
+}
+
+.cityCard {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: $primary-color;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+
+    .cityHeroImage {
+      transform: scale(1.05);
+    }
+
+    .viewGuideLink {
+      opacity: 1;
+      transform: translateX(4px);
+    }
+  }
+}
+
+.cityHeroContainer {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+
+  @media (max-width: $breakpoint-mobile) {
+    height: 200px;
+  }
+}
+
+.cityHeroImage {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.cityHeroOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.cityInfo {
+  padding: 1.5rem 2rem;
+
+  @media (max-width: $breakpoint-mobile) {
+    padding: 1rem 1.25rem;
+  }
+}
+
+.cityName {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.75rem;
+  color: $white;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 1.4rem;
+  }
+}
+
+.cityTagline {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  color: rgba($white, 0.85);
+  line-height: 1.5;
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 1rem;
+  }
+}
+
+.cityStats {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.cityStat {
+  font-size: 0.9rem;
+  color: rgba($white, 0.7);
+
+  @media (max-width: $breakpoint-mobile) {
+    font-size: 0.85rem;
+  }
+}
+
+.cityStatDivider {
+  color: rgba($white, 0.5);
+}
+
+.viewGuideLink {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: $secondary-color;
+  opacity: 0.8;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
