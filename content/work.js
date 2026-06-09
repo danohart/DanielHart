@@ -58,7 +58,14 @@ export const workContent = {
         </div>
       `,
       image: '/images/portfolio/natural-music-2.png',
-      tags: ['WordPress', 'eCommerce', 'PHP', 'MySQL', 'Custom Template', 'SASS'],
+      tags: [
+        'WordPress',
+        'eCommerce',
+        'PHP',
+        'MySQL',
+        'Custom Template',
+        'SASS',
+      ],
     },
     {
       title: 'Pen & Paper Trivia',
@@ -92,7 +99,16 @@ export const workContent = {
       url: 'https://playlistparty.click/',
       description: `<p>A real-time collaborative music application built from scratch. Users create shared playlists, invite friends, and listen together — all synced live via WebSockets. Integrates with the Spotify Web API and ships as a Progressive Web App for native-like mobile performance.</p>`,
       image: '/images/portfolio/playlist-party.png',
-      tags: ['Next.js', 'React', 'Node.js', 'Pusher', 'Spotify Web API', 'Bootstrap', 'SCSS', 'Progressive Web App'],
+      tags: [
+        'Next.js',
+        'React',
+        'Node.js',
+        'Pusher',
+        'Spotify Web API',
+        'Bootstrap',
+        'SCSS',
+        'Progressive Web App',
+      ],
     },
     {
       title: 'Rambler',
@@ -103,12 +119,12 @@ export const workContent = {
       image: '/images/portfolio/rambler.png',
       tags: ['Weebly', 'eCommerce', 'Custom Template', 'Inventory Integration'],
     },
-    {
-      title: 'Peoria First Friday',
-      description: `<p>Peoria First Friday is a collaboration between multiple organizations in Peoria, IL to reach the community and inform them about events happening on the first Friday of every month. Designed and built this WordPress website from scratch while collaborating with a local photographer and graphic designer.</p>`,
-      image: '/images/portfolio/peoria-first-friday.png',
-      tags: ['WordPress', 'PHP', 'MySQL', 'Custom Template', 'SASS'],
-    },
+    // {
+    //   title: 'Peoria First Friday',
+    //   description: `<p>Peoria First Friday is a collaboration between multiple organizations in Peoria, IL to reach the community and inform them about events happening on the first Friday of every month. Designed and built this WordPress website from scratch while collaborating with a local photographer and graphic designer.</p>`,
+    //   image: '/images/portfolio/peoria-first-friday.png',
+    //   tags: ['WordPress', 'PHP', 'MySQL', 'Custom Template', 'SASS'],
+    // },
 
     // {
     //   title: 'Grace Baptist',
