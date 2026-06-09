@@ -5,102 +5,100 @@ import Link from 'next/link';
 import SEO from '../components/seo';
 
 export default function Services() {
-  const services = [
+  const pillars = [
     {
-      title: 'Custom Website Development',
-      description:
-        'Fully custom, high-performance websites built from scratch to meet your specific business goals.',
-      deliverables: [
-        'Responsive, mobile-first design',
-        'SEO optimization',
-        'Fast loading times',
-        'Custom functionality',
-        'Content management system',
+      number: '01',
+      title: 'Frontend Performance Optimization',
+      tagline: 'Stop bleeding revenue to slow pages.',
+      whoItsFor:
+        'eCommerce brands and content-driven sites where mobile conversion underperforms desktop, ad spend efficiency has degraded, or Core Web Vitals scores are dragging down organic visibility.',
+      whatIDo: [
+        'Core Web Vitals audit (LCP, CLS, INP)',
+        'Third-party script triage and deferral strategy',
+        'Checkout funnel rendering optimization',
+        'Image, font, and critical-path delivery improvements',
+        'Ongoing performance regression monitoring',
       ],
-      idealFor:
-        'Businesses needing a unique online presence with specific functionality requirements.',
-      priceRange: '$4,000-$10,000',
-      timeframe: '4-8 weeks',
+      proofPoint:
+        'Bump Boxes: 50% faster mobile load times and 40% checkout conversion lift after migrating off a degraded WordPress monolith to a custom React + GraphQL stack.',
     },
     {
-      title: 'E-Commerce Development',
-      description:
-        'Custom online stores designed to showcase your products and maximize conversions.',
-      deliverables: [
-        'Secure payment processing',
-        'Inventory management',
-        'Customer account functionality',
-        'Order processing and fulfillment',
-        'Product filtering and search',
+      number: '02',
+      title: 'Data Ingestion & Analytics Integrity',
+      tagline: "Make sure your dashboards reflect reality — not what you wish were true.",
+      whoItsFor:
+        "Brands where Klaviyo, GA4, or platform event data doesn't reconcile with actual orders, or where dbt pipelines show unexplained gaps that your team can't trace back to a root cause.",
+      whatIDo: [
+        'Client-side tracker audit (pixel firing order, SPA lifecycle mismatches, race conditions)',
+        'Tag manager hygiene and event schema documentation',
+        'Warehouse-layer event reconciliation',
+        'Attribution integrity review across ad platforms',
+        'Ongoing data layer ownership and monitoring',
       ],
-      idealFor: 'Retailers looking to expand their reach through online sales.',
-      priceRange: '$7,000-$15,000',
-      timeframe: '6-12 weeks',
+      proofPoint:
+        'Discovery Education: Rebuilt the data ingestion layer to ensure reliable, complete event capture at enterprise scale — eliminating the gap between what happened and what the dashboards showed.',
     },
     {
-      title: 'Website Optimization',
-      description:
-        'Performance improvements for existing websites to enhance speed, usability, and conversion rates.',
-      deliverables: [
-        'Performance audit',
-        'Speed optimization',
-        'Mobile responsiveness improvements',
-        'Conversion rate optimization',
-        'SEO enhancements',
+      number: '03',
+      title: 'Fractional Tech Leadership',
+      tagline: 'Senior engineering judgment, without the full-time overhead.',
+      whoItsFor:
+        'Growth-stage companies with an expanding tech stack but no internal senior engineer to vet vendors, own migrations, enforce engineering standards, or protect performance as the team scales.',
+      whatIDo: [
+        'Monthly retainer engagement — I operate as an embedded tech lead',
+        'App and plugin creep audit (performance cost vs. business value per integration)',
+        'Platform migration planning and zero-downtime execution',
+        'Engineering process setup (PR standards, deploy pipelines, QA checklists)',
+        'Technical vetting for new vendors, tools, and third-party integrations',
       ],
-      idealFor:
-        "Businesses with existing websites that aren't performing to their potential.",
-      priceRange: '$2,000-$5,000',
-      timeframe: '2-4 weeks',
+      proofPoint:
+        'Led end-to-end platform overhauls across multiple mid-market eCommerce and subscription brands. Mentored junior engineers and established standards that outlasted the engagement.',
     },
-    {
-      title: 'Ongoing Website Maintenance',
-      description:
-        'Regular updates and support to keep your website secure, up-to-date, and running smoothly.',
-      deliverables: [
-        'Security updates',
-        'Performance monitoring',
-        'Content updates',
-        'Technical support',
-        'Monthly reporting',
-      ],
-      idealFor:
-        'All businesses wanting to protect their investment and keep their website current.',
-      priceRange: '$200-$500/month',
-      timeframe: 'Ongoing',
-    },
+  ];
+
+  const notFor = [
+    'Founders who want to move fast and fix it later',
+    'Projects where "good enough" is the actual standard',
+    'Teams that treat performance as a launch-day checkbox',
   ];
 
   return (
     <Layout>
       <SEO
-        title="Web Development Services"
-        description="Professional web development services for businesses looking to increase their online presence and revenue."
+        title="Fractional Tech Services"
+        description="Frontend performance engineering, analytics integrity, and fractional tech leadership for eCommerce and growth-stage brands. Three engagement pillars, zero fluff."
       />
 
       <Row className="mb-5">
         <Col>
-          <h1>Web Development Services</h1>
-          <p>
-            Leveraging over a decade of experience to deliver websites that
-            drive business growth
+          <h1>How I Work</h1>
+          <p className="lead">
+            I don&apos;t sell hours or deliverables. I own outcomes. Every engagement
+            maps to one of three pillars — each one tied directly to a business
+            metric your team already cares about.
           </p>
         </Col>
       </Row>
 
-      <Row className="mb-5">
-        {services.map((service, index) => (
-          <Col xs={12} className="mb-4" key={index}>
+      {pillars.map((pillar, index) => (
+        <Row className="mb-5" key={index}>
+          <Col xs={12}>
             <Card className="service-card">
               <Card.Body>
                 <Row>
                   <Col xs={12} md={8}>
-                    <Card.Title as="h2">{service.title}</Card.Title>
-                    <Card.Text>{service.description}</Card.Text>
+                    <p className="process-number mb-1">{pillar.number}</p>
+                    <Card.Title as="h2">{pillar.title}</Card.Title>
+                    <p className="lead mb-3">
+                      <em>{pillar.tagline}</em>
+                    </p>
+                    <p>
+                      <strong>Who this is for:</strong> {pillar.whoItsFor}
+                    </p>
 
-                    <h4>What's Included:</h4>
+                    <h4>What I do:</h4>
                     <ul>
-                      {service.deliverables.map((item, i) => (
+                      {pillar.whatIDo.map((item, i) => (
                         <li key={i}>{item}</li>
                       ))}
                     </ul>
@@ -109,20 +107,13 @@ export default function Services() {
                   <Col xs={12} md={4}>
                     <div className="service-meta p-3 rounded">
                       <p>
-                        <strong>Ideal for:</strong> {service.idealFor}
+                        <strong>Proof point:</strong>
                       </p>
-                      <p>
-                        <strong>Investment:</strong> {service.priceRange}
-                      </p>
-                      <p>
-                        <strong>Timeframe:</strong> {service.timeframe}
-                      </p>
+                      <p>{pillar.proofPoint}</p>
 
                       <Button variant="primary" className="w-100 mt-3">
                         <Link href="/hire">
-                          <span className="text-white">
-                            Discuss This Service
-                          </span>
+                          <span className="text-white">Let&apos;s Scope It</span>
                         </Link>
                       </Button>
                     </div>
@@ -131,146 +122,39 @@ export default function Services() {
               </Card.Body>
             </Card>
           </Col>
-        ))}
-      </Row>
+        </Row>
+      ))}
 
       <Row className="mb-5">
         <Col xs={12}>
-          <h2 className="mb-4">My Development Process</h2>
-        </Col>
-
-        <Col xs={12} md={3} className="mb-3">
-          <Card className="h-100 process-card">
-            <Card.Body>
-              <Card.Title>
-                <span className="process-number">1. </span>
-                Discovery
-              </Card.Title>
-              <Card.Text>
-                Understanding your business goals, target audience, and project
-                requirements.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col xs={12} md={3} className="mb-3">
-          <Card className="h-100 process-card">
-            <Card.Body>
-              <Card.Title>
-                <span className="process-number">2. </span>
-                Planning
-              </Card.Title>
-              <Card.Text>
-                Creating a detailed roadmap with timelines, deliverables, and
-                technical specifications.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col xs={12} md={3} className="mb-3">
-          <Card className="h-100 process-card">
-            <Card.Body>
-              <Card.Title>
-                <span className="process-number">3. </span>
-                Development
-              </Card.Title>
-              <Card.Text>
-                Building your website with a focus on performance, usability,
-                and achieving your business goals.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col xs={12} md={3} className="mb-3">
-          <Card className="h-100 process-card">
-            <Card.Body>
-              <Card.Title>
-                <span className="process-number">4. </span>
-                Launch & Support
-              </Card.Title>
-              <Card.Text>
-                Deploying your website and providing ongoing support to ensure
-                continued success.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-
-      <Row className="mb-5">
-        <Col xs={12}>
-          <h2 className="mb-4">Frequently Asked Questions</h2>
-        </Col>
-
-        <Col xs={12} md={6} className="mb-3">
-          <Card>
-            <Card.Body>
-              <Card.Title as="h4">
-                How long does it take to build a website?
-              </Card.Title>
-              <Card.Text>
-                Most projects take 4-12 weeks depending on complexity.
-                E-commerce sites typically take longer than informational
-                websites due to additional functionality requirements.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col xs={12} md={6} className="mb-3">
-          <Card>
-            <Card.Body>
-              <Card.Title as="h4">Do you provide website hosting?</Card.Title>
-              <Card.Text>
-                Yes, I can recommend and set up hosting solutions based on your
-                website's needs, or work with your existing hosting provider if
-                you prefer.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col xs={12} md={6} className="mb-3">
-          <Card>
-            <Card.Body>
-              <Card.Title as="h4">
-                Will my website be mobile-friendly?
-              </Card.Title>
-              <Card.Text>
-                Absolutely. All websites I build are fully responsive and
-                optimized for all devices, from desktop computers to
-                smartphones.
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        </Col>
-
-        <Col xs={12} md={6} className="mb-3">
-          <Card>
-            <Card.Body>
-              <Card.Title as="h4">How do we get started?</Card.Title>
-              <Card.Text>
-                The process begins with a consultation to discuss your goals and
-                requirements. After this, I'll provide a detailed proposal
-                outlining the scope, timeline, and investment.
-              </Card.Text>
-            </Card.Body>
-          </Card>
+          <h2 className="mb-3">Who this is NOT for</h2>
+          <p>
+            I work best with teams that already believe performance and data
+            quality are business priorities — not afterthoughts. This probably
+            isn&apos;t a fit if:
+          </p>
+          <ul>
+            {notFor.map((item, i) => (
+              <li key={i}>{item}</li>
+            ))}
+          </ul>
+          <p>
+            If that&apos;s not you,{' '}
+            <Link href="/hire">let&apos;s talk.</Link>
+          </p>
         </Col>
       </Row>
 
       <Row className="text-center py-5 rounded">
         <Col>
-          <h2>Ready to elevate your online presence?</h2>
+          <h2>Ready to move the metrics that matter?</h2>
           <p className="mb-4">
-            Let's discuss how my expertise can help your business grow.
+            Tell me about the technical friction costing your team the most
+            right now.
           </p>
           <Button size="lg" variant="primary">
             <Link href="/hire">
-              <span>Get in Touch</span>
+              <span>Start the Conversation</span>
             </Link>
           </Button>
         </Col>

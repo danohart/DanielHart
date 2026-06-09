@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import Layout from '../../components/layout';
 import { Row, Col, Button } from 'react-bootstrap';
 import SEO from '../../components/seo';
@@ -33,10 +34,13 @@ const BlogPostTemplate = () => (
     </Row>
     <Row className="post-cta">
       <Col xs={12} sm={12} md={4} lg={2}>
-        <img
+        <Image
           src="/images/daniel-hart-web-developer.jpg"
           alt="Daniel Hart - web developer"
           title="Daniel Hart - web designer"
+          width={300}
+          height={300}
+          style={{ width: '100%', height: 'auto' }}
         />
       </Col>
       <Col>

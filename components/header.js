@@ -4,8 +4,6 @@ import { Row, Col, Button } from 'react-bootstrap';
 import YearsOfExperience from './yearsOfExperience';
 
 const Header = () => {
-  const yearsWorked = new Date().getFullYear() - 2010;
-
   return (
     <Row className="main-header-section">
       <Col xs={12}>
@@ -13,19 +11,20 @@ const Header = () => {
           <h1>
             <Link href="/">Daniel Hart</Link>
             <br />
-            <Link href="/">Web Design</Link>
+            <Link href="/">Fractional Tech Partner</Link>
           </h1>
           <div className="subtext">
-            Providing web development &amp; design to trusting clients in a
-            creative environment. Helping them feel motivated about their
-            business and increase revenue by always learning and adapting.
+            I help eCommerce and growth-stage brands eliminate the frontend
+            performance leaks and analytics blind spots that quietly drain ad
+            spend, suppress mobile conversions, and skew every KPI dashboard
+            your team relies on.
             <Row>
               <Col>
                 <Button>
-                  <Link href="/about">Learn More</Link>
+                  <Link href="/services">See How I Work</Link>
                 </Button>
                 <Button variant="secondary inverse">
-                  <Link href="/work">See Work</Link>
+                  <Link href="/work">View Case Studies</Link>
                 </Button>
               </Col>
             </Row>
@@ -39,12 +38,12 @@ const Header = () => {
       >
         <div className="header-graphic">
           <div className="expertise-badges d-flex flex-wrap justify-content-center">
-            <span className="badge bg-primary">React</span>
-            <span className="badge bg-secondary">Next.js</span>
-            <span className="badge bg-info">JavaScript</span>
-            <span className="badge bg-warning">E-Commerce</span>
-            <span className="badge bg-success">Performance</span>
-            <span className="badge bg-danger">HTML/CSS</span>
+            <span className="badge bg-primary">Core Web Vitals</span>
+            <span className="badge bg-secondary">Checkout Conversion</span>
+            <span className="badge bg-info">Event Tracking Integrity</span>
+            <span className="badge bg-warning">App Creep Elimination</span>
+            <span className="badge bg-success">Zero-Downtime Migration</span>
+            <span className="badge bg-danger">Subscription Architecture</span>
           </div>
         </div>
       </Col>

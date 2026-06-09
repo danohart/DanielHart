@@ -49,7 +49,7 @@ const Work: React.FC<WorkProps> = ({ pages }) => {
                 ></div>
                 <Row>
                   <Col>
-                    <h4>This Project Features:</h4>
+                    <p className="case-study-tags-label">Stack</p>
                     {page.tags.map((tag, index) => (
                       <Badge bg="primary" key={`${page.title}-${tag}-${index}`}>
                         {tag}

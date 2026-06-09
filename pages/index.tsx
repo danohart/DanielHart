@@ -24,12 +24,30 @@ export const getStaticProps: GetStaticProps<HomePageProps> = async () => {
 };
 
 const Home: React.FC<HomePageProps> = ({ featuredWork }) => {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Daniel Hart',
+    jobTitle: 'Fractional Tech Partner',
+    description:
+      'Frontend performance engineering and analytics reliability for eCommerce and growth-stage brands.',
+    url: 'https://danielhart.co',
+    knowsAbout: [
+      'eCommerce',
+      'Core Web Vitals',
+      'Frontend Performance',
+      'Analytics Reliability',
+      'Platform Migration',
+      'Subscription Architecture',
+    ],
+  };
+
   const CTA = (
     <Row>
       <Col className="text-center m-4">
-        <h3>Need a web developer for your next project?</h3>
+        <h3>Ready to eliminate the technical friction costing you conversions?</h3>
         <Button variant="primary" size="lg">
-          <Link href="/hire">Contact Me</Link>
+          <Link href="/hire">Start the Conversation</Link>
         </Button>
       </Col>
     </Row>
@@ -37,7 +55,15 @@ const Home: React.FC<HomePageProps> = ({ featuredWork }) => {
 
   return (
     <Layout>
-      <SEO title="Custom Web Development" />
+      <SEO
+        title="Fractional Tech Partner for eCommerce & Growth Brands"
+        description="Frontend performance engineering and analytics reliability for eCommerce and growth-stage brands. I eliminate the technical friction leaking mobile conversions and corrupting your data."
+        url="https://danielhart.co"
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       <Header />
       <Validators />

@@ -21,11 +21,15 @@ export const getStaticProps: GetStaticProps<WorkPageProps> = async () => {
 const WorkPage: React.FC<WorkPageProps> = ({ portfolioItems }) => {
   return (
     <Layout>
-      <SEO title="Work" />
-      <h1>Portfolio</h1>
+      <SEO
+        title="Case Studies"
+        description="eCommerce and growth-stage brand case studies. Platform migrations, performance overhauls, and subscription architecture — each one tied to a business outcome."
+      />
+      <h1>Case Studies</h1>
       <p className="lead mb-4">
-        Here are some of the projects I've worked on. Each demonstrates my approach 
-        to creating effective web experiences that deliver results.
+        Every engagement starts with a business problem, not a technology
+        choice. Here&apos;s how I&apos;ve moved the metrics that matter for eCommerce,
+        subscription, and enterprise brands.
       </p>
       <Work pages={portfolioItems} />
     </Layout>

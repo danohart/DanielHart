@@ -24,18 +24,20 @@ interface HirePageProps {
 export const getStaticProps: GetStaticProps<HirePageProps> = async () => {
   const projectOptions: ProjectOption[] = [
     { value: "", label: "Select" },
-    { value: "simple-website", label: "Simple, Elegant Website" },
-    { value: "ecommerce", label: "eCommerce Store" },
-    { value: "big-plans", label: "I have big, BIG, plans, we should talk." },
+    { value: "performance-audit", label: "Frontend Performance Audit" },
+    { value: "platform-migration", label: "Platform Migration" },
+    { value: "analytics-data-layer", label: "Analytics & Data Layer" },
+    { value: "fractional-retainer", label: "Fractional Tech Retainer" },
     { value: "other", label: "Other" },
   ];
 
   const budgetOptions: BudgetOption[] = [
     { value: "", label: "Select" },
-    { value: "1000-4000", label: "$1,000-$4,000" },
-    { value: "4000-7000", label: "$4,000-$7,000" },
-    { value: "7000-10000", label: "$7,000-$10,000" },
-    { value: "10000+", label: "$10,000+" },
+    { value: "5000-15000", label: "$5,000–$15,000" },
+    { value: "15000-30000", label: "$15,000–$30,000" },
+    { value: "30000-60000", label: "$30,000–$60,000" },
+    { value: "retainer", label: "Retainer (monthly)" },
+    { value: "lets-talk", label: "Let's talk" },
   ];
 
   return {
@@ -87,13 +89,17 @@ const Hire: React.FC<HirePageProps> = ({
 
   return (
     <Layout>
-      <SEO title="Hire Me" />
+      <SEO
+        title="Work With Daniel Hart"
+        description="Start a conversation about frontend performance, analytics integrity, or fractional tech leadership. Let's scope your engagement."
+      />
       <div>
-        <h1>Hire Me</h1>
+        <h1>Let&apos;s Work Together</h1>
         <p>
-          If you have a project that needs to be taken to the next level, to
-          reach more customers, to make more money, fill out the form below to
-          contact me and I will get back to you as soon as I can.
+          Tell me about the technical friction costing your team the most right
+          now. I&apos;ll respond within one business day with an honest take on
+          whether I&apos;m the right fit — and what a scoped engagement would look
+          like.
         </p>
         <Row>
           <Col

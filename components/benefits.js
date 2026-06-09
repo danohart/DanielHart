@@ -35,12 +35,11 @@ const Benefits = () => (
       </Row>
       {benefitsIcon(faBarcode)}
       <Col className="benefits-description">
-        <h3>Mobile Friendly</h3>
+        <h3>Mobile Revenue Protection</h3>
         <p>
-          In 2019, Black Friday through Cyber Monday, 49% of online orders came
-          from a mobile phone. The best mobile experience for your customer is
-          vital for growth and is always kept in mind with any of
-          our&nbsp;clients.
+          Every 100ms of LCP improvement drives measurable checkout lift. I
+          audit and eliminate the client-side bloat silently killing your mobile
+          funnel — before it shows up as a&nbsp;miss.
         </p>
       </Col>
     </Col>
@@ -49,7 +48,7 @@ const Benefits = () => (
         <Col>
           <Image
             src="/data.jpg"
-            alt="Data Driven Web Design"
+            alt="Analytics data integrity"
             width="300"
             height="300"
           />
@@ -57,11 +56,11 @@ const Benefits = () => (
       </Row>
       {benefitsIcon(faCodeBranch)}
       <Col className="benefits-description">
-        <h3>Data Driven</h3>
+        <h3>Analytics You Can Trust</h3>
         <p>
-          Through years of experience and testing, making design decisions based
-          on what your customer expects from your website, increasing sales and
-          brand loyalty that keeps people coming back to&nbsp;you.
+          Klaviyo drops, GA4 gaps, and mismatched attribution mean your team is
+          optimizing against fiction. I ensure 0% event packet loss between your
+          storefront and your data&nbsp;warehouse.
         </p>
       </Col>
     </Col>
@@ -70,7 +69,7 @@ const Benefits = () => (
         <Col>
           <Image
             src="/speed.jpg"
-            alt="Fast Website Web Development"
+            alt="Tech debt elimination"
             width="300"
             height="300"
           />
@@ -78,12 +77,11 @@ const Benefits = () => (
       </Row>
       {benefitsIcon(faCode)}
       <Col className="benefits-description">
-        <h3>Optimal Speed</h3>
+        <h3>Tech Debt That Pays Off</h3>
         <p>
-          Your website has roughly 4 seconds before a customer decides to go
-          elsewhere if what they see isn't interesting to them. Creating snappy,
-          quick to use websites is important to keeping your customer on
-          your&nbsp;site.
+          App and plugin creep costs brands 8–12 Lighthouse points and seconds
+          of load time per install. I cut the dead weight, show the P&amp;L
+          impact, and keep your stack&nbsp;lean.
         </p>
       </Col>
     </Col>

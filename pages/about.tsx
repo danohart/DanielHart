@@ -31,21 +31,21 @@ export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
 
   const expertiseAreas: ExpertiseArea[] = [
     {
-      title: 'Frontend Performance',
+      title: 'Core Web Vitals & Mobile Revenue',
       description:
-        'Building blazing-fast websites that load quickly and respond instantly to user interactions.',
+        'LCP, CLS, and INP are not abstract scores — they are measurable levers on mobile conversion and ad spend efficiency. I audit, prioritize, and fix the issues that move revenue.',
       icon: faTachometerAlt,
     },
     {
-      title: 'Responsive Design',
+      title: 'Conversion-Focused Frontend Architecture',
       description:
-        "Creating seamless experiences across all devices, focusing on mobile-first approaches that meet today's browsing habits.",
+        'Every architectural decision has a performance cost and a business consequence. I build and migrate frontends with checkout conversion and load time as first-class constraints — not afterthoughts.',
       icon: faMobileAlt,
     },
     {
-      title: 'Data-Driven UX',
+      title: 'Analytics Integrity & Data Layer Ownership',
       description:
-        'Using analytics and user research to inform design decisions that maximize conversion and engagement.',
+        'Broken event tracking means your team optimizes against bad data. I own the full data layer — from client-side pixel health to warehouse reconciliation — so your dashboards reflect what actually happened.',
       icon: faChartLine,
     },
   ];
@@ -62,26 +62,31 @@ export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
 const About: React.FC<AboutPageProps> = ({ yearsWorked, expertiseAreas }) => {
   return (
     <Layout>
-      <SEO title="About Daniel Hart - Frontend Web Developer" />
+      <SEO
+        title="About Daniel Hart - Fractional Tech Partner"
+        description="Fractional Tech Partner for eCommerce and growth-stage brands. I own frontend performance and analytics reliability so your team can trust the data and protect the funnel."
+      />
       <Row className="mb-5 align-items-center">
         <Col xs={12} md={8}>
           <h1>Hello, I'm Daniel Hart</h1>
-          <h2>Frontend Developer with {yearsWorked}+ Years of Experience</h2>
+          <h2>Fractional Tech Partner — {yearsWorked}+ Years in Production</h2>
 
           <p className="lead mb-4">
-            I help businesses transform their digital presence through custom
-            web experiences that convert visitors into customers.
+            I work with eCommerce and growth-stage brands that have outgrown their
+            initial tech stack. My job is to own frontend performance and data
+            reliability — so your growth team can trust every dashboard number
+            and protect every ad dollar.
           </p>
 
           <Button size="lg" className="mb-4">
-            <Link href="/work">View My Portfolio</Link>
+            <Link href="/work">View Case Studies</Link>
           </Button>
         </Col>
 
         <Col xs={12} md={4}>
           <div className="profile-image-container">
             <Image
-              src="/about.jpg"
+              src="/daniel hart black and white-hilo.png"
               alt="Daniel Hart, web developer"
               title="Daniel Hart, web developer"
               width={1200}
@@ -99,15 +104,17 @@ const About: React.FC<AboutPageProps> = ({ yearsWorked, expertiseAreas }) => {
         <Col>
           <h3 className="mb-4">Professional Background</h3>
           <p>
-            With <strong>{yearsWorked}+ years of experience</strong> in web
-            development and design, I've worked with brands ranging from small
-            local businesses to Fortune 500 companies including HEB Grocery,
-            Grainger, and Yum! Brands.
+            With <strong>{yearsWorked}+ years in production</strong>, I&apos;ve worked
+            with brands ranging from local subscription businesses to Fortune 500
+            companies including Grainger and Yum! Brands. I&apos;ve operated at
+            enterprise scale and I know the difference between infrastructure
+            that holds up under load and infrastructure that looks fine until it
+            doesn&apos;t.
           </p>
           <p>
-            My approach combines technical expertise with a deep understanding
-            of user psychology and business objectives. Every project begins
-            with understanding your goals and ends with measurable results.
+            I don&apos;t sell hours. I own outcomes. Every engagement starts with
+            identifying the specific technical friction costing your business
+            the most — and ends with measurable proof that it&apos;s gone.
           </p>
         </Col>
       </Row>
@@ -135,12 +142,13 @@ const About: React.FC<AboutPageProps> = ({ yearsWorked, expertiseAreas }) => {
 
       <Row className="mb-5 text-center">
         <Col>
-          <h3>Ready to discuss your project?</h3>
+          <h3>Ready to move the metrics that matter?</h3>
           <p className="lead">
-            Let's talk about how my experience can help grow your business
+            Tell me about the technical friction costing your team the most
+            right now.
           </p>
           <Button size="lg">
-            <Link href="/hire">Let's Work Together</Link>
+            <Link href="/hire">Start the Conversation</Link>
           </Button>
         </Col>
       </Row>
