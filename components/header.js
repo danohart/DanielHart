@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
-import YearsOfExperience from './yearsOfExperience';
 
 const Header = () => {
   return (
@@ -9,15 +8,22 @@ const Header = () => {
       <Col xs={12}>
         <header className="main-header">
           <h1>
-            <Link href="/">Daniel Hart</Link>
-            <br />
-            <Link href="/">Fractional Tech Partner</Link>
+            <Link href="/">
+              Daniel Hart
+              <br />
+              <div className="header-role">
+                Frontend Developer &amp; Tech Partner
+              </div>
+            </Link>
           </h1>
+          <h2>
+            I fix the technical friction that leaks mobile conversions and
+            corrupts your data.
+          </h2>
           <div className="subtext">
-            I help eCommerce and growth-stage brands eliminate the frontend
-            performance leaks and analytics blind spots that quietly drain ad
-            spend, suppress mobile conversions, and skew every KPI dashboard
-            your team relies on.
+            Whether you&apos;re losing ad spend to slow pages or your team is
+            optimizing against broken analytics — I find it, fix it, and show
+            you the impact.
             <Row>
               <Col>
                 <Button>
