@@ -25,6 +25,7 @@
     "react-ga4": "^2.0.0",
     "remark": "^15.0.1",
     "remark-html": "^16.0.1",
+    "resend": "^6.12.4",
     "sass": "^1.58.3"
   },
   "devDependencies": {

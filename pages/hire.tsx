@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { useInput } from '../components/formInput';
@@ -18,73 +19,80 @@ interface BudgetOption {
 interface HirePageProps {
   projectOptions: ProjectOption[];
   budgetOptions: BudgetOption[];
-  formEndpoint: string;
 }
 
 export const getStaticProps: GetStaticProps<HirePageProps> = async () => {
   const projectOptions: ProjectOption[] = [
-    { value: "", label: "Select" },
-    { value: "performance-audit", label: "Frontend Performance Audit" },
-    { value: "platform-migration", label: "Platform Migration" },
-    { value: "analytics-data-layer", label: "Analytics & Data Layer" },
-    { value: "fractional-retainer", label: "Fractional Tech Retainer" },
-    { value: "other", label: "Other" },
+    { value: '', label: 'Select' },
+    { value: 'Frontend Performance Audit', label: 'Frontend Performance Audit' },
+    { value: 'Platform Migration', label: 'Platform Migration' },
+    { value: 'Analytics & Data Layer', label: 'Analytics & Data Layer' },
+    { value: 'Fractional Tech Retainer', label: 'Fractional Tech Retainer' },
+    { value: 'Other', label: 'Other' },
   ];
 
   const budgetOptions: BudgetOption[] = [
-    { value: "", label: "Select" },
-    { value: "5000-15000", label: "$5,000–$15,000" },
-    { value: "15000-30000", label: "$15,000–$30,000" },
-    { value: "30000-60000", label: "$30,000–$60,000" },
-    { value: "retainer", label: "Retainer (monthly)" },
-    { value: "lets-talk", label: "Let's talk" },
+    { value: '', label: 'Select' },
+    { value: '$5,000–$15,000', label: '$5,000–$15,000' },
+    { value: '$15,000–$30,000', label: '$15,000–$30,000' },
+    { value: '$30,000–$60,000', label: '$30,000–$60,000' },
+    { value: 'Retainer (monthly)', label: 'Retainer (monthly)' },
+    { value: "Let's talk", label: "Let's talk" },
   ];
 
   return {
-    props: {
-      projectOptions,
-      budgetOptions,
-      formEndpoint: "https://getform.io/f/f4b2bda9-a727-46ac-9498-1134a5a50b00",
-    },
-    revalidate: 60 * 60 * 24 * 7,
+    props: { projectOptions, budgetOptions },
   };
 };
 
-const Hire: React.FC<HirePageProps> = ({ 
-  projectOptions, 
-  budgetOptions, 
-  formEndpoint 
-}) => {
+const Hire: React.FC<HirePageProps> = ({ projectOptions, budgetOptions }) => {
+  const router = useRouter();
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState('');
+
   const { value: Name, bind: bindName, reset: resetName } = useInput('');
   const { value: Email, bind: bindEmail, reset: resetEmail } = useInput('');
-  const {
-    value: ProjectType,
-    bind: bindProjectType,
-    reset: resetProjectType,
-  } = useInput('');
+  const { value: ProjectType, bind: bindProjectType, reset: resetProjectType } = useInput('');
   const { value: Budget, bind: bindBudget, reset: resetBudget } = useInput('');
   const { value: Info, bind: bindInfo, reset: resetInfo } = useInput('');
 
-  const handleSubmit = (evt: React.FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (evt: React.FormEvent<HTMLFormElement>): Promise<void> => {
     evt.preventDefault();
-    
-    const form = evt.currentTarget as HTMLFormElement;
-    if (!form.checkValidity()) {
-      alert(
-        'Some information is missing. Please check that all fields are filled out.'
-      );
+    setError('');
+
+    if (!Name || !Email || !ProjectType || !Budget) {
+      setError('Please fill out all required fields.');
       return;
     }
-    
-    alert(
-      `Thank you for reaching out to me. An email was sent and I will respond to it within a couple days.`
-    );
 
-    resetName();
-    resetEmail();
-    resetProjectType();
-    resetBudget();
-    resetInfo();
+    setSubmitting(true);
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: Name,
+          email: Email,
+          projectType: ProjectType,
+          budget: Budget,
+          message: Info,
+        }),
+      });
+
+      if (!res.ok) throw new Error('Submission failed');
+
+      resetName();
+      resetEmail();
+      resetProjectType();
+      resetBudget();
+      resetInfo();
+
+      router.push('/thank-you');
+    } catch {
+      setError('Something went wrong. Please try again or email me directly at daniel@danielhart.co.');
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -111,97 +119,91 @@ const Hire: React.FC<HirePageProps> = ({
             <hr />
           </Col>
         </Row>
-        <div>
-          <Form
-            action={formEndpoint}
-            method="POST"
-            onSubmit={handleSubmit}
-          >
-            <Row>
-              <Col xs={12} sm={12} md={6} lg={6}>
-                <Form.Group>
-                  <Form.Label>Name</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="name"
-                    id="name"
-                    {...bindName}
-                    placeholder="Enter Name"
-                    required
-                  />
-                </Form.Group>
-              </Col>
-              <Col xs={12} sm={12} md={6} lg={6}>
-                <Form.Group>
-                  <Form.Label>Email</Form.Label>
-                  <Form.Control
-                    type="email"
-                    name="email"
-                    id="email"
-                    {...bindEmail}
-                    placeholder="Enter Email Address"
-                    required
-                  />
-                </Form.Group>
-              </Col>
-            </Row>
 
-            <Row>
-              <Col xs={12} sm={12} md={6} lg={6}>
-                <Form.Group>
-                  <Form.Label as="legend">What type of project?</Form.Label>
-                  <Form.Control
-                    as="select"
-                    name="projectType"
-                    {...bindProjectType}
-                    required
-                  >
-                    {projectOptions.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </Form.Control>
-                </Form.Group>
-              </Col>
-              <Col xs={12} sm={12} md={6} lg={6}>
-                <Form.Group>
-                  <Form.Label as="legend">What's your budget?</Form.Label>
-                  <Form.Control
-                    as="select"
-                    name="budget"
-                    {...bindBudget}
-                    required
-                  >
-                    {budgetOptions.map((option) => (
-                      <option key={option.value} value={option.value}>
-                        {option.label}
-                      </option>
-                    ))}
-                  </Form.Control>
-                </Form.Group>
-              </Col>
-            </Row>
+        <Form onSubmit={handleSubmit}>
+          <Row>
+            <Col xs={12} sm={12} md={6} lg={6}>
+              <Form.Group className="mb-3">
+                <Form.Label>Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="name"
+                  id="name"
+                  {...bindName}
+                  placeholder="Your name"
+                  required
+                />
+              </Form.Group>
+            </Col>
+            <Col xs={12} sm={12} md={6} lg={6}>
+              <Form.Group className="mb-3">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  name="email"
+                  id="email"
+                  {...bindEmail}
+                  placeholder="your@email.com"
+                  required
+                />
+              </Form.Group>
+            </Col>
+          </Row>
 
+          <Row>
+            <Col xs={12} sm={12} md={6} lg={6}>
+              <Form.Group className="mb-3">
+                <Form.Label>What type of project?</Form.Label>
+                <Form.Control as="select" name="projectType" {...bindProjectType} required>
+                  {projectOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </Form.Control>
+              </Form.Group>
+            </Col>
+            <Col xs={12} sm={12} md={6} lg={6}>
+              <Form.Group className="mb-3">
+                <Form.Label>What&apos;s your budget?</Form.Label>
+                <Form.Control as="select" name="budget" {...bindBudget} required>
+                  {budgetOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
+                    </option>
+                  ))}
+                </Form.Control>
+              </Form.Group>
+            </Col>
+          </Row>
+
+          <Row>
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Label>Tell me about the problem</Form.Label>
+                <Form.Control
+                  as="textarea"
+                  rows={4}
+                  name="message"
+                  placeholder="What's the technical friction costing you the most right now?"
+                  {...bindInfo}
+                />
+              </Form.Group>
+            </Col>
+          </Row>
+
+          {error && (
             <Row>
               <Col>
-                <Form.Group>
-                  <Form.Label>Additional Info</Form.Label>
-                  <Form.Control
-                    as="textarea"
-                    rows={4}
-                    name="message"
-                    placeholder="Just a little info to get us started..."
-                    {...bindInfo}
-                  />
-                </Form.Group>
+                <p style={{ color: '#e72e4d' }}>{error}</p>
               </Col>
             </Row>
-            <Button variant="primary" type="submit">
-              Send
-            </Button>
-          </Form>
-        </div>
+          )}
+
+          <Button variant="primary" type="submit" disabled={submitting}>
+            {submitting ? 'Sending...' : 'Send'}
+          </Button>
+        </Form>
       </div>
     </Layout>
   );
