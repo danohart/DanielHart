@@ -45,22 +45,6 @@ const Header = () => {
           </Row>
         </header>
       </Col>
-
-      <Col
-        xs={12}
-        className="d-flex align-items-center justify-content-center mb-4"
-      >
-        <div className="header-graphic">
-          <div className="expertise-badges d-flex flex-wrap justify-content-center">
-            <span className="badge bg-primary">Core Web Vitals</span>
-            <span className="badge bg-secondary">Checkout Conversion</span>
-            <span className="badge bg-info">Event Tracking Integrity</span>
-            <span className="badge bg-warning">App Creep Elimination</span>
-            <span className="badge bg-success">Zero-Downtime Migration</span>
-            <span className="badge bg-danger">Subscription Architecture</span>
-          </div>
-        </div>
-      </Col>
     </Row>
   );
 };
