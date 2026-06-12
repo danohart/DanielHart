@@ -33,7 +33,7 @@ const Work: React.FC<WorkProps> = ({ pages }) => {
                 {page.url && (
                   <Row className="card-button">
                     <Col className='d-flex justify-content-center'>
-                      <Button className="btn btn-primary">
+                      <Button className="btn btn-primary" size="lg">
                         <a href={page.url} target="_blank" rel="noopener noreferrer">View Project</a>
                       </Button>
                     </Col>

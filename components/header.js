@@ -32,10 +32,10 @@ const Header = () => {
                 show you the impact.
                 <Row>
                   <Col>
-                    <Button>
+                    <Button size="lg" variant="primary">
                       <Link href="/services">See How I Work</Link>
                     </Button>
-                    <Button variant="secondary inverse">
+                    <Button size="lg" variant="secondary inverse">
                       <Link href="/work">View Case Studies</Link>
                     </Button>
                   </Col>
