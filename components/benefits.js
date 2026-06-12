@@ -33,7 +33,7 @@ const Benefits = () => (
           />
         </Col>
       </Row>
-      {benefitsIcon(faBarcode)}
+      {/* {benefitsIcon(faBarcode)} */}
       <Col className="benefits-description">
         <h3>Mobile Revenue Protection</h3>
         <p>
@@ -54,7 +54,7 @@ const Benefits = () => (
           />
         </Col>
       </Row>
-      {benefitsIcon(faCodeBranch)}
+      {/* {benefitsIcon(faCodeBranch)} */}
       <Col className="benefits-description">
         <h3>Analytics You Can Trust</h3>
         <p>
@@ -75,7 +75,7 @@ const Benefits = () => (
           />
         </Col>
       </Row>
-      {benefitsIcon(faCode)}
+      {/* {benefitsIcon(faCode)} */}
       <Col className="benefits-description">
         <h3>Tech Debt That Pays Off</h3>
         <p>

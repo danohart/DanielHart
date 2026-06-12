@@ -16,25 +16,33 @@ const Header = () => {
               </div>
             </Link>
           </h1>
-          <h2>
-            I fix the technical friction that leaks mobile conversions and
-            corrupts your data.
-          </h2>
-          <div className="subtext">
-            Whether you&apos;re losing ad spend to slow pages or your team is
-            optimizing against broken analytics — I find it, fix it, and show
-            you the impact.
-            <Row>
-              <Col>
-                <Button>
-                  <Link href="/services">See How I Work</Link>
-                </Button>
-                <Button variant="secondary inverse">
-                  <Link href="/work">View Case Studies</Link>
-                </Button>
-              </Col>
-            </Row>
-          </div>
+          <Row>
+            <Col
+              xs={12}
+              md={{ span: 8, offset: 2 }}
+              lg={{ span: 8, offset: 2 }}
+            >
+              <h2>
+                I fix the technical friction that leaks mobile conversions and
+                corrupts your data.
+              </h2>
+              <div className="subtext">
+                Whether you&apos;re losing ad spend to slow pages or your team
+                is optimizing against broken analytics — I find it, fix it, and
+                show you the impact.
+                <Row>
+                  <Col>
+                    <Button>
+                      <Link href="/services">See How I Work</Link>
+                    </Button>
+                    <Button variant="secondary inverse">
+                      <Link href="/work">View Case Studies</Link>
+                    </Button>
+                  </Col>
+                </Row>
+              </div>
+            </Col>
+          </Row>
         </header>
       </Col>
 

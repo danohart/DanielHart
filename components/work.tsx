@@ -26,9 +26,6 @@ const Work: React.FC<WorkProps> = ({ pages }) => {
                 <Image
                   width={600}
                   height={400}
-                  style={{
-                    maxHeight: 'calc(50vh - 6.5rem)',
-                  }}
                   src={page.image}
                   alt={page.title}
                   sizes="(max-width: 767px) 100vw, 50vw"

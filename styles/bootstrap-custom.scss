@@ -1,0 +1,35 @@
+// Selective Bootstrap 5 import — only modules used on this site.
+// Replaces the full bootstrap.min.css (152 KiB) to reduce render-blocking CSS.
+
+// Required core (must come first)
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// CSS custom properties
+@import "bootstrap/scss/root";
+
+// Base normalization
+@import "bootstrap/scss/reboot";
+
+// Layout — Container, Row, Col
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+
+// Typography — includes .lead
+@import "bootstrap/scss/type";
+
+// Components used on this site
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/transitions";
+
+// Helpers (clearfix, visually-hidden, etc.)
+@import "bootstrap/scss/helpers";
+
+// Utility classes — d-flex, mb-3, text-center, w-100, justify-content-center, etc.
+@import "bootstrap/scss/utilities/api";

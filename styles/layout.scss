@@ -119,6 +119,11 @@ h3 {
 
   a {
     padding: 2px 5px;
+    display: block;
+    text-decoration: none;
+    background-color: $primary-color-alt;
+    border-radius: 5px;
+    margin-bottom: 5px;
   }
 }
 
@@ -128,7 +133,7 @@ h3 {
   &:after {
     position: absolute;
     top: 0;
-    left: -50%;
+    left: -30%;
     width: 800px;
     height: 800px;
     content: '';
@@ -158,6 +163,7 @@ h3 {
 
     a {
       color: $white;
+      text-decoration: none;
     }
   }
 
@@ -231,6 +237,7 @@ h3 {
   &-card {
     color: $black;
     margin-bottom: 20px;
+    position: relative;
 
     img {
       width: 100%;
@@ -291,6 +298,10 @@ h3 {
   padding-bottom: 20px;
   font-size: 0.8em;
   text-align: center;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .blog-header {
