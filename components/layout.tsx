@@ -26,9 +26,11 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       <div className="morph2" />
       <Container>
         <Nav />
-        <Row>
-          <Col>{children}</Col>
-        </Row>
+        <main>
+          <Row>
+            <Col>{children}</Col>
+          </Row>
+        </main>
 
         <Footer />
       </Container>
