@@ -5,6 +5,9 @@ const nextConfig = {
   images: {
     deviceSizes: [480, 768, 1200],
   },
+  experimental: {
+    optimizeCss: true,
+  },
 };
 
 module.exports = nextConfig;

@@ -10,16 +10,14 @@ interface SEOProps {
 
 const SEO: React.FC<SEOProps> = ({ description, title, image, url }) => {
   const site = {
-    title: 'Daniel Hart — Fractional Tech Partner',
+    title: 'Daniel Hart — Front End Developer',
     description:
       'Frontend performance engineering and analytics reliability for eCommerce and growth-stage brands. I eliminate the technical friction leaking mobile conversions and corrupting your data.',
   };
 
   const metaTitle = title + ' - ' + site.title;
-  const metaDescription = description ? description : site.description;
-  const metaImage = image
-    ? image
-    : 'https://danielhart.co/images/daniel-hart-web-design.png';
+  const metaDescription = description || site.description;
+  const metaImage = image || 'https://danielhart.co/images/daniel-hart-web-design.png';
   const canonicalUrl = url || 'https://danielhart.co';
 
   return (
