@@ -31,6 +31,7 @@ const Work: React.FC<WorkProps> = ({ pages }) => {
                   }}
                   src={page.image}
                   alt={page.title}
+                  sizes="(max-width: 767px) 100vw, 50vw"
                 />
                 {page.url && (
                   <Row className="card-button">
