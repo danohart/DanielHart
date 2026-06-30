@@ -19,6 +19,9 @@ const Nav = () => (
     <Col xs={4} sm={2} md={2} lg={2}>
       <Link href="/hire">Hire</Link>
     </Col>
+    <Col xs={4} sm={2} md={2} lg={2}>
+      <Link href="/audit">Audit</Link>
+    </Col>
   </Row>
 );
 
