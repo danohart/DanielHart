@@ -10,30 +10,30 @@ const deliverables = [
     number: '01',
     title: 'Live Screen-Share Audit',
     description:
-      'We walk through your site together. I look at load time, mobile rendering, Core Web Vitals, security basics, and the friction points costing you conversions — while you watch.',
+      'We walk through your site together. I look at load time, mobile rendering, Core Web Vitals, security basics, and the friction points costing you conversions - while you watch.',
   },
   {
     number: '02',
     title: 'Written Follow-Up',
     description:
-      'After the call you get a short, prioritized list of what to fix and why — sent the same day. No vague takeaways, no 40-page PDF.',
+      'After the call you get a short, prioritized list of what to fix and why - sent the same day. No vague takeaways, no 40-page PDF.',
   },
   {
     number: '03',
     title: 'No Pitch, No Pressure',
     description:
-      "This is not a sales call for a bigger engagement. You get the audit, the summary, and that's it. If you want to work together after, great — but there's zero expectation.",
+      "This is not a sales call for a bigger engagement. You get the audit, the summary, and that's it. If you want to work together after, great - but there's zero expectation.",
   },
 ];
 
 const faqs = [
   {
     q: "What if I don't have anything technical to show you?",
-    a: "That's fine. The audit covers UX, conversion friction, and mobile experience too — you don't need a codebase. A live URL is enough.",
+    a: "That's fine. The audit covers UX, conversion friction, and mobile experience too - you don't need a codebase. A live URL is enough.",
   },
   {
     q: 'Is this a sales pitch for more work?',
-    a: "No. You get what you paid for — a 30-minute audit and a written summary. If you want to talk about next steps after that, I'm happy to, but there's no pitch baked into the call.",
+    a: "No. You get what you paid for - a 30-minute audit and a written summary. If you want to talk about next steps after that, I'm happy to, but there's no pitch baked into the call.",
   },
   {
     q: 'What do I need to prepare?',
@@ -57,7 +57,7 @@ export default function Audit() {
     <Layout>
       <SEO
         title="Book a Website Audit Call"
-        description="A flat-rate 30-minute audit call for founders and small business owners who want to know what's actually slowing their site down. Load time, mobile UX, security basics, and conversion friction — reviewed live, with a written follow-up."
+        description="A flat-rate 30-minute audit call for founders and small business owners who want to know what's actually slowing their site down. Load time, mobile UX, security basics, and conversion friction - reviewed live, with a written follow-up."
         url="https://danielhart.co/audit"
       />
 
@@ -138,7 +138,7 @@ export default function Audit() {
                   <h3>Website Audit Call</h3>
                   <p>
                     Live screen-share review of your site&apos;s speed, mobile
-                    experience, security basics, and conversion friction — plus
+                    experience, security basics, and conversion friction - plus
                     a written priority list sent after the call.
                   </p>
                   <p>
@@ -153,7 +153,7 @@ export default function Audit() {
                     <p className="process-number mb-1">60-min</p>
                     <h3>Deep Dive Audit</h3>
                     <p>
-                      Same live audit format but twice the time — right for
+                      Same live audit format but twice the time - right for
                       larger codebases, multi-flow sites, or founders who want
                       to dig into the technical detail.
                     </p>
@@ -175,7 +175,7 @@ export default function Audit() {
         <Col xs={12}>
           <h2 className="mb-3">Pick a time</h2>
           <p className="mb-4">
-            Choose your slot below. Stripe payment is collected during booking —
+            Choose your slot below. Stripe payment is collected during booking -
             nothing else needed from you until the call.
           </p>
         </Col>
@@ -217,7 +217,7 @@ export default function Audit() {
             Ready to see what&apos;s holding your site back?
           </h2>
           <Button size="lg" variant="secondary" href="#booking">
-            Book a 30-Min Audit — $198
+            Book a 30-Min Audit - $198
           </Button>
         </Col>
       </Row>
