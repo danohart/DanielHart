@@ -1,5 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+
+const SITE_URL = 'https://danielhart.co';
 
 interface SEOProps {
   description?: string;
@@ -9,6 +12,7 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({ description, title, image, url }) => {
+  const router = useRouter();
   const site = {
     title: 'Daniel Hart — Front End Developer',
     description:
@@ -17,8 +21,9 @@ const SEO: React.FC<SEOProps> = ({ description, title, image, url }) => {
 
   const metaTitle = title + ' - ' + site.title;
   const metaDescription = description || site.description;
-  const metaImage = image || 'https://danielhart.co/images/daniel-hart-web-design.png';
-  const canonicalUrl = url || 'https://danielhart.co';
+  const metaImage = image || `${SITE_URL}/images/daniel-hart-web-design.png`;
+  const path = router.asPath.split('?')[0].split('#')[0];
+  const canonicalUrl = url || `${SITE_URL}${path}`;
 
   return (
     <Head>

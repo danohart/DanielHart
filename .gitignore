@@ -72,3 +72,5 @@ yarn-error.log
 
 ./pages/blog/blogPosts/
 content/slackers.html
+skills-lock.json
+.agents/

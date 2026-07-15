@@ -58,7 +58,6 @@ export default function Audit() {
       <SEO
         title="Book a Website Audit Call"
         description="A flat-rate 30-minute audit call for founders and small business owners who want to know what's actually slowing their site down. Load time, mobile UX, security basics, and conversion friction - reviewed live, with a written follow-up."
-        url="https://danielhart.co/audit"
       />
 
       <Row className="mb-5">
