@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import React from 'react';
 import { Row, Col, Button } from 'react-bootstrap';
+import { getYearsOfExperience } from '../utils/yearsOfExperience';
 
 const Header = () => {
+  const years = getYearsOfExperience();
   return (
     <Row className="main-header-section">
       <Col xs={12}>
@@ -12,7 +14,9 @@ const Header = () => {
               Daniel Hart
               <br />
               <div className="header-role">
-                Frontend Developer &amp; Tech Partner
+                Front-end developer for websites
+                <br />
+                and eCommerce brands. {years}+&nbsp;years.
               </div>
             </Link>
           </h1>
@@ -23,17 +27,18 @@ const Header = () => {
               lg={{ span: 8, offset: 2 }}
             >
               <h2>
-                I fix the technical friction that leaks mobile conversions and
-                corrupts your data.
+                Your store is making money. Slow mobile pages and broken
+                tracking are costing you some of&nbsp;it.
               </h2>
               <div className="subtext">
-                Whether you&apos;re losing ad spend to slow pages or your team
-                is optimizing against broken analytics — I find it, fix it, and
-                show you the impact.
+                I find where mobile shoppers drop off and where your data stops
+                matching reality, then fix it. On eCommerce sites I&apos;ve worked
+                on, that meant 50% faster mobile loads and 40%
+                more&nbsp;checkouts.
                 <Row>
                   <Col>
                     <Button size="lg" variant="primary">
-                      <Link href="/services">See How I Work</Link>
+                      <Link href="/audit">Get a Store Audit</Link>
                     </Button>
                     <Button size="lg" variant="secondary inverse">
                       <Link href="/work">View Case Studies</Link>

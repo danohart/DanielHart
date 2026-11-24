@@ -8,7 +8,7 @@ class Validators extends Component {
       <Row className="validators">
         <Col>
           <Row>
-            <h2>Brands I've Worked With</h2>
+            <h2>Brands I&apos;ve Worked With</h2>
           </Row>
           <Row>
             <Col xs={6} sm={6} md={4} lg={4}>

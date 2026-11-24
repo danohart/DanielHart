@@ -9,9 +9,10 @@ interface SEOProps {
   title: string;
   image?: string;
   url?: string;
+  absoluteTitle?: boolean;
 }
 
-const SEO: React.FC<SEOProps> = ({ description, title, image, url }) => {
+const SEO: React.FC<SEOProps> = ({ description, title, image, url, absoluteTitle }) => {
   const router = useRouter();
   const site = {
     title: 'Daniel Hart — Front End Developer',
@@ -19,7 +20,7 @@ const SEO: React.FC<SEOProps> = ({ description, title, image, url }) => {
       'Frontend performance engineering and analytics reliability for eCommerce and growth-stage brands. I eliminate the technical friction leaking mobile conversions and corrupting your data.',
   };
 
-  const metaTitle = title + ' - ' + site.title;
+  const metaTitle = absoluteTitle ? title : title + ' - ' + site.title;
   const metaDescription = description || site.description;
   const metaImage = image || `${SITE_URL}/images/daniel-hart-web-design.png`;
   const path = router.asPath.split('?')[0].split('#')[0];

@@ -56,7 +56,8 @@ const Home: React.FC<HomePageProps> = ({ featuredWork }) => {
   return (
     <Layout>
       <SEO
-        title="Fractional Tech Partner for eCommerce & Growth Brands"
+        title="Daniel Hart | eCommerce Front-End Developer"
+        absoluteTitle
         description="Frontend performance engineering and analytics reliability for eCommerce and growth-stage brands. I eliminate the technical friction leaking mobile conversions and corrupting your data."
       />
       <script

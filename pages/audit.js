@@ -4,6 +4,7 @@ import SEO from '../components/seo';
 import { Row, Col, Card, Button } from 'react-bootstrap';
 import Link from 'next/link';
 import Image from 'next/image';
+import { getYearsOfExperience } from '../utils/yearsOfExperience';
 
 const deliverables = [
   {
@@ -53,6 +54,7 @@ const logos = [
 ];
 
 export default function Audit() {
+  const years = getYearsOfExperience();
   return (
     <Layout>
       <SEO
@@ -72,10 +74,10 @@ export default function Audit() {
           </h1>
           <p className="lead mb-4">
             For founders and small business owners whose site feels slow, dated,
-            or just&nbsp;offm but who aren&apos;t sure where to start.
+            or just&nbsp;off but who aren&apos;t sure where to start.
           </p>
           <Button size="lg" variant="secondary" href="#booking">
-            Book a 30-Min Audit - $198
+            Book a 30-min Audit - $198
           </Button>
         </Col>
       </Row>
@@ -101,7 +103,7 @@ export default function Audit() {
         <Col xs={12}>
           <h2 className="mb-1">Brands I&apos;ve worked with</h2>
           <p className="mb-4">
-            16+ years building production web apps for teams from solo founders
+            {years}+ years building production web apps for teams from solo founders
             to Fortune 500.
           </p>
         </Col>
@@ -144,7 +146,7 @@ export default function Audit() {
                     <strong>$198 flat rate, paid at booking.</strong>
                   </p>
                   <Button size="lg" variant="secondary" href="#booking">
-                    Book the 30-Min Audit
+                    Book the 30-min Audit
                   </Button>
                 </Col>
                 <Col xs={12} md={6}>
@@ -216,7 +218,7 @@ export default function Audit() {
             Ready to see what&apos;s holding your site back?
           </h2>
           <Button size="lg" variant="secondary" href="#booking">
-            Book a 30-Min Audit - $198
+            Book a 30-min Audit - $198
           </Button>
         </Col>
       </Row>

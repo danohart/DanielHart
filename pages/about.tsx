@@ -5,6 +5,7 @@ import Layout from '../components/layout';
 import { Row, Col, Button, Card } from 'react-bootstrap';
 import SEO from '../components/seo';
 import YearsOfExperience from '../components/yearsOfExperience';
+import { getYearsOfExperience } from '../utils/yearsOfExperience';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTachometerAlt,
@@ -26,26 +27,25 @@ interface AboutPageProps {
 }
 
 export const getStaticProps: GetStaticProps<AboutPageProps> = async () => {
-  const currentYear = new Date().getFullYear();
-  const yearsWorked = currentYear - 2010;
+  const yearsWorked = getYearsOfExperience();
 
   const expertiseAreas: ExpertiseArea[] = [
     {
       title: 'Core Web Vitals & Mobile Revenue',
       description:
-        'LCP, CLS, and INP are not abstract scores — they are measurable levers on mobile conversion and ad spend efficiency. I audit, prioritize, and fix the issues that move revenue.',
+        'LCP, CLS, and INP are not abstract scores - they are measurable levers on mobile conversion and ad spend efficiency. I audit, prioritize, and fix the issues that move revenue.',
       icon: faTachometerAlt,
     },
     {
       title: 'Conversion-Focused Frontend Architecture',
       description:
-        'Every architectural decision has a performance cost and a business consequence. I build and migrate frontends with checkout conversion and load time as first-class constraints — not afterthoughts.',
+        'Every architectural decision has a performance cost and a business consequence. I build and migrate frontends with checkout conversion and load time as first-class constraints - not afterthoughts.',
       icon: faMobileAlt,
     },
     {
       title: 'Analytics Integrity & Data Layer Ownership',
       description:
-        'Broken event tracking means your team optimizes against bad data. I own the full data layer — from client-side pixel health to warehouse reconciliation — so your dashboards reflect what actually happened.',
+        'Broken event tracking means your team optimizes against bad data. I own the full data layer - from client-side pixel health to warehouse reconciliation - so your dashboards reflect what actually happened.',
       icon: faChartLine,
     },
   ];
@@ -68,13 +68,13 @@ const About: React.FC<AboutPageProps> = ({ yearsWorked, expertiseAreas }) => {
       />
       <Row className="mb-5 align-items-center">
         <Col xs={12} md={8}>
-          <h1>Hello, I'm Daniel Hart</h1>
-          <h2>Fractional Tech Partner — {yearsWorked}+ Years in Production</h2>
+          <h1>Hello, I&apos;m Daniel Hart</h1>
+          <h2>Fractional Tech Partner - {yearsWorked}+ Years in Production</h2>
 
           <p className="lead mb-4">
             I work with eCommerce and growth-stage brands that have outgrown their
             initial tech stack. My job is to own frontend performance and data
-            reliability — so your growth team can trust every dashboard number
+            reliability - so your growth team can trust every dashboard number
             and protect every ad dollar.
           </p>
 
@@ -114,7 +114,7 @@ const About: React.FC<AboutPageProps> = ({ yearsWorked, expertiseAreas }) => {
           <p>
             I don&apos;t sell hours. I own outcomes. Every engagement starts with
             identifying the specific technical friction costing your business
-            the most — and ends with measurable proof that it&apos;s gone.
+            the most - and ends with measurable proof that it&apos;s gone.
           </p>
         </Col>
       </Row>

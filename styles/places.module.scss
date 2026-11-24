@@ -209,7 +209,9 @@ $breakpoint-mobile: 600px;
   .imageContainer {
     width: 200px;
     min-width: 200px;
-    height: 150px;
+    // No fixed height: stretch to match the card so the image fills it
+    min-height: 150px;
+    align-self: stretch;
     position: relative;
   }
   

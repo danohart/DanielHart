@@ -35,11 +35,10 @@ const Benefits = () => (
       </Row>
       {/* {benefitsIcon(faBarcode)} */}
       <Col className="benefits-description">
-        <h3>Mobile Revenue Protection</h3>
+        <h3>Faster Mobile Checkout</h3>
         <p>
-          Every 100ms of LCP improvement drives measurable checkout lift. I
-          audit and eliminate the client-side bloat silently killing your mobile
-          funnel — before it shows up as a&nbsp;miss.
+          I audit and cut the client-side bloat slowing down your product pages
+          and&nbsp;checkout.
         </p>
       </Col>
     </Col>
@@ -56,11 +55,10 @@ const Benefits = () => (
       </Row>
       {/* {benefitsIcon(faCodeBranch)} */}
       <Col className="benefits-description">
-        <h3>Analytics You Can Trust</h3>
+        <h3>Tracking You Can Trust</h3>
         <p>
-          Klaviyo drops, GA4 gaps, and mismatched attribution mean your team is
-          optimizing against fiction. I ensure 0% event packet loss between your
-          storefront and your data&nbsp;warehouse.
+          I fix GA4, Klaviyo, and attribution gaps so your ad and email
+          decisions are based on real&nbsp;numbers.
         </p>
       </Col>
     </Col>
@@ -77,11 +75,10 @@ const Benefits = () => (
       </Row>
       {/* {benefitsIcon(faCode)} */}
       <Col className="benefits-description">
-        <h3>Tech Debt That Pays Off</h3>
+        <h3>A Leaner Stack</h3>
         <p>
-          App and plugin creep costs brands 8–12 Lighthouse points and seconds
-          of load time per install. I cut the dead weight, show the P&amp;L
-          impact, and keep your stack&nbsp;lean.
+          Extra apps and plugins add weight. I cut the ones that aren&apos;t
+          earning their&nbsp;keep.
         </p>
       </Col>
     </Col>
